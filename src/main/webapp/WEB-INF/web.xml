@@ -9,11 +9,19 @@
     </servlet-mapping>
 
     <context-param>
-        <param-name>user</param-name>
+        <param-name>Hakkaton_user</param-name>
         <param-value>hakkaton_01</param-value>
     </context-param>
     <context-param>
-        <param-name>password</param-name>
+        <param-name>Hakkaton_password</param-name>
         <param-value>rai5AeshaqsdfKee</param-value>
+    </context-param>
+    <context-param>
+        <param-name>user</param-name>
+        <param-value>local_r0705623</param-value>
+    </context-param>
+    <context-param>
+        <param-name>password</param-name>
+        <param-value>èqh5EçuzYéJ-FY</param-value>
     </context-param>
 </web-app>
