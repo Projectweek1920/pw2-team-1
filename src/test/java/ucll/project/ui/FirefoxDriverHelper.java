@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class FirefoxDriverHelper {
+ class FirefoxDriverHelper {
     static FirefoxDriver getDriver() {
         // Setup the Chrome driver for the whole class
         WebDriverManager.firefoxdriver().setup();
