@@ -15,6 +15,7 @@ public class User {
     private String email;
     private Gender gender;
     private Role role;
+    private boolean difficult = false;
 
     // hashed password
     private transient String hashedPassword;
@@ -60,6 +61,15 @@ public class User {
     }
 
     // Getters and setters and toString
+
+    public boolean isDifficult() {
+        return difficult;
+    }
+
+    public void setDifficult() {
+        this.difficult = true;
+    }
+
     public int getUserId() {
         return this.userId;
     }

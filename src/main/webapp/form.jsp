@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!-- Header -->
@@ -28,6 +29,37 @@
 
     <div class="starter-template">
         <h1>Form page</h1>
+
+        <form method="post" action="/Controller?command=Enrol" novalidate>
+            <p>Welke opleiding?</p>
+            <p>
+                <input type="radio" value="graduaat" name="vraag1" id="graduaat">
+                <label for="graduaat">Bachelor</label>
+                <input type="radio" value="postgraduaat" name="vraag1" id="postgraduaat">
+                <label for="postgraduaat">Banaba PostGraduaat</label>
+                <input type="radio" value="andere" name="vraag1" id="andere">
+                <label for="andere">Andere</label>
+            </p>
+            <p>Middelbaar of Bachelor/graduaat?</p>
+            <p>
+                <input type="radio" value="middelbaar" name="vraag2" id="middelbaar">
+                <label for="middelbaar">Middelbaar</label>
+                <input type="radio" value="bachelor" name="vraag2" id="bachelor">
+                <label for="bachelor">Bachelor/graduaat</label>
+                <input type="radio" value="andere" name="vraag2" id="andere1">
+                <label for="andere">Andere</label>
+            </p>
+            <p>Taal?</p>
+            <p>
+                <input type="radio" value="NL" name="vraag3" id="NL">
+                <label for="NL">Nederlands</label>
+                <input type="radio" value="VL" name="vraag3" id="VL">
+                <label for="VL">Vlaams</label>
+                <input type="radio" value="andere" name="vraag3" id="andere2">
+                <label for="andere">Andere</label>
+            </p>
+            <p><input type="submit" value="Send" id="submit"></p>
+        </form>
 
     </div>
 
