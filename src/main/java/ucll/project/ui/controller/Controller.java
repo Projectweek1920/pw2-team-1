@@ -1,16 +1,15 @@
 package ucll.project.ui.controller;
 
 import ucll.project.domain.user.UserService;
+import ucll.project.ui.controller.Handler.HandlerFactory;
+import ucll.project.ui.controller.Handler.RequestHandler;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Enumeration;
-import java.util.Properties;
 
 @WebServlet("/Controller")
 public class Controller extends HttpServlet {

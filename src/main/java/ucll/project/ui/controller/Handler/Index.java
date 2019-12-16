@@ -1,4 +1,4 @@
-package ucll.project.ui.controller;
+package ucll.project.ui.controller.Handler;
 
 import ucll.project.domain.user.UserService;
 

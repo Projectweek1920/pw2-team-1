@@ -27,6 +27,7 @@ public class HomePageTest {
     /**
      * This is a sample test, remove this test and write your own!
      */
+
     @Test
     public void VisitHomePageTest() {
         System.out.println("test");

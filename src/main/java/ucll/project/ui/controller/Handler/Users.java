@@ -1,6 +1,5 @@
-package ucll.project.ui.controller;
+package ucll.project.ui.controller.Handler;
 
-import ucll.project.domain.user.UserRepository;
 import ucll.project.domain.user.UserService;
 
 import javax.servlet.http.HttpServletRequest;

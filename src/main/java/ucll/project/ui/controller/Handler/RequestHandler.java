@@ -1,4 +1,4 @@
-package ucll.project.ui.controller;
+package ucll.project.ui.controller.Handler;
 
 import ucll.project.domain.user.*;
 import ucll.project.ui.controller.ControllerException;
@@ -40,7 +40,7 @@ public abstract class RequestHandler {
         return command;
     }
 
-    void forwardRequest(String destination, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void forwardRequest(String destination, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher view = request.getRequestDispatcher(destination);
         view.forward(request, response);
     }
