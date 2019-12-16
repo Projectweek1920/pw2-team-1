@@ -52,9 +52,7 @@
             <p>Taal?</p>
             <p>
                 <input type="radio" value="NL" name="vraag3" id="NL">
-                <label for="NL">Nederlands</label>
-                <input type="radio" value="VL" name="vraag3" id="VL">
-                <label for="VL">Vlaams</label>
+                <label for="NL">Nederlands/Vlaams</label>
                 <input type="radio" value="andere" name="vraag3" id="andere2">
                 <label for="andere">Andere</label>
             </p>

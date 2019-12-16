@@ -16,6 +16,9 @@ public class EnrolHandler extends RequestHandler {
         String vraag2 = request.getParameter("vraag2");
         String vraag3 = request.getParameter("vraag3");
 
+
+
+
         System.out.println(vraag1 + vraag2 +vraag3);
         return "index.jsp";
     }
