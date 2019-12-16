@@ -10,7 +10,6 @@ public class UserRepositoryMemoryTest {
     public void createUser() {
         fail("This test has yet to be implemented");
     }
-
     @Test
     public void get() {
         fail("This test has yet to be implemented");
