@@ -33,7 +33,6 @@
                 class="green">Take Me To The Homepage</span></a></p>
     </div>
 </div>
-</body>
 <!-- Footer -->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Bootstrap JS -->

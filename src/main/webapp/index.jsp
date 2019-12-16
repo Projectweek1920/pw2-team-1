@@ -33,7 +33,6 @@
     </div>
 
 </main>
-</body>
 <!-- Footer -->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Bootstrap JS -->
