@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="/static/css/style.css" rel="stylesheet">
-    <title>Hello world!</title>
+    <title>All users</title>
 </head>
 <body>
 
@@ -24,14 +24,14 @@
 <!-- Page Content -->
 
 
-<div class="container">
-    <!-- Jumbotron -->
-    <div class="jumbotron">
-        <h1><i class="fa fa-frown-o red"></i> 404 Not Found</h1>
-        <p class="lead">We couldn't find what you're looking for.</p>
-        <p><a href="/Controller?command=Home" class="btn btn-default btn-lg"><span class="green">Take Me To The Homepage</span></a></p>
+<main role="main" class="container">
+
+    <div class="starter-template">
+        <h1>Form page</h1>
+
     </div>
-</div>
+
+</main>
 </body>
 <!-- Footer -->
 <!-- Optional JavaScript -->
@@ -44,9 +44,3 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-
-
-
-
