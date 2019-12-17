@@ -22,10 +22,6 @@ public class EnrolHandler extends RequestHandler {
         if (vraag1.equals("andere") || vraag2.equals("andere") || vraag3.equals("andere")){
             //moeilijke user
             user.setDifficult(true);
-        } else if(vraag1.equals("graduaat") && vraag2.equals("middelbaar")){
-            user.setDifficult(true);
-        }else if(vraag1.equals("postgraduaat") && vraag3.equals("andere")){
-            user.setDifficult(true);
         }
 
         getUserService().addToWaitingList(user);

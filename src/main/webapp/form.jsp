@@ -33,14 +33,16 @@
         <form method="post" action="/Controller?command=Enrol" novalidate>
             <p>Welke opleiding?</p>
             <p>
+
                 <input type="radio" value="graduaat" name="vraag1" id="graduaat">
-                <label for="graduaat">Bachelor</label>
+                <label for="graduaat">Bachelor graduaat</label>
                 <input type="radio" value="postgraduaat" name="vraag1" id="postgraduaat">
-                <label for="postgraduaat">Banaba PostGraduaat</label>
+                <label for="postgraduaat">Banaba postgraduaat</label>
                 <input type="radio" value="andere" name="vraag1" id="andere">
                 <label for="andere">Andere</label>
             </p>
-            <p>Middelbaar of Bachelor/graduaat?</p>
+
+            <p>Welke vooropleiding?</p>
             <p>
                 <input type="radio" value="middelbaar" name="vraag2" id="middelbaar">
                 <label for="middelbaar">Middelbaar</label>
@@ -48,6 +50,7 @@
                 <label for="bachelor">Bachelor/graduaat</label>
                 <input type="radio" value="andere" name="vraag2" id="andere1">
                 <label for="andere1">Andere</label>
+
             </p>
             <p>Taal?</p>
             <p>
