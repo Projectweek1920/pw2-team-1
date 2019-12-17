@@ -16,6 +16,7 @@ public class User {
     private String email;
     private Gender gender;
     private Role role;
+    private String loket;
     private boolean difficult = false;
 
     // hashed password
@@ -95,6 +96,9 @@ public class User {
     public String getEmail() {
         return this.email;
     }
+    public String getLoket() {
+        return this.loket;
+    }
 
     public Gender getGender() {
         return this.gender;
@@ -118,6 +122,10 @@ public class User {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public void setLoket(String loket) {
+        this.loket = loket;
     }
 
     public void setLastName(String lastName) {
