@@ -72,6 +72,10 @@ public class Worker extends Person{
         return "User(userId=" + ", userName=" + this.getUserName() + ", firstName=" + this.getFirstName() + ", lastName=" + this.getLastName() + ", email=" + this.getEmail() + ", gender=" + this.getGender() + ", role=" + this.getRole() + ", hashedPassword=" + this.getHashedPassword() + ")";
     }
 
+    public String toShowString(){
+        return "Username: " + this.getUserName() + " name: " + this.getFirstName() + "." + this.getLastName() + " role: " + this.getRole();
+    }
+
     public String getLoket() {
         return loket;
     }

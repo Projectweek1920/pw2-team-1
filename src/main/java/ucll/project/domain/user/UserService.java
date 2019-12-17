@@ -33,6 +33,10 @@ public class UserService {
         return this.userRepo.getAll();
     }
 
+    public void addUserRepo(Worker worker,String password){
+        userRepo.createUser(worker,password);
+    }
+
     public void addToWaitingList(User user){
         this.waitingList.addUser(user);
     }
@@ -45,18 +49,23 @@ public class UserService {
         this.waitingList.addUser(user);
     }
 
-    public User nextUser() {
+    public User nextEasyUser() {
         //if user is jobstudent
         //deze staat op difficcult omdat het algo een beetje derp is atm.
         //TODO: bij fix algo difficult
-        System.out.println(waitingList.getDifficult());
-        return waitingList.getDifficult().peek();
+        return waitingList.getEasy().peek();
         //else if admin
         //return waitingList.getDifficult().peek();
     }
 
-    public void clickNext() {
-        waitingList.getDifficult().remove(nextUser());
-        waitingList.getEasy().remove(nextUser());
+    public void clickNextEasy() {
+        waitingList.getEasy().remove(nextEasyUser());
+    }
+    public void clickNextDifficult(){
+        waitingList.getDifficult().remove(nextDifficultUser());
+    }
+
+    public User nextDifficultUser() {
+        return waitingList.getDifficult().peek();
     }
 }

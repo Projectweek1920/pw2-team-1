@@ -16,12 +16,12 @@ public class WaitingList {
     private WaitingList() {
     }
 
+
     public static synchronized WaitingList getInstance(){
         if(instance==null){
             instance = new WaitingList();
         }
         return instance;
-
     }
 
     public Queue<User> getEasy() {
@@ -73,7 +73,7 @@ public class WaitingList {
         return next;
 
     }
-
+    //TODO Not like this xD
     public ArrayList<User> getAll() {
         ArrayList arrayList = new ArrayList();
         for (User user : easy) {
