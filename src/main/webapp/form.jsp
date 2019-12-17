@@ -16,6 +16,19 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="/static/css/style.css" rel="stylesheet">
     <title>All users</title>
+
+    <script>
+        function showHideVooropleiding() {
+            if(document.getElementById('graduaat').checked || document.getElementById('postgraduaat').checked){
+                document.getElementById('vooropleiding').style.display='none';
+            }
+                else{
+                document.getElementById('vooropleiding').style.display='block';
+            }
+            
+        }
+    </script>
+    s
 </head>
 <body onload="startTime()">
 
@@ -59,24 +72,26 @@
             <p>Welke opleiding?</p>
             <p>
 
-                <input type="radio" value="graduaat" name="vraag1" id="graduaat">
+                <input type="radio" value="graduaat" name="vraag1" id="graduaat" onclick="showHideVooropleiding()">
                 <label for="graduaat">Bachelor graduaat</label>
-                <input type="radio" value="postgraduaat" name="vraag1" id="postgraduaat">
+                <input type="radio" value="postgraduaat" name="vraag1" id="postgraduaat" onclick="showHideVooropleiding()">
                 <label for="postgraduaat">Banaba postgraduaat</label>
-                <input type="radio" value="andere" name="vraag1" id="andere">
+                <input type="radio" value="andere" name="vraag1" id="andere" onclick="showHideVooropleiding()">
                 <label for="andere">Andere</label>
             </p>
 
-            <p>Welke vooropleiding?</p>
-            <p>
-                <input type="radio" value="middelbaar" name="vraag2" id="middelbaar">
+            <fieldset id="vooropleiding">
+            <legend>Welke vooropleiding?</legend>
+
+                <input type="radio" value="middelbaar" name="vraag2" id="middelbaar" checked>
                 <label for="middelbaar">Middelbaar</label>
                 <input type="radio" value="bachelor" name="vraag2" id="bachelor">
                 <label for="bachelor">Bachelor/graduaat</label>
                 <input type="radio" value="andere" name="vraag2" id="andere1">
                 <label for="andere1">Andere</label>
 
-            </p>
+            </fieldset>
+
             <p>Taal?</p>
             <p>
                 <input type="radio" value="NL" name="vraag3" id="NL">
