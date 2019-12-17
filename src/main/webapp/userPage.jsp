@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="/static/css/style.css" rel="stylesheet">
-    <title>Jobstudent page</title>
+    <title>${title}</title>
 </head>
 <body onload="startTime()">
 
@@ -28,10 +28,8 @@
 <main role="main" class="container">
 
     <div class="starter-template">
-        <h1> Jobstudent page</h1>
-        <div>
-            <p>${JobStudent.userId}</p>
-        </div>
+        <h1>${title} titel nog fixen</h1>
+
         <jsp:include page="userButtons.jsp">
             <jsp:param name="" value=""/>
         </jsp:include>
