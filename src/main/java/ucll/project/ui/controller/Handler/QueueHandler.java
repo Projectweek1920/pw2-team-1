@@ -17,22 +17,29 @@ public class QueueHandler extends RequestHandler {
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
 
-        request.setAttribute("numbers", getNumbers());
+        request.setAttribute("names", getNames());
         QueueSyncronizer.getInstance().addDom(request,response);
         return "waitingList.jsp";
 
     }
 
-    public ArrayList<Integer> getNumbers(){
-        ArrayList<Integer> numbers = new ArrayList<>();
+    public ArrayList<String> getNames(){
+        ArrayList<String> names = new ArrayList<>();
         try {
             for (User u : WaitingList.getInstance().getAll()) {
-                numbers.add(u.getUserId());
+                names.add(formatName(u.getFirstName(),u.getLastName()));
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return numbers;
+        return names;
+    }
+
+    public String formatName(String name, String surname){
+        String formatted = name;
+        formatted = formatted + surname.charAt(0);
+
+        return formatted;
     }
 
 }
