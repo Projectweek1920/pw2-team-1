@@ -16,15 +16,14 @@ public class SignInHandler extends RequestHandler {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         String destination = "";
-        System.out.println("test");
 
         for(User user : getUserService().getUserRepo()){
 
             if (user.getUserName().equals(userName)){
-                System.out.println(user.getHashedPassword());
-
-                if (user.getHashedPassword().equals(user.getHashedPassword())){
-                    request.setAttribute("user", user);
+                User user1 = new User();
+                user1.hashAndSetPassword(password);
+                if (user.getHashedPassword().equals(user1.getHashedPassword())){
+                    request.getSession().setAttribute("user",user);
                     destination = "index.jsp";
                 } else{
                     destination = "login.jsp";
