@@ -10,8 +10,6 @@ import java.util.List;
 public class UserService {
     private UserRepository userRepo;
     private WaitingList waitingList;
-    private ArrayList arrayList = new ArrayList();
-
 
     public UserService(){
         userRepo = new UserRepositoryMemory();
@@ -27,13 +25,20 @@ public class UserService {
     }
 
     public void addUser(User user){
-        this.arrayList.add(user);
+        this.waitingList.addUser(user);
     }
 
-    public ArrayList<User> getAll(){
-        return arrayList;
+    public User nextUser() {
+        //if user is jobstudent
+        //deze staat op difficcult omdat het algo een beetje derp is atm.
+        //TODO: bij fix algo difficult
+        return waitingList.getDifficult().peek();
+        //else if admin
+        //return waitingList.getDifficult().peek();
     }
 
-
-
+    public void clickNext() {
+        waitingList.getDifficult().remove(nextUser());
+        waitingList.getEasy().remove(nextUser());
+    }
 }

@@ -28,9 +28,11 @@
     <div class="starter-template">
         <h1> Jobstudent page</h1>
         <div>
-            <p>NR</p>
+            <p>${JobStudent.userId}</p>
         </div>
-        <input type="button" value="Next">
+        <form action="/Controller?command=NextTicket" method="post">
+            <input type="submit" value="Next">
+        </form>
     </div>
 </main>
 
