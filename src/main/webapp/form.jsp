@@ -32,22 +32,22 @@
     <div class="starter-template">
         <h1>Form page</h1>
 
-        <form method="post" action="/Controller?command=Enrol" novalidate>
+        <form method="post" action="/Controller?command=Enrol">
             <p>User information:</p>
             <p>
                 <label for="firstName">Voornaam:</label>
-                <input type="text" value="" name="firstName" id="firstName">
+                <input type="text" value="" name="firstName" id="firstName" required>
             </p>
             <p>
                 <label for="lastName">LastName:</label>
-                <input type="text" value="" name="lastName" id="lastName">
+                <input type="text" value="" name="lastName" id="lastName" required>
             </p>
             <p>
                 <label for="email">Email:</label>
-                <input type="text" value="" name="email" id="email">
+                <input type="text" value="" name="email" id="email" required>
             </p>
             <p>
-                <input type="radio" value="FEMALE" name="gender" id="femalegender">
+                <input type="radio" value="FEMALE" name="gender" id="femalegender" required>
                 <label for="femalegender">Female</label>
                 <input type="radio" value="MALE" name="gender" id="malegender">
                 <label for="malegender">Male</label>
@@ -59,7 +59,7 @@
             <p>Welke opleiding?</p>
             <p>
 
-                <input type="radio" value="graduaat" name="vraag1" id="graduaat">
+                <input type="radio" value="graduaat" name="vraag1" id="graduaat" required>
                 <label for="graduaat">Bachelor graduaat</label>
                 <input type="radio" value="postgraduaat" name="vraag1" id="postgraduaat">
                 <label for="postgraduaat">Banaba postgraduaat</label>
@@ -69,7 +69,7 @@
 
             <p>Welke vooropleiding?</p>
             <p>
-                <input type="radio" value="middelbaar" name="vraag2" id="middelbaar">
+                <input type="radio" value="middelbaar" name="vraag2" id="middelbaar" required>
                 <label for="middelbaar">Middelbaar</label>
                 <input type="radio" value="bachelor" name="vraag2" id="bachelor">
                 <label for="bachelor">Bachelor/graduaat</label>
@@ -79,7 +79,7 @@
             </p>
             <p>Taal?</p>
             <p>
-                <input type="radio" value="NL" name="vraag3" id="NL">
+                <input type="radio" value="NL" name="vraag3" id="NL" required>
                 <label for="NL">Nederlands/Vlaams</label>
                 <input type="radio" value="andere" name="vraag3" id="andere2">
                 <label for="andere2">Andere</label>
