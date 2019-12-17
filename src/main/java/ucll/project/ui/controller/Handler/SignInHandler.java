@@ -15,6 +15,7 @@ public class SignInHandler extends RequestHandler {
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
+        String loket = request.getParameter("loket");
         String destination = "";
 
         for(User user : getUserService().getUserRepo()){
@@ -23,8 +24,10 @@ public class SignInHandler extends RequestHandler {
                 User user1 = new User();
                 user1.hashAndSetPassword(password);
                 if (user.getHashedPassword().equals(user1.getHashedPassword())){
+                    user.setLoket(loket);
                     request.getSession().setAttribute("user",user);
                     destination = "index.jsp";
+                    System.out.println(user.getRole());
                 } else{
                     destination = "login.jsp";
 

@@ -35,6 +35,10 @@
             <label for="password">Password:</label>
             <input type="password" value="" name="password" id="password">
         </p>
+        <p>
+            <label for="loket">Loket:</label>
+            <input type="loket" value="" name="loket" id="loket">
+        </p>
         <p><input type="submit" value="Send" id="submit"></p>
     </form>
 

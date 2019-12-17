@@ -27,7 +27,13 @@
 <main role="main" class="container">
 
     <div class="starter-template">
-        <h1>Welcome to our Ticketing system ${user.firstName}!</h1>
+        <c:if test = "${user.getRole()=='ADMIN'}">
+            <h1>Welcome to our Ticketing system ${user.firstName} you are in loket ${user.loket}!</h1>
+        </c:if>
+
+        <c:if test = "${user.getRole()!='ADMIN'}">
+            <h1>Welcome to our Ticketing system!</h1>
+        </c:if>
         <p class="lead">This is the homepage, if you want to enrol in our school head to our <a href="Controller?command=Form">form page</a>!</p>
         <p>If you wish to see an overview of all enrolled students then go to the <a href="Controller?command=Users">users page</a>!</p>
     </div>
