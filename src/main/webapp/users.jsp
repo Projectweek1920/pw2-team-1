@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!-- Header -->
@@ -30,7 +31,11 @@
         <h1>Users page</h1>
 
     </div>
-
+    <c:choose>
+        <c:when test="${users == null || users == []}">
+            <p>No users to show "${users}"</p>
+        </c:when>
+        <c:otherwise>
     <table class="table">
         <caption>List of users</caption>
         <thead>
@@ -42,26 +47,20 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
+        <c:forEach var="user" items="${users}">
+            <tr>
+                <th>${fn:escapeXml(user.userId)}</th>
+                <th>${fn:escapeXml(user.userId)}</th>
+                <th>${fn:escapeXml(user.userId)}</th>
+                <th>${fn:escapeXml(user.userId)}</th>
+            </tr>
+        </c:forEach>
         </tbody>
     </table>
+    </c:otherwise>
+    </c:choose>
+
+
 
 </main>
 <!-- Footer -->

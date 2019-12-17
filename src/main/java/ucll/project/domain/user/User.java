@@ -8,6 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class User {
+    private static int count = 0;
     private int userId;
     private String userName;
     private String firstName;
@@ -21,6 +22,7 @@ public class User {
     private transient String hashedPassword;
 
     public User() {
+        setUserId(++count);
     }
 
     public User(String userName, String firstName, String lastName, String email, Gender gender, Role role) {
@@ -30,6 +32,7 @@ public class User {
         setEmail(email);
         setGender(gender);
         setRole(role);
+        setUserId(++count);
     }
 
     public void hashAndSetPassword(String password) {

@@ -2,6 +2,7 @@ package ucll.project.domain.user;
 
 public class DummyUserData {
     public static void addData(UserRepository userRepository) {
+        /*
         userRepository.createUser(
                 new User("admin",
                         "admin", "user",
@@ -34,5 +35,6 @@ public class DummyUserData {
                 ),
                 "user2" // password
         );
+        */
     }
 }

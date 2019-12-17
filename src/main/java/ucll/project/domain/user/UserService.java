@@ -14,10 +14,14 @@ public class UserService {
     public UserService(){
         userRepo = new UserRepositoryMemory();
         waitingList = new WaitingList();
+    }
 
+    public void addToWaitingList(User user){
+        this.waitingList.addUser(user);
     }
 
     public List<User> getUsers() {
         return userRepo.getAll();
     }
+
 }

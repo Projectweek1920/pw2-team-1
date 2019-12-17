@@ -25,7 +25,7 @@ public abstract class RequestHandler {
         this.command = command;
     }
 
-    private void setUserService(UserService userService){
+    public void setUserService(UserService userService){
         if (userService == null){
             throw new ControllerException("User service cannot be null.");
         }
