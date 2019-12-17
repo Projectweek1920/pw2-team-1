@@ -18,28 +18,24 @@ public class EnrolHandler extends RequestHandler {
         String vraag3 = request.getParameter("vraag3");
 
         User user = new User();
-
+        user.setDifficult(false);
         if (vraag1.equals("andere") || vraag2.equals("andere") || vraag3.equals("andere")){
             //moeilijke user
-            user.setDifficult();
+            user.setDifficult(true);
         } else if(vraag1.equals("graduaat") && vraag2.equals("middelbaar")){
-            user.setDifficult();
+            user.setDifficult(true);
         }else if(vraag1.equals("postgraduaat") && vraag3.equals("andere")){
-            user.setDifficult();
+            user.setDifficult(true);
         }
-        //crashes here
-        System.out.println(getUserService().getUsers());
-        getUserService().addToWaitingList(user);
-        System.out.println(getUserService().getUsers());
-        System.out.println(user.getUserId());
-        System.out.println(user.isDifficult());
+
+        getUserService().addUser(user);
 
 
 
 
 
         System.out.println(vraag1 + vraag2 +vraag3);
-        request.setAttribute("users", this.getUserService().getUsers());
+        request.setAttribute("users", getUserService().getAll());
         return "users.jsp";
     }
 }

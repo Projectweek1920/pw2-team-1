@@ -2,10 +2,13 @@ package ucll.project.db;
 
 import ucll.project.domain.user.User;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class WaitingList {
-    private Queue<User> easy,difficult;
+    private Queue<User> easy,difficult = new LinkedList<>();
 
     public WaitingList() {
     }
@@ -27,15 +30,15 @@ public class WaitingList {
     }
 
     public void addUser(User user){
-        if(user!=null){
-            if(user.isDifficult()){
-                difficult.add(user); //this doesn't work pls help xD c:
-            }else{
-                easy.add(user);
+            if (user != null) {
+                if (user.isDifficult()) {
+                    difficult.add(user); //this doesn't work pls help xD c:
+                } else {
+                    easy.offer(user);
+                }
+            } else {
+                throw new IllegalArgumentException("user is null");
             }
-        }else{
-            throw new IllegalArgumentException("user is null");
-        }
     }
 
     public User getNextDifficultUser(){
@@ -58,5 +61,16 @@ public class WaitingList {
         }
         return next;
 
+    }
+
+    public ArrayList<User> getAll() {
+        ArrayList arrayList = new ArrayList();
+        for(User user : easy){
+            arrayList.add(user);
+        }
+        for(User user : difficult){
+            arrayList.add(user);
+        }
+        return arrayList;
     }
 }

@@ -69,8 +69,8 @@ public class User {
         return difficult;
     }
 
-    public void setDifficult() {
-        this.difficult = true;
+    public void setDifficult(boolean difficult) {
+        this.difficult = difficult;
     }
 
     public int getUserId() {

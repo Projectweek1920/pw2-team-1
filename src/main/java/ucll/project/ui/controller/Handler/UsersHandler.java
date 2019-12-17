@@ -12,7 +12,7 @@ public class UsersHandler extends RequestHandler {
 
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        request.setAttribute("users", this.getUserService().getUsers());
+        request.setAttribute("users", getUserService().getAll());
         return "users.jsp";
     }
 }

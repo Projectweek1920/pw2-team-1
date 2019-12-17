@@ -33,7 +33,7 @@
     </div>
     <c:choose>
         <c:when test="${users == null || users == []}">
-            <p>No users to show "${users}"</p>
+            <p>No users to show</p>
         </c:when>
         <c:otherwise>
     <table class="table">
@@ -41,17 +41,11 @@
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach var="user" items="${users}">
             <tr>
-                <th>${fn:escapeXml(user.userId)}</th>
-                <th>${fn:escapeXml(user.userId)}</th>
-                <th>${fn:escapeXml(user.userId)}</th>
                 <th>${fn:escapeXml(user.userId)}</th>
             </tr>
         </c:forEach>
