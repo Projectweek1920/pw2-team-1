@@ -8,10 +8,19 @@ import java.util.List;
 import java.util.Queue;
 
 public class WaitingList {
+    private static WaitingList instance;
     private Queue<User> easy = new LinkedList<>();
     private Queue<User> difficult = new LinkedList<>();
 
-    public WaitingList() {
+    private WaitingList() {
+    }
+
+    public static synchronized WaitingList getInstance(){
+        if(instance==null){
+            instance = new WaitingList();
+        }
+        return instance;
+
     }
 
     public Queue<User> getEasy() {

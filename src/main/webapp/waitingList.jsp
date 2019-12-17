@@ -8,9 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Wachtlijst</title>
 </head>
 <body>
-$END$
+<main>
+    <div id="Wachtrij">
+
+    </div>
+    <div id="Klaar">
+
+    </div>
+</main>
 </body>
+<script src="js/Queue.js"></script>
 </html>

@@ -1,5 +1,6 @@
 package ucll.project.ui.controller.Handler;
 
+import ucll.project.db.WaitingList;
 import ucll.project.domain.user.*;
 import ucll.project.ui.controller.ControllerException;
 
@@ -12,6 +13,7 @@ import java.io.IOException;
 public abstract class RequestHandler {
     private String command;
     private UserService userService;
+    private WaitingList waitingList;
 
     public RequestHandler(String command, UserService userService){
         setCommand(command);
