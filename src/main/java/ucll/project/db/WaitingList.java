@@ -8,7 +8,8 @@ import java.util.List;
 import java.util.Queue;
 
 public class WaitingList {
-    private Queue<User> easy,difficult = new LinkedList<>();
+    private Queue<User> easy = new LinkedList<>();
+    private Queue<User> difficult = new LinkedList<>();
 
     public WaitingList() {
     }
@@ -29,34 +30,34 @@ public class WaitingList {
         this.difficult = difficult;
     }
 
-    public void addUser(User user){
-            if (user != null) {
-                if (user.isDifficult()) {
-                    difficult.add(user); //this doesn't work pls help xD c:
-                } else {
-                    easy.offer(user);
-                }
+    public void addUser(User user) {
+        if (user != null) {
+            if (user.isDifficult()) {
+                difficult.add(user); //this doesn't work pls help xD c:
             } else {
-                throw new IllegalArgumentException("user is null");
+                easy.offer(user);
             }
+        } else {
+            throw new IllegalArgumentException("user is null");
+        }
     }
 
-    public User getNextDifficultUser(){
+    public User getNextDifficultUser() {
         User next = null;
         try {
             next = difficult.poll();
-        }catch (Exception e){
+        } catch (Exception e) {
             next = getNextEasyUser();
             System.out.println("Geen complexe studenten");
         }
         return next;
     }
 
-    public User getNextEasyUser(){
+    public User getNextEasyUser() {
         User next = null;
         try {
             next = easy.poll();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return next;
@@ -65,10 +66,10 @@ public class WaitingList {
 
     public ArrayList<User> getAll() {
         ArrayList arrayList = new ArrayList();
-        for(User user : easy){
+        for (User user : easy) {
             arrayList.add(user);
         }
-        for(User user : difficult){
+        for (User user : difficult) {
             arrayList.add(user);
         }
         return arrayList;
