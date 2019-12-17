@@ -72,11 +72,7 @@
             <p>Welke opleiding?</p>
             <p>
 
-<<<<<<< HEAD
                 <input type="radio" value="graduaat" name="vraag1" id="graduaat" onclick="showHideVooropleiding()">
-=======
-                <input type="radio" value="graduaat" name="vraag1" id="graduaat" required>
->>>>>>> 7b2317369dd97df167996e4343890800b8f59181
                 <label for="graduaat">Bachelor graduaat</label>
                 <input type="radio" value="postgraduaat" name="vraag1" id="postgraduaat" onclick="showHideVooropleiding()">
                 <label for="postgraduaat">Banaba postgraduaat</label>
@@ -84,16 +80,10 @@
                 <label for="andere">Andere</label>
             </p>
 
-<<<<<<< HEAD
             <fieldset id="vooropleiding">
             <legend>Welke vooropleiding?</legend>
 
                 <input type="radio" value="middelbaar" name="vraag2" id="middelbaar" checked>
-=======
-            <p>Welke vooropleiding?</p>
-            <p>
-                <input type="radio" value="middelbaar" name="vraag2" id="middelbaar" required>
->>>>>>> 7b2317369dd97df167996e4343890800b8f59181
                 <label for="middelbaar">Middelbaar</label>
                 <input type="radio" value="bachelor" name="vraag2" id="bachelor">
                 <label for="bachelor">Bachelor/graduaat</label>
