@@ -26,11 +26,17 @@
 
 <main role="main" class="container">
 
-    <div class="starter-template">
-        <h1>Welcome to our Ticketing system ${user.firstName}!</h1>
-        <p class="lead">This is the homepage, if you want to enrol in our school head to our <a href="Controller?command=Form">form page</a>!</p>
-        <p>If you wish to see an overview of all enrolled students then go to the <a href="Controller?command=Users">users page</a>!</p>
-    </div>
+    <form action="Controller?command=SignIn" method="POST" novalidate>
+        <p>
+            <label for="userName">Username:</label>
+            <input type="text" value="Wout123" name="userName" id="userName">
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" value="" name="password" id="password">
+        </p>
+        <p><input type="submit" value="Send" id="submit"></p>
+    </form>
 
 </main>
 <!-- Footer -->

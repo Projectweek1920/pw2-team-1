@@ -1,5 +1,7 @@
 package ucll.project.ui.controller.Handler;
 
+import ucll.project.domain.user.Gender;
+import ucll.project.domain.user.Role;
 import ucll.project.domain.user.User;
 import ucll.project.domain.user.UserService;
 
@@ -13,11 +15,21 @@ public class EnrolHandler extends RequestHandler {
 
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
+        String firstName = request.getParameter("firstName");
+        String lastName = request.getParameter("lastName");
+        String email = request.getParameter("email");
+        String gender = request.getParameter("gender");
+
         String vraag1 = request.getParameter("vraag1");
         String vraag2 = request.getParameter("vraag2");
         String vraag3 = request.getParameter("vraag3");
 
         User user = new User();
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setEmail(email);
+        user.setGender(Gender.valueOf(gender));
+        user.setRole(Role.USER);
         user.setDifficult(false);
         if (vraag1.equals("andere") || vraag2.equals("andere") || vraag3.equals("andere")){
             //moeilijke user
@@ -30,11 +42,6 @@ public class EnrolHandler extends RequestHandler {
 
         getUserService().addToWaitingList(user);
 
-
-
-
-
-        System.out.println(vraag1 + vraag2 +vraag3);
         request.setAttribute("users", getUserService().getUsers());
         return "users.jsp";
     }

@@ -12,8 +12,24 @@ public class UserService {
     private WaitingList waitingList;
 
     public UserService(){
+        User user = new User("Admin","Wout","De Boeck","WoutDeBoeck@gmail.com",Gender.MALE,Role.ADMIN);
         userRepo = new UserRepositoryMemory();
+        userRepo.createUser(user,"P@ssw0rd");
         waitingList = new WaitingList();
+    }
+
+    public User getCertainUserRepo(String userName){
+        User usertest = null;
+        for(User user : userRepo.getAll()){
+            if(user.getUserName().equals(userName)){
+                usertest = user;
+            }
+        }
+        return usertest;
+    }
+
+    public List<User> getUserRepo(){
+        return this.userRepo.getAll();
     }
 
     public void addToWaitingList(User user){

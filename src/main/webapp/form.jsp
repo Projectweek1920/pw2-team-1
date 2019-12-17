@@ -31,6 +31,29 @@
         <h1>Form page</h1>
 
         <form method="post" action="/Controller?command=Enrol" novalidate>
+            <p>User information:</p>
+            <p>
+                <label for="firstName">Voornaam:</label>
+                <input type="text" value="" name="firstName" id="firstName">
+            </p>
+            <p>
+                <label for="lastName">LastName:</label>
+                <input type="text" value="" name="lastName" id="lastName">
+            </p>
+            <p>
+                <label for="email">Email:</label>
+                <input type="text" value="" name="email" id="email">
+            </p>
+            <p>
+                <input type="radio" value="FEMALE" name="gender" id="femalegender">
+                <label for="femalegender">Female</label>
+                <input type="radio" value="MALE" name="gender" id="malegender">
+                <label for="malegender">Male</label>
+            </p>
+
+
+
+
             <p>Welke opleiding?</p>
             <p>
                 <input type="radio" value="graduaat" name="vraag1" id="graduaat">
