@@ -11,12 +11,11 @@ import static org.junit.Assert.*;
 
 public class WaitingListTest {
 
-    private WaitingList waitingList;
+    private WaitingList waitingList = WaitingList.getInstance();
     private User ok,Nok,Nok1,Nok2;
 
     @Before
     public void setUp() {
-        waitingList = new WaitingList();
         ok = new User("x","x","x","x@x.com", Gender.MALE, Role.ADMIN);
         Nok = new User("x","x","x","x@x.com", Gender.MALE, Role.ADMIN);
         Nok1 = new User("x","x","x","x@x.com", Gender.MALE, Role.ADMIN);

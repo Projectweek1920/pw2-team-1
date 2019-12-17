@@ -9,13 +9,12 @@ import java.util.List;
 
 public class UserService {
     private UserRepository userRepo;
-    private WaitingList waitingList;
+    private WaitingList waitingList = WaitingList.getInstance();
 
     public UserService(){
         User user = new User("Admin","Wout","De Boeck","WoutDeBoeck@gmail.com",Gender.MALE,Role.ADMIN);
         userRepo = new UserRepositoryMemory();
         userRepo.createUser(user,"P@ssw0rd");
-        waitingList = new WaitingList();
     }
 
     public User getCertainUserRepo(String userName){

@@ -7,9 +7,7 @@ import ucll.project.domain.user.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.websocket.server.ServerEndpoint;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Queue extends RequestHandler {
     public Queue(String command, UserService userService) {
