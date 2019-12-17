@@ -1,5 +1,6 @@
 body {
     padding-top: 5rem;
+    /*background-color: red;*/
 }
 
 .starter-template {
@@ -10,4 +11,45 @@ body {
 
 .selector-for-some-widget {
     box-sizing: content-box;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+
+}
+
+.grid-item{
+    display: block;
+    text-align: center;
+
+}
+
+h2{
+    background-color: red;
+    color: white;
+    font-size: 180%;
+    padding: 10px;
+    color: white;
+}
+
+main{
+    background-color: white;
+    height: 70%;
+}
+
+.section{
+    border: red solid 5px;
+}
+
+.section h2{
+    margin-top: 0px;
+    padding: 5px;
+    text-align: center;
+}
+
+th{
+    padding: 10px;
+    font-size: 170px ;
 }
