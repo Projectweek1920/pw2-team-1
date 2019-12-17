@@ -11,6 +11,7 @@ public class WaitingList {
     private static WaitingList instance;
     private Queue<User> easy = new LinkedList<>();
     private Queue<User> difficult = new LinkedList<>();
+    private Queue<User> aanDeBeurt = new LinkedList<>();
 
     private WaitingList() {
     }
@@ -42,7 +43,7 @@ public class WaitingList {
     public void addUser(User user) {
         if (user != null) {
             if (user.isDifficult()) {
-                difficult.add(user); //this doesn't work pls help xD c:
+                difficult.offer(user); //this doesn't work pls help xD c:
             } else {
                 easy.offer(user);
             }
