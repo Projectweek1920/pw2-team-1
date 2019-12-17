@@ -23,6 +23,9 @@ public class User {
 
     public User() {
         setUserId(++count);
+        if(count >= 100) {
+            count = 0;
+        }
     }
 
     public User(String userName, String firstName, String lastName, String email, Gender gender, Role role) {
