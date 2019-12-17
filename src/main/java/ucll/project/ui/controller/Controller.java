@@ -21,7 +21,7 @@ public class Controller extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
-        QueueSyncronizer.getInstance();
+        QueueSyncronizer.getInstance().setController(this);
         handlerFactory = new HandlerFactory();
         service = new UserService();
     }
@@ -35,7 +35,7 @@ public class Controller extends HttpServlet {
         processRequest(request, response);
     }
 
-    private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             String command = request.getParameter("command");
             if (command == null || command.trim().isEmpty()) {
