@@ -28,7 +28,6 @@
             
         }
     </script>
-    s
 </head>
 <body onload="startTime()">
 

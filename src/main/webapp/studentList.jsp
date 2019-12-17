@@ -47,6 +47,15 @@
                 <c:forEach var="student" items="${students}">
                     <tr>
                         <th>${fn:escapeXml(student.toShowString())}</th>
+                        <c:if test = "${worker.getRole()=='ADMIN'}">
+                            <form method="post" action="Controller?command=ChangeRole" novalidate>
+                                <input type="radio" name="role" value="JOBSTUDENT"> Jobstudent<br>
+                                <input type="radio" name="role" value="EXPERT"> Expert<br>
+                                <input type="radio" name="role" value="ADMIN"> Admin<br>
+                                <input type="text" name="student" value="${student}" type="hidden">
+                                <input type="submit" value="save">
+                            </form>
+                        </c:if>
                     </tr>
                 </c:forEach>
                 </tbody>
