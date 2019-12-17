@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 
-public class Queue extends RequestHandler {
-    public Queue(String command, UserService userService) {
+public class QueueHandler extends RequestHandler {
+    public QueueHandler(String command, UserService userService) {
         super(command, userService);
     }
 

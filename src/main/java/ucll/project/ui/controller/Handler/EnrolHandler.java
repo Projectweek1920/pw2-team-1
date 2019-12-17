@@ -29,7 +29,6 @@ public class EnrolHandler extends RequestHandler {
         user.setLastName(lastName);
         user.setEmail(email);
         user.setGender(Gender.valueOf(gender));
-        user.setRole(Role.USER);
         user.setDifficult(false);
         if (vraag1.equals("andere") || vraag2.equals("andere") || vraag3.equals("andere")){
             //moeilijke user

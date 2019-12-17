@@ -6,41 +6,40 @@ import java.util.List;
 import java.util.Map;
 
 public class UserRepositoryMemory implements UserRepository {
-    private Map<Integer, User> users = new HashMap<Integer, User>();
+    private Map<Integer, Worker> workers = new HashMap<Integer, Worker>();
 
     public UserRepositoryMemory() {
         DummyUserData.addData(this);
     }
 
     @Override
-    public void createUser(User user, String password) {
-        for (User u : users.values()) {
-            if (u.getUserName().equals(user.getUserName())) {
+    public void createUser(Worker worker, String password) {
+        for (Worker u : workers.values()) {
+            if (u.getUserName().equals(worker.getUserName())) {
                 throw new IllegalArgumentException("Username already in use");
             }
-            if (u.getEmail().equals(user.getEmail())) {
+            if (u.getEmail().equals(worker.getEmail())) {
                 throw new IllegalArgumentException("Email already in use");
             }
         }
-        int userId = users.size() + 1;
-        user.setUserId(userId);
-        user.hashAndSetPassword(password);
-        users.put(userId, user);
+        int userId = workers.size() + 1;
+        worker.hashAndSetPassword(password);
+        workers.put(userId, worker);
     }
 
     @Override
-    public User get(int userId) {
-        return users.get(userId);
+    public Worker get(int userId) {
+        return workers.get(userId);
     }
 
     @Override
-    public List<User> getAll() {
-        return new ArrayList<User>(users.values());
+    public List<Worker> getAll() {
+        return new ArrayList<Worker>(workers.values());
     }
 
     @Override
-    public User loginUser(String username, String password) throws InvalidLogin {
-        for (User u : users.values()) {
+    public Worker loginUser(String username, String password) throws InvalidLogin {
+        for (Worker u : workers.values()) {
             if (u.getEmail().equals(username) || u.getUserName().equals(username)) {
                 if (u.isValidPassword(password)) {
                     return u;
@@ -53,12 +52,12 @@ public class UserRepositoryMemory implements UserRepository {
     }
 
     @Override
-    public void update(User user) {
-        users.replace(user.getUserId(), user);
+    public void update(Worker worker) {
+
     }
 
     @Override
-    public void delete(User user) {
-        users.remove(user.getUserId());
+    public void delete(Worker worker) {
+
     }
 }

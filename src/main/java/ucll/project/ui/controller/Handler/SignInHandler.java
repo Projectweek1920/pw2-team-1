@@ -2,6 +2,7 @@ package ucll.project.ui.controller.Handler;
 
 import ucll.project.domain.user.User;
 import ucll.project.domain.user.UserService;
+import ucll.project.domain.user.Worker;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,16 +19,16 @@ public class SignInHandler extends RequestHandler {
         String loket = request.getParameter("loket");
         String destination = "";
 
-        for(User user : getUserService().getUserRepo()){
+        for(Worker worker : getUserService().getUserRepo()){
 
-            if (user.getUserName().equals(userName)){
-                User user1 = new User();
+            if (worker.getUserName().equals(userName)){
+                Worker user1 = new Worker();
                 user1.hashAndSetPassword(password);
-                if (user.getHashedPassword().equals(user1.getHashedPassword())){
-                    user.setLoket(loket);
-                    request.getSession().setAttribute("user",user);
+                if (worker.getHashedPassword().equals(user1.getHashedPassword())){
+                    worker.setLoket(loket);
+                    request.getSession().setAttribute("worker",worker);
                     destination = "index.jsp";
-                    System.out.println(user.getRole());
+                    System.out.println(worker.getRole());
                 } else{
                     destination = "login.jsp";
 

@@ -1,4 +1,4 @@
-package ucll.project.domain.user;
+/*package ucll.project.domain.user;
 
 import ucll.project.db.ConnectionPool;
 
@@ -137,3 +137,4 @@ public class UserRepositoryDb implements UserRepository {
         return i;
     }
 }
+*/

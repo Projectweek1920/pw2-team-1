@@ -16,10 +16,10 @@ public class WaitingListTest {
 
     @Before
     public void setUp() {
-        ok = new User("x","x","x","x@x.com", Gender.MALE, Role.ADMIN);
-        Nok = new User("x","x","x","x@x.com", Gender.MALE, Role.ADMIN);
-        Nok1 = new User("x","x","x","x@x.com", Gender.MALE, Role.ADMIN);
-        Nok2 = new User("x","x","x","x@x.com", Gender.MALE, Role.ADMIN);
+        ok = new User("x","x","x","x@x.com", Gender.MALE);
+        Nok = new User("x","x","x","x@x.com", Gender.MALE);
+        Nok1 = new User("x","x","x","x@x.com", Gender.MALE);
+        Nok2 = new User("x","x","x","x@x.com", Gender.MALE);
         Nok.setDifficult(true);
         ok.setDifficult(false);
         Nok1.setDifficult(false);

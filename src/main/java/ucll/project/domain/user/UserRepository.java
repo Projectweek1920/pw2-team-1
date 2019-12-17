@@ -5,20 +5,20 @@ import java.util.List;
 public interface UserRepository {
 
     // CREATE
-    void createUser(User user, String password);
+    void createUser(Worker worker, String password);
 
     // READ ONE
-    User get(int userId);
+    Worker get(int workerId);
 
     // READ ALL
-    List<User> getAll();
+    List<Worker> getAll();
 
     // LOGIN (= GET but with password check)
-    User loginUser(String username, String password) throws InvalidLogin;
+    Worker loginUser(String username, String password) throws InvalidLogin;
 
     // UPDATE
-    void update(User user);
+    void update(Worker worker);
 
     // DELETE
-    void delete(User user);
+    void delete(Worker worker);
 }

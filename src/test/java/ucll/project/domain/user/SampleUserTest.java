@@ -18,8 +18,7 @@ public class SampleUserTest {
                 "firstName",
                 "lastName",
                 "email@example.com",
-                Gender.FEMALE,
-                Role.ADMIN
+                Gender.FEMALE
         );
 
         assertEquals(user.getUserName(), "username");
@@ -27,7 +26,6 @@ public class SampleUserTest {
         assertEquals(user.getLastName(), "lastName");
         assertEquals(user.getEmail(), "email@example.com");
         assertEquals(user.getGender(), Gender.FEMALE);
-        assertEquals(user.getRole(), Role.ADMIN);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -37,8 +35,7 @@ public class SampleUserTest {
                 "firstName",
                 "lastName",
                 "emailexample.com",
-                Gender.FEMALE,
-                Role.ADMIN
+                Gender.FEMALE
         );
     }
 

@@ -20,5 +20,10 @@
                 <a class="nav-link" href="/Controller?command=Jobstudent">Jobstudent</a>
             </li>
         </ul>
+        <c:if test = "${worker.getRole()=='ADMIN'}">
+            <li class="nav-item">
+                <a class="nav-link" href="/Controller?command=SignOut">${worker.getRole()}: logout</a>
+            </li>
+        </c:if>
     </div>
 </nav>

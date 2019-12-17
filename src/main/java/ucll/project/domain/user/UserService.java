@@ -12,22 +12,24 @@ public class UserService {
     private WaitingList waitingList = WaitingList.getInstance();
 
     public UserService(){
-        User user = new User("Admin","Wout","De Boeck","WoutDeBoeck@gmail.com",Gender.MALE,Role.ADMIN);
+
+        Worker worker = new Worker("Admin","Wout","De Boeck","WoutDeBoeck@gmail.com",Gender.MALE,Role.ADMIN);
         userRepo = new UserRepositoryMemory();
-        userRepo.createUser(user,"P@ssw0rd");
+        userRepo.createUser(worker,"P@ssw0rd");
+
     }
 
-    public User getCertainUserRepo(String userName){
-        User usertest = null;
-        for(User user : userRepo.getAll()){
-            if(user.getUserName().equals(userName)){
-                usertest = user;
+    public Worker getCertainUserRepo(String userName){
+        Worker usertest = null;
+        for(Worker worker : userRepo.getAll()){
+            if(worker.getUserName().equals(userName)){
+                usertest = worker;
             }
         }
         return usertest;
     }
 
-    public List<User> getUserRepo(){
+    public List<Worker> getUserRepo(){
         return this.userRepo.getAll();
     }
 
@@ -47,6 +49,7 @@ public class UserService {
         //if user is jobstudent
         //deze staat op difficcult omdat het algo een beetje derp is atm.
         //TODO: bij fix algo difficult
+        System.out.println(waitingList.getDifficult());
         return waitingList.getDifficult().peek();
         //else if admin
         //return waitingList.getDifficult().peek();
