@@ -47,14 +47,14 @@
                 <input type="radio" value="bachelor" name="vraag2" id="bachelor">
                 <label for="bachelor">Bachelor/graduaat</label>
                 <input type="radio" value="andere" name="vraag2" id="andere1">
-                <label for="andere">Andere</label>
+                <label for="andere1">Andere</label>
             </p>
             <p>Taal?</p>
             <p>
                 <input type="radio" value="NL" name="vraag3" id="NL">
                 <label for="NL">Nederlands/Vlaams</label>
                 <input type="radio" value="andere" name="vraag3" id="andere2">
-                <label for="andere">Andere</label>
+                <label for="andere2">Andere</label>
             </p>
             <p><input type="submit" value="Send" id="submit"></p>
         </form>

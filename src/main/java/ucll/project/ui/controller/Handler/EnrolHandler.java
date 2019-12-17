@@ -28,14 +28,14 @@ public class EnrolHandler extends RequestHandler {
             user.setDifficult(true);
         }
 
-        getUserService().addUser(user);
+        getUserService().addToWaitingList(user);
 
 
 
 
 
         System.out.println(vraag1 + vraag2 +vraag3);
-        request.setAttribute("users", getUserService().getAll());
+        request.setAttribute("users", getUserService().getUsers());
         return "users.jsp";
     }
 }

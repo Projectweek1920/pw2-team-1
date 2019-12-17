@@ -27,9 +27,9 @@
 <main role="main" class="container">
 
     <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a
-            mostly barebones HTML document.</p>
+        <h1>Welcome to our Ticketing system!</h1>
+        <p class="lead">This is the homepage, if you want to enrol in our school head to our <a href="Controller?command=Form">form page</a>!</p>
+        <p>If you wish to see an overview of all enrolled students then go to the <a href="Controller?command=Users">users page</a>!</p>
     </div>
 
 </main>
