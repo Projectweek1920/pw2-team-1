@@ -1,8 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<!-- Header -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="/static/css/style.css" rel="stylesheet">
-    <title>Jobstudent page</title>
+    <title>Hello world!</title>
 </head>
 <body>
 
@@ -23,20 +23,26 @@
 
 <!-- Page Content -->
 
+
 <main role="main" class="container">
 
-    <div class="starter-template">
-        <h1> Jobstudent page</h1>
-        <div>
-            <p>${JobStudent.userId}</p>
-        </div>
-        <form action="/Controller?command=NextTicket" method="post">
-            <input type="submit" value="Next">
-        </form>
-    </div>
+    <form action="Controller?command=SignIn" method="POST" novalidate>
+        <p>
+            <label for="userName">Username:</label>
+            <input type="text" value="Wout123" name="userName" id="userName">
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" value="" name="password" id="password">
+        </p>
+        <p>
+            <label for="loket">Loket:</label>
+            <input type="loket" value="" name="loket" id="loket">
+        </p>
+        <p><input type="submit" value="Send" id="submit"></p>
+    </form>
+
 </main>
-
-
 <!-- Footer -->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Bootstrap JS -->

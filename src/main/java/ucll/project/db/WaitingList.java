@@ -8,10 +8,20 @@ import java.util.List;
 import java.util.Queue;
 
 public class WaitingList {
+    private static WaitingList instance;
     private Queue<User> easy = new LinkedList<>();
     private Queue<User> difficult = new LinkedList<>();
+    private Queue<User> aanDeBeurt = new LinkedList<>();
 
-    public WaitingList() {
+    private WaitingList() {
+    }
+
+    public static synchronized WaitingList getInstance(){
+        if(instance==null){
+            instance = new WaitingList();
+        }
+        return instance;
+
     }
 
     public Queue<User> getEasy() {
@@ -33,7 +43,7 @@ public class WaitingList {
     public void addUser(User user) {
         if (user != null) {
             if (user.isDifficult()) {
-                difficult.add(user); //this doesn't work pls help xD c:
+                difficult.offer(user); //this doesn't work pls help xD c:
             } else {
                 easy.offer(user);
             }

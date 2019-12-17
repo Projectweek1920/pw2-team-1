@@ -1,5 +1,6 @@
 package ucll.project.ui.controller;
 
+import ucll.project.domain.user.QueueSyncronizer;
 import ucll.project.domain.user.UserService;
 import ucll.project.ui.controller.Handler.HandlerFactory;
 import ucll.project.ui.controller.Handler.RequestHandler;
@@ -20,6 +21,7 @@ public class Controller extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
+        QueueSyncronizer.getInstance();
         handlerFactory = new HandlerFactory();
         service = new UserService();
     }
