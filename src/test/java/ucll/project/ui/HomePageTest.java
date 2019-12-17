@@ -15,7 +15,7 @@ public class HomePageTest {
     public static void SetupDriver() {
         // Setup the Chrome driver for the whole class
         System.setProperty("webdriver.chrome.driver", "libs/chromedriver.exe");
-        driver = ChromeDriverHelper.getDriver();
+        driver = DriverHelper.getDriver();
     }
 
     @AfterClass

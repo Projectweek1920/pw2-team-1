@@ -1,7 +1,7 @@
 package ucll.project.ui;
 
 public class Config {
-    public static final String BASE_URL = "http://localhost:8081/";
+    public static String BASE_URL = "https://dev.team-1.projectweek.be/";
 
 
 
