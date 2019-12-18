@@ -49,7 +49,7 @@ main{
     text-align: center;
 }
 
-th{
+.table-cell{
     padding: 10px;
     font-size: 170px ;
 }

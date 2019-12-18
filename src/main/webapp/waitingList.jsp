@@ -25,7 +25,7 @@
         <div id="Wachtrij" class="grid-container">
             <c:forEach var="name" items="${names}">
                 <tr class="grid-item">
-                    <th>${name}</th>
+                    <th class="table-cell">${name}</th>
                 </tr>
             </c:forEach>
             <%--<th class="grid-item">4</th>
@@ -37,7 +37,7 @@
         <div id="In behandeling" class="grid-container">
             <c:forEach var="name" items="${ready}">
                 <tr class="grid-item">
-                    <th>${name}</th>
+                    <th class="table-cell">${name}</th>
                 </tr>
             </c:forEach>
             <%--<th class="grid-item">2</th>
@@ -46,4 +46,5 @@
     </div>
 </main>
 </body>
+<script src="./js/synchron.js"></script>
 </html>

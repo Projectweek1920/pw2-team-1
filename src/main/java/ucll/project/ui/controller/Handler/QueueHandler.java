@@ -18,6 +18,7 @@ public class QueueHandler extends RequestHandler {
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
 
         request.setAttribute("names", getNames());
+        request.setAttribute("ready", getReady());
         QueueSyncronizer.getInstance().addDom(request,response);
         return "waitingList.jsp";
 
@@ -40,6 +41,10 @@ public class QueueHandler extends RequestHandler {
         formatted = formatted + surname.charAt(0);
 
         return formatted;
+    }
+
+    public ArrayList<String> getReady(){
+        return null;
     }
 
 }
