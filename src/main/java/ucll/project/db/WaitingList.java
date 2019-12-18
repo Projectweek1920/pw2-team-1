@@ -9,7 +9,7 @@ public class WaitingList {
     private static WaitingList instance;
     private Queue<User> easy = new LinkedList<>();
     private Queue<User> difficult = new LinkedList<>();
-    private Queue<User> aanDeBeurt = new LinkedList<>();
+    private ArrayList<User> aanDeBeurt = new ArrayList<>();
 
     private WaitingList() {
     }
@@ -50,6 +50,10 @@ public class WaitingList {
         }
     }
 
+    public void addUserAanDeBeurt(User user){
+        aanDeBeurt.add(user);
+    }
+
     public User getNextDifficultUser() {
         User next = null;
         try {
@@ -71,6 +75,19 @@ public class WaitingList {
         return next;
 
     }
+
+    public void removeNextEasyUser(){
+        try {
+            easy.poll();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public ArrayList<User> getAanDeBeurt() {
+        return aanDeBeurt;
+    }
+
     //TODO Not like this xD
     public ArrayList<User> getAll() {
         ArrayList arrayList = new ArrayList();

@@ -14,6 +14,7 @@ public class UserService {
     public UserService(){
 
         Worker worker = new Worker("Admin","Wout","De Boeck","WoutDeBoeck@gmail.com",Gender.MALE,Role.ADMIN);
+        worker.setLoket("a");
         userRepo = new UserRepositoryMemory();
         userRepo.createUser(worker,"P@ssw0rd");
 

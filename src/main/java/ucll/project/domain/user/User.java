@@ -11,8 +11,9 @@ public class User extends Person {
     private static int count = 0;
     private int userId;
     private boolean difficult = false;
+    private String loket;
 
-    public User(){
+    public User() {
         setUserId(++count);
         if (count >= 100) {
             count = 1;
@@ -44,5 +45,18 @@ public class User extends Person {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public String getLoket() {
+        return loket;
+    }
+
+    public void setLoket(String loket) {
+
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.getUserId())+"\n";
     }
 }
