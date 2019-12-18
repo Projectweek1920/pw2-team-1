@@ -21,7 +21,7 @@
             </li>
     <c:if test = "${worker.getRole()=='ADMIN'}">
                 <li class="nav-item">
-                    <a class="nav-link" href="/Controller?command=ShowAssignJobstudent">Addstudents</a>
+                    <a class="nav-link" href="/Controller?command=ShowAssignJobstudent">Add student</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/Controller?command=showStudentList">StudentsList</a>
