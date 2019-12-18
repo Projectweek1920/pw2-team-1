@@ -58,15 +58,15 @@ public class UserService {
         //return waitingList.getDifficult().peek();
     }
 
+    public User nextDifficultUser() {
+        return waitingList.getDifficult().peek();
+    }
+
     public void clickNextEasy() {
         waitingList.getEasy().remove(nextEasyUser());
     }
     public void clickNextDifficult(){
         waitingList.getDifficult().remove(nextDifficultUser());
-    }
-
-    public User nextDifficultUser() {
-        return waitingList.getDifficult().peek();
     }
 
 }

@@ -18,14 +18,17 @@ public class EnrolHandler extends RequestHandler {
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         ArrayList<String> errors = new ArrayList<String>();
         User user = new User();
+        Boolean answercheck = false;
 
         try{
             setFirstName(user,request,errors);
             setLastName(user,request,errors);
             setEmail(user,request,errors);
             setGender(user,request,errors);
-            setVraag1(user,request,errors);
-            setVraag2(user,request,errors);
+            setVraag1(answercheck,user,request,errors);
+            if (answercheck == true){
+                setVraag2(user,request,errors);
+            }
             setVraag3(user,request,errors);
             user.setDifficult(false);
         } catch (ServletException e) {
@@ -33,12 +36,6 @@ public class EnrolHandler extends RequestHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        /*
-        if (vraag1.equals("andere") || vraag2.equals("andere") || vraag3.equals("andere")){
-            //moeilijke user
-            user.setDifficult(true);
-        }
-        */
 
         if (errors.size() == 0){
             try{
@@ -112,7 +109,7 @@ public class EnrolHandler extends RequestHandler {
         }
     }
 
-    protected void setVraag1(User user,HttpServletRequest request,ArrayList<String> errors) throws ServletException, IOException {
+    protected void setVraag1(Boolean answercheck ,User user,HttpServletRequest request,ArrayList<String> errors) throws ServletException, IOException {
         String vraag1 = request.getParameter("vraag1");
         try {
             request.setAttribute("Class", "has-success");
@@ -122,6 +119,7 @@ public class EnrolHandler extends RequestHandler {
                 request.setAttribute("postgraduaatPV","checked");
             } else if (vraag1.equals("andereOPO")) {
                 request.setAttribute("andereOPOPV", "checked");
+                answercheck = true;
                 user.setDifficult(true);
             }
         } catch (DomainException exc) {
