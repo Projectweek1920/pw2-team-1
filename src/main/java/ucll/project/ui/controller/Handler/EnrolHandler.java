@@ -37,7 +37,9 @@ public class EnrolHandler extends RequestHandler {
 
         getUserService().addToWaitingList(user);
 
-        request.setAttribute("users", getUserService().getUsers());
-        return "users.jsp";
+        /*request.setAttribute("users", getUserService().getUsers());
+        return "users.jsp";*/
+        request.setAttribute("submitted","block");
+        return "form.jsp";
     }
 }
