@@ -48,7 +48,7 @@
             <p>User information:</p>
             <p>
                 <label for="firstName">Voornaam:</label>
-                <input type="text" value="c" name="firstName" id="firstName" required>
+                <input type="text" value="<c:out value=""></c:out>" name="firstName" id="firstName" required>
             </p>
             <p>
                 <label for="lastName">LastName:</label>
