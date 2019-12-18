@@ -1,13 +1,7 @@
 package ucll.project.domain.user;
 
-import javax.xml.bind.DatatypeConverter;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class User extends Person {
     private static int count = 0;
