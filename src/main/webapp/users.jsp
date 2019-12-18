@@ -49,6 +49,7 @@
         <c:forEach var="user" items="${users}">
             <tr>
                 <th>${fn:escapeXml(user.userId)}</th>
+                <th>${fn:escapeXml(user.tijdVanInschrijving)}</th>
             </tr>
         </c:forEach>
         </tbody>

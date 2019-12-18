@@ -141,7 +141,7 @@
         if (document.getElementById("done").style.display === 'block') {
             console.log("reeeeeee");
             alert("Your information has been submitted.");
-            wait(2000);
+            //wait(2000);
             function wait(ms){
                 var start = new Date().getTime();
                 var end = start;
