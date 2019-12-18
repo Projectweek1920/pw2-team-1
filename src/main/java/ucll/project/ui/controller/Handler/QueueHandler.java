@@ -38,7 +38,7 @@ public class QueueHandler extends RequestHandler {
 
     public String formatName(String name, String surname){
         String formatted = name;
-        formatted = formatted + surname.charAt(0);
+        formatted = formatted+ " " + surname.charAt(0)+".";
 
         return formatted;
     }

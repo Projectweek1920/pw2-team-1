@@ -9,6 +9,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <!-- Auto refresh -->
+    <meta http-equiv="refresh" content="5"/>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,9 +27,7 @@
         <h2 style="margin-right: -1px">Wachtrij</h2>
         <div id="Wachtrij" class="grid-container">
             <c:forEach var="name" items="${names}">
-                <tr class="grid-item">
-                    <th class="table-cell">${name}</th>
-                </tr>
+                <div class="table-cell"><p style="font-weight: bolder">${name}</p></div>
             </c:forEach>
             <%--<th class="grid-item">4</th>
             <th class="grid-item">5</th>--%>
@@ -36,9 +37,7 @@
         <h2 style="margin-right: -1px">In behandeling</h2>
         <div id="In behandeling" class="grid-container">
             <c:forEach var="name" items="${ready}">
-                <tr class="grid-item">
-                    <th class="table-cell">${name}</th>
-                </tr>
+                <div class="table-cell"><p style="font-weight: bolder">${name}</p></div>
             </c:forEach>
             <%--<th class="grid-item">2</th>
             <th class="grid-item">1</th>--%>
