@@ -28,7 +28,7 @@ public class SampleUserTest {
         assertEquals(user.getGender(), Gender.FEMALE);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = DomainException.class)
     public void CreateUserWithWrongEmailTest(){
         User user = new User(
                 "username",

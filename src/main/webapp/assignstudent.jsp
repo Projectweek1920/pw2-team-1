@@ -63,9 +63,9 @@
                 <input type="text" value="${fn:escapeXml(emailPV)}" name="email" id="email">
             </p>
             <p>
-                <input type="radio" value="FEMALE" name="gender" id="femalegender">
+                <input type="radio" value="FEMALE" name="gender" id="femalegender" ${genderfemalePV}>
                 <label for="femalegender">Female</label>
-                <input type="radio" value="MALE" name="gender" id="malegender">
+                <input type="radio" value="MALE" name="gender" id="malegender" ${gendermalePV}>
                 <label for="malegender">Male</label>
             </p>
             <p>
