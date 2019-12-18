@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="/static/css/style.css" rel="stylesheet">
-    <title>Hello world!</title>
+    <title>Welkom op ons ticketing system!</title>
 </head>
 <body onload="startTime()">
 
@@ -29,20 +29,20 @@
 <main role="main" class="container">
     <div class="starter-template">
         <c:if test = "${worker.getRole()=='ADMIN' || worker.getRole()=='JOBSTUDENT' || worker.getRole()=='EXPERT'}">
-            <h1>${worker.getRole()} , you are in loket ${worker.getLoket()}!</h1>
+            <h1>${worker.getRole()} , u zit in loket ${worker.getLoket()}!</h1>
         </c:if>
 
         <c:if test = "${worker.getRole()!='ADMIN' || worker.getRole()!='JOBSTUDENT' || worker.getRole()!='EXPERT'}">
-            <h1>Welcome to our Ticketing system!</h1>
+            <h1>Welkom op ons ticketing system!</h1>
         </c:if>
-        <p class="lead">This is the homepage, if you want to enrol in our school head to our <a href="Controller?command=Form">form page</a>!</p>
-        <p>If you wish to see an overview of all enrolled students then go to the <a href="Controller?command=Users">users page</a>!</p>
+        <p class="lead">U bent op de startpagina, klik <a href="Controller?command=Form">hier</a> voor het inschrijvingsformulier.</p>
+        <p>Klik <a href="Controller?command=Queue">hier</a> voor het wachtscherm.</p>
         <p>
-            <button><a href="Controller?command=Users" class="button">Queue of Students</a></button>
+            <button><a href="Controller?command=Queue" class="button">Wachtscherm</a></button>
 <c:if test = "${worker.getRole()=='ADMIN' || worker.getRole()=='EXPERT'}">
-            <button><a href="Controller?command=ShowAdministration" type="button" class="button">AdministrationPage</a></button>
+            <button><a href="Controller?command=ShowAdministration" type="button" class="button">Toon medewerkers</a></button>
 </c:if>
-            <button><a href="Controller?command=Form" type="button" class="button">Go to Student Form</a></button>
+            <button><a href="Controller?command=Form" type="button" class="button">Inschrijvingsformulier</a></button>
         </p>
     </div>
 

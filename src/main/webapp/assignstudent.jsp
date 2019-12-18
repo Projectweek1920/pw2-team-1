@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="/static/css/style.css" rel="stylesheet">
-    <title>All users</title>
+    <title>Administratieve medewerkers toevoegen</title>
 </head>
 <body>
 
@@ -28,7 +28,7 @@
 <main role="main" class="container">
 
     <div class="starter-template">
-        <h1>Form page</h1>
+        <h1>Nieuwe administratieve medewerker</h1>
         <c:choose>
             <c:when test="${errors==null}">
                 <div>
@@ -45,17 +45,12 @@
         </c:choose>
 
         <form method="post" action="/Controller?command=Assignstudent" novalidate>
-            <p>User information:</p>
-            <p>
-                <label for="userName">Username:</label>
-                <input type="text" value="${fn:escapeXml(userNamePV)}" name="userName" id="userName">
-            </p>
             <p>
                 <label for="firstName">Voornaam:</label>
                 <input type="text" value="${fn:escapeXml(firstNamePV)}" name="firstName" id="firstName">
             </p>
             <p>
-                <label for="lastName">LastName:</label>
+                <label for="lastName">Achternaam:</label>
                 <input type="text" value="${fn:escapeXml(lastNamePV)}" name="lastName" id="lastName">
             </p>
             <p>

@@ -30,24 +30,24 @@
 <main role="main" class="container">
 
     <div class="starter-template">
-        <h1>Users page</h1>
+        <h1>Behandel student (Expert)</h1>
 
     </div>
     <c:choose>
         <c:when test="${users == null || users == []}">
-            <p>No users to show</p>
+            <p>Er zijn nog geen tickets aangemaakt.</p>
         </c:when>
         <c:otherwise>
     <table class="table">
-        <caption>List of users</caption>
+        <caption>Studentenlijst</caption>
         <thead>
         <tr>
-            <th scope="col">ID</th>
-            <th scope="col">LastName</th>
-            <th scope="col">FirstName</th>
+            <th scope="col">Volgnummer</th>
+            <th scope="col">Voornaam</th>
+            <th scope="col">Achternaam</th>
             <th scope="col">Email</th>
-            <th scope="col">Complex</th>
-            <th scope="col">Timestamp</th>
+            <th scope="col">Complexiteit</th>
+            <th scope="col">Tijd van inschrijven</th>
         </tr>
         </thead>
         <tbody>

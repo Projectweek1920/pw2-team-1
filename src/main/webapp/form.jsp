@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="/static/css/style.css" rel="stylesheet">
-    <title>All users</title>
+    <title>New enrolment</title>
 
     <script>
         function showHideVooropleiding() {
@@ -43,16 +43,16 @@
 
     <div class="starter-template">
         <p id="done" style="display: ${submitted eq 'block' ? 'block' : 'none'}">Your information has been submitted.</p>
-        <h1>Form page</h1>
+        <h1>New enrolment</h1>
 
         <form method="post" action="/Controller?command=Enrol">
-            <p>User information:</p>
+            <p>Please input your information.</p>
             <p>
-                <label for="firstName">Voornaam:</label>
+                <label for="firstName">First Name:</label>
                 <input type="text" value="${fn:escapeXml("")}" name="firstName" id="firstName" required>
             </p>
             <p>
-                <label for="lastName">LastName:</label>
+                <label for="lastName">Last Name:</label>
                 <input type="text" value="${fn:escapeXml("")}" name="lastName" id="lastName" required>
             </p>
             <p>
@@ -69,35 +69,35 @@
 
 
 
-            <p>Welke opleiding?</p>
+            <p>What type of study will you be doing?</p>
             <p>
 
                 <input type="radio" value="graduaat" name="vraag1" id="graduaat" onclick="showHideVooropleiding()">
-                <label for="graduaat">Bachelor graduaat</label>
+                <label for="graduaat">Bachelor or graduate</label>
                 <input type="radio" value="postgraduaat" name="vraag1" id="postgraduaat" onclick="showHideVooropleiding()">
-                <label for="postgraduaat">Banaba postgraduaat</label>
+                <label for="postgraduaat">Banaba or post-graduate</label>
                 <input type="radio" value="andere" name="vraag1" id="andere" onclick="showHideVooropleiding()">
-                <label for="andere">Andere</label>
+                <label for="andere">Other</label>
             </p>
 
             <fieldset id="vooropleiding">
-            <legend>Welke vooropleiding?</legend>
+            <legend>What is your previous education?</legend>
 
                 <input type="radio" value="middelbaar" name="vraag2" id="middelbaar" checked>
-                <label for="middelbaar">Middelbaar</label>
+                <label for="middelbaar">High School</label>
                 <input type="radio" value="bachelor" name="vraag2" id="bachelor">
-                <label for="bachelor">Bachelor/graduaat</label>
+                <label for="bachelor">Bachelor  or graduate</label>
                 <input type="radio" value="andere" name="vraag2" id="andere1">
-                <label for="andere1">Andere</label>
+                <label for="andere1">Other</label>
 
             </fieldset>
 
-            <p>Taal?</p>
+            <p>Language?</p>
             <p>
                 <input type="radio" value="NL" name="vraag3" id="NL" required>
-                <label for="NL">Nederlands/Vlaams</label>
+                <label for="NL">Nederlands</label>
                 <input type="radio" value="andere" name="vraag3" id="andere2">
-                <label for="andere2">Andere</label>
+                <label for="andere2">Other</label>
             </p>
             <p><input type="submit" value="Send" id="submit"></p>
         </form>
@@ -139,9 +139,7 @@
 
     function initPage(){
         if (document.getElementById("done").style.display === 'block') {
-            console.log("reeeeeee");
-            alert("Your information has been submitted.");
-            //wait(2000);
+            alert("Your information has been submitted. Please wait in the lounge.");
             function wait(ms){
                 var start = new Date().getTime();
                 var end = start;

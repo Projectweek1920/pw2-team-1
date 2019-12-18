@@ -3,19 +3,19 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/Controller?command=ShowSignIn">Login-Workers</a>
+                <a class="nav-link" href="/Controller?command=ShowSignIn">Login Personeel</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Controller?command=Home">Home <span
+                <a class="nav-link" href="/Controller?command=Home">Home<span
                         class="sr-only">(current)</span></a>
             </li>
-<c:if test="${worker.getRole()=='EXPERT' || worker.getRole()=='ADMIN'}">
+            <!--<c:if test="${worker.getRole()=='EXPERT' || worker.getRole()=='ADMIN'}">
             <li class="nav-item">
                 <a class="nav-link" href="/Controller?command=Users">Users</a>
             </li>
-</c:if>
+</c:if>-->
             <li class="nav-item">
-                <a class="nav-link" href="/Controller?command=Form">Form</a>
+                <a class="nav-link" href="/Controller?command=Form">Inschrijvingen studenten</a>
             </li>
 <c:if test="${!(worker.getRole()=='EXPERT') || !(worker.getRole()=='ADMIN') }">
             <li class="nav-item">
@@ -29,21 +29,21 @@
 </c:if>
             <c:if test="${worker.getRole()=='ADMIN'}">
                 <li class="nav-item">
-                    <a class="nav-link" href="/Controller?command=ShowAssignJobstudent">Add student</a>
+                    <a class="nav-link" href="/Controller?command=ShowAssignJobstudent">Voeg een medewerker toe</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Controller?command=showStudentList">StudentsList</a>
+                    <a class="nav-link" href="/Controller?command=showStudentList">Overzicht Medewerkers</a>
                 </li>
             </c:if>
 <c:if test = "${worker.getRole()=='ADMIN' || worker.getRole()=='EXPERT'}">
             <li class="nav-item">
-                <a class="nav-link" href="/Controller?command=ShowAdministration">Administration</a>
+                <a class="nav-link" href="/Controller?command=ShowAdministration">Administratie</a>
             </li>
 </c:if>
         </ul>
         <c:if test="${worker.getRole()=='ADMIN' || worker.getRole()=='JOBSTUDENT' || worker.getRole()=='EXPERT'}">
             <li class="nav-item">
-                <a class="nav-link" href="/Controller?command=SignOut">${worker.getRole()}: logout</a>
+                <a class="nav-link" href="/Controller?command=SignOut">${worker.getRole()}: Afmelden</a>
             </li>
         </c:if>
     </div>
