@@ -129,7 +129,7 @@ public class EnrolHandler extends RequestHandler {
             request.setAttribute("vraag1Class", "has-error");
         } catch (NullPointerException exc){
             errors.add("Question one is empty!");
-            request.setAttribute("vraag1Class", "has-error");
+            request.setAttribute("vraagClass", "has-error");
         }
     }
 
@@ -147,10 +147,10 @@ public class EnrolHandler extends RequestHandler {
             }
         } catch (DomainException exc) {
             errors.add(exc.getMessage());
-            request.setAttribute("vraag1Class", "has-error");
+            request.setAttribute("vraag2Class", "has-error");
         } catch (NullPointerException exc){
             errors.add("Question 2 is empty!");
-            request.setAttribute("vraag1Class", "has-error");
+            request.setAttribute("vraag2Class", "has-error");
         }
     }
 
@@ -166,9 +166,28 @@ public class EnrolHandler extends RequestHandler {
             }
         } catch (DomainException exc) {
             errors.add(exc.getMessage());
-            request.setAttribute("vraag1Class", "has-error");
+            request.setAttribute("vraag3Class", "has-error");
         } catch (NullPointerException exc){
             errors.add("Question 3 is empty!");
+            request.setAttribute("vraag3Class", "has-error");
+        }
+    }
+
+    protected void setVraag4(User user,HttpServletRequest request,ArrayList<String> errors) throws ServletException, IOException {
+        String vraag4 = request.getParameter("vraag4");
+        try {
+            request.setAttribute("Class", "has-success");
+            if (vraag4.equals("YES")){
+                request.setAttribute("YESPV","checked");
+                user.setDifficult(true);
+            } else if (vraag4.equals("NO")){
+                request.setAttribute("NOPV","checked");
+            }
+        } catch (DomainException exc) {
+            errors.add(exc.getMessage());
+            request.setAttribute("vraag4Class", "has-error");
+        } catch (NullPointerException exc){
+            errors.add("Question 4 is empty!");
             request.setAttribute("vraag1Class", "has-error");
         }
     }
