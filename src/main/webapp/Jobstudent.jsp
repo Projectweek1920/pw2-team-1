@@ -15,6 +15,17 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="/static/css/style.css" rel="stylesheet">
     <title>Jobstudent page</title>
+    <script>
+        function pauze() {
+            document.getElementById('pauzeKnop').style.display='none';
+            document.getElementById('studentInfo').style.display='none';
+        }
+
+        function next() {
+            document.getElementById('pauzeKnop').style.display='block';
+            /*document.getElementById('studentInfo').style.display='block';*/    //Als je de studentInfo wil terug tonen, toont die niks, die doet dat dus automatisch?
+        }
+    </script>
 </head>
 <body onload="startTime()">
 
@@ -30,8 +41,10 @@
     <div class="starter-template">
         <h1> Jobstudent page</h1>
         <div>
+            <div id="studentInfo">
             <p>${JobStudent.firstName} ${JobStudent.lastName}</p>
             <p>${JobStudent.userId}</p>
+            </div>
         </div>
         <jsp:include page="userButtons.jsp">
             <jsp:param name="" value=""/>

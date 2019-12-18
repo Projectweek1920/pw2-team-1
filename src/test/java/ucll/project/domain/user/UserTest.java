@@ -5,7 +5,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class UserTest {
+public class UserTest
+{
 
     private static User user;
 
@@ -15,16 +16,20 @@ public class UserTest {
     private static String email = "wout.deboeck@gmail.com";
     private static Gender gender = Gender.MALE;
 
+    private static int id;
+
     @BeforeClass
     public static void setup()
     {
         user = new User(username, firstname, lastname, email, gender);
+
+        id = user.getUserId();
     }
 
     @Test
     public void userIdGetsSet()
     {
-        assertEquals(1, user.getUserId());
+        assertEquals(id, user.getUserId());
     }
 
     @Test
@@ -32,7 +37,7 @@ public class UserTest {
     {
         User user2 = new User(username, firstname, lastname, email, gender);
 
-        assertEquals(2, user2.getUserId());
+        assertEquals(id + 1, user2.getUserId());
     }
 
     @Test
