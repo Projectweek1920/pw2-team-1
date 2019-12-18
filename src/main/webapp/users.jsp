@@ -47,6 +47,7 @@
             <th scope="col">FirstName</th>
             <th scope="col">Email</th>
             <th scope="col">Complex</th>
+            <th scope="col">Timestamp</th>
         </tr>
         </thead>
         <tbody>
@@ -54,8 +55,8 @@
             <tr>
                 <th>${fn:escapeXml(user.userId)}</th>
                 <th>${fn:escapeXml(user.getFirstNamee())}</th>
-                <th>${fn:escapeXml(user.getLastNamee)}</th>
-                <th>${fn:escapeXml(user.getEmail)}</th>
+                <th>${fn:escapeXml(user.getLastNamee())}</th>
+                <th>${fn:escapeXml(user.getEmaile())}</th>
                 <th>${fn:escapeXml(user.isDifficult())}</th>
                 <th>${fn:escapeXml(user.tijdVanInschrijving)}</th>
             </tr>

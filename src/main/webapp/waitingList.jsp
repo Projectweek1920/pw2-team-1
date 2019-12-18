@@ -16,6 +16,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Aleo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./static/css/style.css">
     <link rel="stylesheet" href="./static/css/reset.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,6 +51,7 @@
         </div>
     </div>
 </main>
+<a class="link" href="/Controller?command=Home">Terug</a>
 </body>
 <script src="./js/synchron.js"></script>
 </html>

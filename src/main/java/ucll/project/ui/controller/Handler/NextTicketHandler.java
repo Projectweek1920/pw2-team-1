@@ -26,6 +26,9 @@ public class NextTicketHandler extends RequestHandler {
             WaitingList.getInstance().addUserAanDeBeurt(user);
             System.out.println(WaitingList.getInstance().getAanDeBeurt().size());
         }
-        return "Jobstudent.jsp";
+        RequestHandler requestHandler = new JobstudentHandler(getCommand(),getUserService());
+        requestHandler.setUserService(getUserService());
+        String desti = requestHandler.handleRequest(request,response);
+        return desti;
     }
 }
