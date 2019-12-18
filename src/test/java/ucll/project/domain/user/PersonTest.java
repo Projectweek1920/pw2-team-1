@@ -5,13 +5,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class PersonTest {
-    Person person;
 
-    String username = "Wout123";
-    String firstname = "Wout";
-    String lastname = "De Boeck";
-    String email = "wout.deboeck@gmail.com";
-    Gender gender = Gender.MALE;
+    private Person person;
+
+    private String username = "Wout123";
+    private String firstname = "Wout";
+    private String lastname = "De Boeck";
+    private String email = "wout.deboeck@gmail.com";
+    private Gender gender = Gender.MALE;
 
     //setup
 

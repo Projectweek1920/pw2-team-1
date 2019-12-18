@@ -15,9 +15,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="/Controller?command=Form">Form</a>
             </li>
+<c:if test="${worker.getRole()=='JOBSTUDENT' || worker.getRole()=='ADMIN'}">
             <li class="nav-item">
                 <a class="nav-link" href="/Controller?command=Jobstudent">Jobstudent</a>
             </li>
+</c:if>
             <c:if test="${worker.getRole()=='ADMIN'}">
                 <li class="nav-item">
                     <a class="nav-link" href="/Controller?command=ShowAssignJobstudent">Add student</a>
