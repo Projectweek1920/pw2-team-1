@@ -16,10 +16,10 @@ public class UserRepositoryMemory implements UserRepository {
     public void createUser(Worker worker, String password) {
         for (Worker u : workers.values()) {
             if (u.getUserName().equals(worker.getUserName())) {
-                throw new IllegalArgumentException("Username already in use");
+                throw new DomainException("Username already in use");
             }
             if (u.getEmail().equals(worker.getEmail())) {
-                throw new IllegalArgumentException("Email already in use");
+                throw new DomainException("Email already in use");
             }
         }
         int userId = workers.size() + 1;

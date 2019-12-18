@@ -69,11 +69,11 @@
                 <label for="malegender">Male</label>
             </p>
             <p>
-                <input type="radio" value="JOBSTUDENT" name="worker" id="jobStudent">
+                <input type="radio" value="JOBSTUDENT" name="worker" id="jobStudent" ${jobstudentPV}>
                 <label for="jobStudent">JobStudent</label>
-                <input type="radio" value="EXPERT" name="worker" id="expert">
+                <input type="radio" value="EXPERT" name="worker" id="expert" ${expertPV}>
                 <label for="expert">Expert</label>
-                <input type="radio" value="ADMIN" name="worker" id="admin">
+                <input type="radio" value="ADMIN" name="worker" id="admin" ${adminPV}>
                 <label for="admin">Admin</label>
             </p>
             <p><input type="submit" value="Send" id="submit"></p>

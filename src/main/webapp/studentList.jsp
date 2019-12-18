@@ -46,16 +46,20 @@
                 <tbody>
                 <c:forEach var="student" items="${students}">
                     <tr>
-                        <th>${fn:escapeXml(student.toShowString())}</th>
-                        <c:if test = "${worker.getRole()=='ADMIN'}">
-                            <form method="post" action="Controller?command=ChangeRole" novalidate>
-                                <input type="radio" name="role" value="JOBSTUDENT"> Jobstudent<br>
-                                <input type="radio" name="role" value="EXPERT"> Expert<br>
-                                <input type="radio" name="role" value="ADMIN"> Admin<br>
-                                <p><label for="worker"></label><input type="hidden" id="worker" name="worker" value="${fn:escapeXml(student.showUserName())}"></p>
-                                <input type="submit" value="save">
-                            </form>
-                        </c:if>
+                        <th>${fn:escapeXml(student.toShowString())}
+                            <c:if test = "${worker.getRole()=='ADMIN'}">
+                                <form method="post" action="Controller?command=ChangeRole" novalidate>
+                                    <input type="radio" name="role" value="JOBSTUDENT" id="jobstudent">
+                                    <label for="jobstudent">Jobstudent</label>
+                                    <input type="radio" name="role" value="EXPERT" id="expert">
+                                    <label for="expert">Expert</label>
+                                    <input type="radio" name="role" value="ADMIN" id="admin">
+                                    <label for="admin">Admin</label>
+                                    <p><label for="worker"></label><input type="hidden" id="worker" name="worker" value="${fn:escapeXml(student.showUserName())}"></p>
+                                    <input type="submit" value="save">
+                                </form>
+                            </c:if>
+                        </th>
                     </tr>
                 </c:forEach>
                 </tbody>
