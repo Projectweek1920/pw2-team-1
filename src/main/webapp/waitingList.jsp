@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%--
   Created by IntelliJ IDEA.
   User: mathi
@@ -36,8 +37,13 @@
     <div class="section">
         <h2 style="margin-right: -1px">In behandeling</h2>
         <div id="In behandeling" class="grid-container">
-            <c:forEach var="name" items="${ready}">
-                <div class="table-cell"><p style="font-weight: bolder">${name}</p></div>
+            <c:forEach var="user" items="${ready}">
+                <div class="table-cell">
+                    <p style="font-weight: bolder">${user.firstName} ${fn:substring(user.lastName,0,0)}.</p>
+                </div>
+                <div class="table-cell">
+                    <p style="font-weight: bolder">${user.loket}</p>
+                </div>
             </c:forEach>
             <%--<th class="grid-item">2</th>
             <th class="grid-item">1</th>--%>
