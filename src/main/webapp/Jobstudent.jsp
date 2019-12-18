@@ -30,6 +30,7 @@
     <div class="starter-template">
         <h1> Jobstudent page</h1>
         <div>
+            <p>${JobStudent.firstName} ${JobStudent.lastName}</p>
             <p>${JobStudent.userId}</p>
         </div>
         <jsp:include page="userButtons.jsp">
