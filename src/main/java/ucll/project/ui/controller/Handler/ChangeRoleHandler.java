@@ -1,5 +1,6 @@
 package ucll.project.ui.controller.Handler;
 
+import ucll.project.domain.user.Role;
 import ucll.project.domain.user.UserService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,10 +14,13 @@ public class ChangeRoleHandler extends RequestHandler {
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         String role = request.getParameter("role");
-        String student = request.getParameter("student");
+        String student = request.getParameter("worker");
 
+        getUserService().getCertainUserRepo(student).setRole(Role.valueOf(role));
 
-
-        return null;
+        RequestHandler requestHandler = new showStudentListHandler(getCommand(),getUserService());
+        requestHandler.setUserService(getUserService());
+        String desti = requestHandler.handleRequest(request,response);
+        return desti;
     }
 }

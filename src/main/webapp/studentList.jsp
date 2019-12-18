@@ -28,16 +28,16 @@
 <main role="main" class="container">
 
     <div class="starter-template">
-        <h1>Control page</h1>
+        <h1>Overview page</h1>
 
     </div>
     <c:choose>
         <c:when test="${students == null || students == []}">
-            <p>No users to show</p>
+            <p>No workers to show</p>
         </c:when>
         <c:otherwise>
             <table class="table">
-                <caption>List of users</caption>
+                <caption>List of workers</caption>
                 <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -52,7 +52,7 @@
                                 <input type="radio" name="role" value="JOBSTUDENT"> Jobstudent<br>
                                 <input type="radio" name="role" value="EXPERT"> Expert<br>
                                 <input type="radio" name="role" value="ADMIN"> Admin<br>
-                                <input type="text" name="student" value="${student}" type="hidden">
+                                <p><label for="worker"></label><input type="hidden" id="worker" name="worker" value="${student.showUserName()}"></p>
                                 <input type="submit" value="save">
                             </form>
                         </c:if>

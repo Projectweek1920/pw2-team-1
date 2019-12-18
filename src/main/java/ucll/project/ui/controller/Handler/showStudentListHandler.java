@@ -12,7 +12,6 @@ public class showStudentListHandler extends RequestHandler {
 
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println(getUserService().getUserRepo());
         request.setAttribute("students",getUserService().getUserRepo());
         return "studentList.jsp";
     }

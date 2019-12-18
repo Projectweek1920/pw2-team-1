@@ -56,9 +56,11 @@
             </p>
             <p>
                 <input type="radio" value="JOBSTUDENT" name="worker" id="jobStudent">
-                <label for="femalegender">JobStudent</label>
+                <label for="jobStudent">JobStudent</label>
                 <input type="radio" value="EXPERT" name="worker" id="expert">
                 <label for="expert">Expert</label>
+                <input type="radio" value="ADMIN" name="worker" id="admin">
+                <label for="admin">Admin</label>
             </p>
             <p><input type="submit" value="Send" id="submit"></p>
         </form>

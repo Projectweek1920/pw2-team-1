@@ -20,6 +20,7 @@ public class Worker extends Person{
         setRole(role);
     }
 
+
     public Role getRole() {
         return role;
     }
@@ -66,6 +67,10 @@ public class Worker extends Person{
 
     public void setLoket(String loket) {
         this.loket = loket;
+    }
+
+    public String showUserName(){
+        return this.getUserName();
     }
 
     public String toString() {

@@ -23,7 +23,10 @@ public class AssignstudentHandler extends RequestHandler {
         String workerString = request.getParameter("worker");
         Worker worker = new Worker(userName,firstName,lastName,email,Gender.valueOf(gender),Role.valueOf(workerString));
         getUserService().addUserRepo(worker,"P@ssw0rd");
-        return "studentList.jsp";
+        RequestHandler requestHandler = new showStudentListHandler(getCommand(),getUserService());
+        requestHandler.setUserService(getUserService());
+        String desti = requestHandler.handleRequest(request,response);
+        return desti;
 
 
 

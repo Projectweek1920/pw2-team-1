@@ -13,9 +13,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="/Controller?command=Users">Users</a>
             </li>
+<c:if test = "${worker.getRole()=='ADMIN' || worker.getRole()=='JOBSTUDENT' || worker.getRole()=='EXPERT'}">
             <li class="nav-item">
                 <a class="nav-link" href="/Controller?command=Form">Form</a>
             </li>
+</c:if>
             <li class="nav-item">
                 <a class="nav-link" href="/Controller?command=Jobstudent">Jobstudent</a>
             </li>
@@ -28,7 +30,7 @@
                 </li>
             </c:if>
         </ul>
-        <c:if test = "${worker.getRole()=='ADMIN'}">
+        <c:if test = "${worker.getRole()=='ADMIN' || worker.getRole()=='JOBSTUDENT' || worker.getRole()=='EXPERT'}">
             <li class="nav-item">
                 <a class="nav-link" href="/Controller?command=SignOut">${worker.getRole()}: logout</a>
             </li>
