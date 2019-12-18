@@ -55,21 +55,30 @@ public class User extends Person {
         this.userId = userId;
     }
 
-<<<<<<<HEAD
+    public String getFirstNamee(){
+        return getFirstName();
+    }
 
+    public String getLastNamee(){
+        return getLastName();
+    }
+
+    public String getEmaile(){
+        return getEmail();
+    }
     public String getLoket() {
         return loket;
     }
 
     public void setLoket(String loket) {
 
-    }
 
+    }
     @Override
     public String toString() {
         return String.valueOf(this.getUserId()) + "\n";
-    }
 
+    }
     public String getTijdVanInschrijving() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm");
         return tijdVanInschrijving.format(dtf);

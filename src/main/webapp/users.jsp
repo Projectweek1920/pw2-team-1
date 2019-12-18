@@ -42,13 +42,21 @@
         <caption>List of users</caption>
         <thead>
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">LastName</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">Email</th>
+            <th scope="col">Complex</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach var="user" items="${users}">
             <tr>
                 <th>${fn:escapeXml(user.userId)}</th>
+                <th>${fn:escapeXml(user.getFirstNamee())}</th>
+                <th>${fn:escapeXml(user.getLastNamee)}</th>
+                <th>${fn:escapeXml(user.getEmail)}</th>
+                <th>${fn:escapeXml(user.isDifficult())}</th>
                 <th>${fn:escapeXml(user.tijdVanInschrijving)}</th>
             </tr>
         </c:forEach>
