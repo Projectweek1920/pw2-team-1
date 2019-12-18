@@ -1,11 +1,9 @@
 package ucll.project.db;
 
+import ucll.project.domain.user.SortById;
 import ucll.project.domain.user.User;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class WaitingList {
     private static WaitingList instance;
@@ -82,6 +80,7 @@ public class WaitingList {
         for (User user : difficult) {
             arrayList.add(user);
         }
+        Collections.sort(arrayList, new SortById());
         return arrayList;
     }
 }
