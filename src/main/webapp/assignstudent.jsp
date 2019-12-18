@@ -46,7 +46,7 @@
         <form method="post" action="/Controller?command=Assignstudent" novalidate>
             <p>User information:</p>
             <p>
-                <label for="userName">Username:</label>
+                <label for="userName">StudentenNummer:</label>
                 <input type="text" value="<c:out value="${userNamePV}"></c:out>" name="userName" id="userName">
             </p>
             <p>
