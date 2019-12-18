@@ -100,12 +100,19 @@ public class AssignstudentHandler extends RequestHandler {
     protected void setGender(Worker worker, HttpServletRequest request,ArrayList<String> errors) throws ServletException, IOException {
         String gender = request.getParameter("gender");
         try {
-            System.out.println(gender);
             worker.setGender(Gender.valueOf(gender));
             request.setAttribute("Class", "has-success");
+            if (Gender.valueOf(gender) == Gender.MALE){
+                request.setAttribute("gendermalePV", "checked");
+            } else if(Gender.valueOf(gender) == Gender.FEMALE){
+                request.setAttribute("genderfemalePV", "checked");
+            }
             request.setAttribute("genderPV", gender);
         } catch (DomainException exc) {
             errors.add(exc.getMessage());
+            request.setAttribute("genderClass", "has-error");
+        } catch (NullPointerException exc){
+            errors.add("Gender is empty!");
             request.setAttribute("genderClass", "has-error");
         }
     }
@@ -115,10 +122,20 @@ public class AssignstudentHandler extends RequestHandler {
         try {
             worker.setRole(Role.valueOf(role));
             request.setAttribute("Class", "has-success");
+            if (Role.valueOf(role) == Role.ADMIN){
+                request.setAttribute("adminPV", "checked");
+            } else if(Role.valueOf(role) == Role.JOBSTUDENT){
+                request.setAttribute("jobstudentPV", "checked");
+            } else if(Role.valueOf(role) == Role.EXPERT){
+                request.setAttribute("expertPV", "checked");
+            }
             request.setAttribute("rolePV", role);
         } catch (DomainException exc) {
             errors.add(exc.getMessage());
             request.setAttribute("roleClass", "has-error");
+        } catch (NullPointerException exc){
+            errors.add("Role is empty!");
+            request.setAttribute("genderClass", "has-error");
         }
     }
 }

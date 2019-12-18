@@ -42,6 +42,7 @@
 <main role="main" class="container">
 
     <div class="starter-template">
+        <p id="done" style="display: ${submitted eq 'block' ? 'block' : 'none'}">Your information has been submitted.</p>
         <h1>Form page</h1>
 
         <form method="post" action="/Controller?command=Enrol">
@@ -120,7 +121,7 @@
         var t = setTimeout(startTime, 500);
     }
     function checkTime(i) {
-        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        if (i < 10) {i = "0" + i}  // add zero in front of numbers < 10
         return i;
     }
 </script>
@@ -133,5 +134,24 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+<script>
+    window.addEventListener("load",initPage);
+
+    function initPage(){
+        if (document.getElementById("done").style.display === 'block') {
+            console.log("reeeeeee");
+            alert("Your information has been submitted.");
+            wait(2000);
+            function wait(ms){
+                var start = new Date().getTime();
+                var end = start;
+                while(end < start + ms) {
+                    end = new Date().getTime();
+                }
+            }
+            document.getElementById("done").style.display = 'none';
+        }
+    }
+</script>
 </body>
 </html>

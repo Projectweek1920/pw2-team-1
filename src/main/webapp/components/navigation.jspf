@@ -3,7 +3,7 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/Controller?command=ShowSignIn">Login</a>
+                <a class="nav-link" href="/Controller?command=ShowSignIn">Login-Workers</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/Controller?command=Home">Home <span
@@ -29,6 +29,11 @@
                     <a class="nav-link" href="/Controller?command=Queue">Wachtscherm</a>
                 </li>
             </c:if>
+<c:if test = "${worker.getRole()=='ADMIN' || worker.getRole()=='EXPERT'}">
+            <li class="nav-item">
+                <a class="nav-link" href="/Controller?command=ShowAdministration">Administration</a>
+            </li>
+</c:if>
         </ul>
         <c:if test="${worker.getRole()=='ADMIN' || worker.getRole()=='JOBSTUDENT' || worker.getRole()=='EXPERT'}">
             <li class="nav-item">

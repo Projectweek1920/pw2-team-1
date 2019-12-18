@@ -27,7 +27,6 @@
 
 
 <main role="main" class="container">
-
     <div class="starter-template">
         <c:if test = "${worker.getRole()=='ADMIN'}">
             <h1>Welcome to our Ticketing system ${worker.getRole()} you are in loket ${worker.getLoket()}!</h1>
@@ -38,6 +37,13 @@
         </c:if>
         <p class="lead">This is the homepage, if you want to enrol in our school head to our <a href="Controller?command=Form">form page</a>!</p>
         <p>If you wish to see an overview of all enrolled students then go to the <a href="Controller?command=Users">users page</a>!</p>
+        <p>
+            <button><a href="Controller?command=Users" class="button">Queue of Students</a></button>
+<c:if test = "${worker.getRole()=='ADMIN' || worker.getRole()=='EXPERT'}">
+            <button><a href="Controller?command=ShowAdministration" type="button" class="button">AdministrationPage</a></button>
+</c:if>
+            <button><a href="Controller?command=Form" type="button" class="button">Go to Student Form</a></button>
+        </p>
     </div>
 
 </main>
