@@ -18,7 +18,7 @@ public class EnrolHandler extends RequestHandler {
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
-        String gender = request.getParameter("gender");
+//        String gender = request.getParameter("gender");
 
         String vraag1 = request.getParameter("vraag1");
         String vraag2 = request.getParameter("vraag2");
@@ -28,9 +28,9 @@ public class EnrolHandler extends RequestHandler {
         user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setEmail(email);
-        user.setGender(Gender.valueOf(gender));
+        //user.setGender(Gender.valueOf(gender));
         user.setDifficult(false);
-        if (vraag1.equals("andere") || vraag2.equals("andere") || vraag3.equals("andere")){
+        if (vraag1.equals("andere") || vraag2.equals("andere") || vraag3.equals("andere")) {
             //moeilijke user
             user.setDifficult(true);
         }
@@ -39,7 +39,7 @@ public class EnrolHandler extends RequestHandler {
 
         /*request.setAttribute("users", getUserService().getUsers());
         return "users.jsp";*/
-        request.setAttribute("submitted","block");
+        request.setAttribute("submitted", "block");
         return "form.jsp";
     }
 }

@@ -58,12 +58,12 @@
                 <label for="email">Email:</label>
                 <input type="text" value="<c:out value=""></c:out>" name="email" id="email" required>
             </p>
-            <p>
+            <%--<p>
                 <input type="radio" value="<c:out value="FEMALE"></c:out>" name="gender" id="femalegender" required>
                 <label for="femalegender">Female</label>
                 <input type="radio" value="<c:out value="MALE"></c:out>" name="gender" id="malegender">
                 <label for="malegender">Male</label>
-            </p>
+            </p>--%>
 
 
 

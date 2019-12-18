@@ -54,7 +54,7 @@
                                     <label for="expert">Expert</label>
                                     <input type="radio" name="role" value="ADMIN" id="admin">
                                     <label for="admin">Admin</label>
-                                    <p><label for="worker"></label><input type="hidden" id="worker" name="worker" value="${fn:escapeXml(student.showUserName())}"></p>
+                                    <p><label for="worker"></label><input type="hidden" id="worker" name="worker" value="<c:out value="${student.userName}"></c:out>"></p>
                                     <input type="submit" value="save">
                                 </form>
                             </c:if>
