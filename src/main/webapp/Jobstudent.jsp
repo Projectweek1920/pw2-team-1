@@ -23,7 +23,7 @@
 
         function next() {
             document.getElementById('pauzeKnop').style.display='block';
-            /*document.getElementById('studentInfo').style.display='block';*/    //Als je de studentInfo wil terug tonen, toont die niks, die doet dat dus automatisch?
+            document.getElementById('studentInfo').style.display='block';    //Als je de studentInfo wil terug tonen, toont die niks, die doet dat dus automatisch?
         }
     </script>
 </head>
