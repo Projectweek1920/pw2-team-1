@@ -52,7 +52,7 @@
                                 <input type="radio" name="role" value="JOBSTUDENT"> Jobstudent<br>
                                 <input type="radio" name="role" value="EXPERT"> Expert<br>
                                 <input type="radio" name="role" value="ADMIN"> Admin<br>
-                                <p><label for="worker"></label><input type="hidden" id="worker" name="worker" value="${student.showUserName()}"></p>
+                                <p><label for="worker"></label><input type="hidden" id="worker" name="worker" value="${fn:escapeXml(student.showUserName())}"></p>
                                 <input type="submit" value="save">
                             </form>
                         </c:if>

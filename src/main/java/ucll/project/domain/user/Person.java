@@ -24,6 +24,7 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
+        if (firstName.isEmpty()) throw new DomainException("FirstName is empty!");
         this.firstName = firstName;
     }
 
@@ -36,6 +37,7 @@ public class Person {
     }
 
     public void setLastName(String lastName) {
+        if (lastName.isEmpty()) throw new DomainException("Lastname is empty!");
         this.lastName = lastName;
     }
 
@@ -46,7 +48,7 @@ public class Person {
     public void setEmail(String email) {
         Pattern pattern = Pattern.compile("[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}");
         Matcher mat = pattern.matcher(email);
-        if (email.trim().isEmpty() || !mat.matches()) throw new IllegalArgumentException("invalid email");
+        if (email.trim().isEmpty() || !mat.matches()) throw new DomainException("invalid email");
         this.email = email;
     }
 
@@ -63,6 +65,7 @@ public class Person {
     }
 
     public void setUserName(String userName) {
+        if (userName.isEmpty()) throw new DomainException("Username is empty!");
         this.userName = userName;
     }
 

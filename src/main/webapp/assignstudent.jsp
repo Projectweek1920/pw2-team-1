@@ -29,24 +29,38 @@
 
     <div class="starter-template">
         <h1>Form page</h1>
+        <c:choose>
+            <c:when test="${errors==null}">
+                <div>
+
+                </div>
+            </c:when>
+            <c:otherwise>
+                <div class="alert-danger">
+                    <ul>
+                        <li>${errors}</li>
+                    </ul>
+                </div>
+            </c:otherwise>
+        </c:choose>
 
         <form method="post" action="/Controller?command=Assignstudent" novalidate>
             <p>User information:</p>
             <p>
                 <label for="userName">Username:</label>
-                <input type="text" value="" name="userName" id="userName">
+                <input type="text" value="${fn:escapeXml(userNamePV)}" name="userName" id="userName">
             </p>
             <p>
                 <label for="firstName">Voornaam:</label>
-                <input type="text" value="" name="firstName" id="firstName">
+                <input type="text" value="${fn:escapeXml(firstNamePV)}" name="firstName" id="firstName">
             </p>
             <p>
                 <label for="lastName">LastName:</label>
-                <input type="text" value="" name="lastName" id="lastName">
+                <input type="text" value="${fn:escapeXml(lastNamePV)}" name="lastName" id="lastName">
             </p>
             <p>
                 <label for="email">Email:</label>
-                <input type="text" value="" name="email" id="email">
+                <input type="text" value="${fn:escapeXml(emailPV)}" name="email" id="email">
             </p>
             <p>
                 <input type="radio" value="FEMALE" name="gender" id="femalegender">
