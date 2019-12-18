@@ -68,4 +68,5 @@ public class UserService {
     public User nextDifficultUser() {
         return waitingList.getDifficult().peek();
     }
+
 }
