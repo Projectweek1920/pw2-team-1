@@ -32,15 +32,15 @@
     <form action="/Controller?command=SignIn" method="POST" novalidate>
         <p>
             <label for="userName">Username:</label>
-            <input type="text" value="${fn:escapeXml("Admin")}" name="userName" id="userName">
+            <input type="text" value="<c:out value="Admin">" name="userName" id="userName">
         </p>
         <p>
             <label for="password">Password:</label>
-            <input type="password" value="${fn:escapeXml("")}" name="password" id="password">
+            <input type="password" value="<c:out value="">" name="password" id="password">
         </p>
         <p>
             <label for="loket">Loket:</label>
-            <input type="loket" value="" name="loket" id="loket">
+            <input type="loket" value="<c:out value="">" name="loket" id="loket">
         </p>
         <p><input type="submit" value="Send" id="submit"></p>
     </form>

@@ -42,8 +42,8 @@
         <h1> Jobstudent page</h1>
         <div>
             <div id="studentInfo">
-            <p>${JobStudent.firstName} ${JobStudent.lastName}</p>
-            <p>${JobStudent.userId}</p>
+            <p><c:out value="${JobStudent.firstName} ${JobStudent.lastName}"></p>
+            <p><c:out value="${JobStudent.userId}"></p>
             </div>
         </div>
         <jsp:include page="userButtons.jsp">

@@ -28,7 +28,7 @@
 <main role="main" class="container">
 
     <div class="starter-template">
-        <h1>${title} titel nog fixen</h1>
+        <h1><c:out value="${title}"></c:out> titel nog fixen</h1>
 
         <jsp:include page="userButtons.jsp">
             <jsp:param name="" value=""/>

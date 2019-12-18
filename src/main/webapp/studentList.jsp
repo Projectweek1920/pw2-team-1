@@ -46,7 +46,7 @@
                 <tbody>
                 <c:forEach var="student" items="${students}">
                     <tr>
-                        <th>${fn:escapeXml(student.toShowString())}
+                        <th><c:out value="${student.toShowString()}"></c:out>
                             <c:if test = "${worker.getRole()=='ADMIN'}">
                                 <form method="post" action="Controller?command=ChangeRole" novalidate>
                                     <input type="radio" name="role" value="JOBSTUDENT" id="jobstudent">

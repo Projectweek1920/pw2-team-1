@@ -53,12 +53,12 @@
         <tbody>
         <c:forEach var="user" items="${users}">
             <tr>
-                <th>${fn:escapeXml(user.userId)}</th>
-                <th>${fn:escapeXml(user.getFirstNamee())}</th>
-                <th>${fn:escapeXml(user.getLastNamee())}</th>
-                <th>${fn:escapeXml(user.getEmaile())}</th>
-                <th>${fn:escapeXml(user.isDifficult())}</th>
-                <th>${fn:escapeXml(user.tijdVanInschrijving)}</th>
+                <th><c:out value="${user.userId}"></c:out> </th>
+                <th><c:out value="${user.getFirstNamee()}"></c:out> </th>
+                <th><c:out value="${user.getLastNamee()}"></c:out></th>
+                <th><c:out value="${user.getEmaile()}"></c:out> </th>
+                <th><c:out value="${user.isDifficult()}"></c:out> </th>
+                <th><c:out value="${user.tijdVanInschrijving}"></c:out> </th>
             </tr>
         </c:forEach>
         </tbody>
