@@ -15,6 +15,7 @@ public class NextTicketHandler extends RequestHandler {
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         getUserService().clickNextEasy();
         request.setAttribute("JobStudent", getUserService().nextEasyUser());
+        System.out.println("test");
         return "Jobstudent.jsp";
     }
 }
