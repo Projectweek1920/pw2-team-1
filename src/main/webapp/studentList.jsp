@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!-- Header -->
@@ -46,7 +45,7 @@
                 <tbody>
                 <c:forEach var="student" items="${students}">
                     <tr>
-                        <th>${fn:escapeXml(student.toShowString())}
+                        <th><c:out value="${student.toShowString()}"></c:out>
                             <c:if test = "${worker.getRole()=='ADMIN'}">
                                 <form method="post" action="Controller?command=ChangeRole" novalidate>
                                     <input type="radio" name="role" value="JOBSTUDENT" id="jobstudent">
@@ -55,7 +54,7 @@
                                     <label for="expert">Expert</label>
                                     <input type="radio" name="role" value="ADMIN" id="admin">
                                     <label for="admin">Admin</label>
-                                    <p><label for="worker"></label><input type="hidden" id="worker" name="worker" value="${fn:escapeXml(student.showUserName())}"></p>
+                                    <p><label for="worker"></label><input type="hidden" id="worker" name="worker" value="<c:out value="${student.userName}"></c:out>"></p>
                                     <input type="submit" value="save">
                                 </form>
                             </c:if>

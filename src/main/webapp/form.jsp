@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!-- Header -->
@@ -45,58 +44,70 @@
         <p id="done" style="display: ${submitted eq 'block' ? 'block' : 'none'}">Your information has been submitted.</p>
         <h1>New enrolment</h1>
 
+        <c:choose>
+            <c:when test="${errors==null}">
+                <div>
+
+                </div>
+            </c:when>
+            <c:otherwise>
+                <div class="alert-danger">
+                    <ul>
+                        <li>${errors}</li>
+                    </ul>
+                </div>
+            </c:otherwise>
+        </c:choose>
+
         <form method="post" action="/Controller?command=Enrol">
             <p>Please input your information.</p>
             <p>
                 <label for="firstName">First Name:</label>
-                <input type="text" value="${fn:escapeXml("")}" name="firstName" id="firstName" required>
+                <input type="text" value="<c:out value="${firstNamePV}"></c:out>" name="firstName" id="firstName">
             </p>
             <p>
                 <label for="lastName">Last Name:</label>
-                <input type="text" value="${fn:escapeXml("")}" name="lastName" id="lastName" required>
+                <input type="text" value="<c:out value="${lastNamePV}"></c:out>" name="lastName" id="lastName">
             </p>
             <p>
                 <label for="email">Email:</label>
-                <input type="text" value="${fn:escapeXml("")}" name="email" id="email" required>
+                <input type="text" value="<c:out value="${emailPV}"></c:out>" name="email" id="email">
             </p>
             <p>
-                <input type="radio" value="${fn:escapeXml("FEMALE")}" name="gender" id="femalegender" required>
+                <input type="radio" value="<c:out value="FEMALE"></c:out>" name="gender" id="femalegender" ${gendermalePV}>
                 <label for="femalegender">Female</label>
-                <input type="radio" value="${fn:escapeXml("MALE")}" name="gender" id="malegender">
+                <input type="radio" value="<c:out value="MALE"></c:out>" name="gender" id="malegender" ${genderfemalePV}>
                 <label for="malegender">Male</label>
             </p>
 
-
-
-
-            <p>What type of study will you be doing?</p>
+            <p>Welke opleiding?</p>
             <p>
 
-                <input type="radio" value="graduaat" name="vraag1" id="graduaat" onclick="showHideVooropleiding()">
+                <input type="radio" value="graduaat" name="vraag1" id="graduaat" onclick="showHideVooropleiding()" ${graduaatPV}>
                 <label for="graduaat">Bachelor or graduate</label>
-                <input type="radio" value="postgraduaat" name="vraag1" id="postgraduaat" onclick="showHideVooropleiding()">
+                <input type="radio" value="postgraduaat" name="vraag1" id="postgraduaat" onclick="showHideVooropleiding()" ${postgraduaatPV}>
                 <label for="postgraduaat">Banaba or post-graduate</label>
-                <input type="radio" value="andere" name="vraag1" id="andere" onclick="showHideVooropleiding()">
+                <input type="radio" value="andereOPO" name="vraag1" id="andere" onclick="showHideVooropleiding()" ${andereOPOPV}>
                 <label for="andere">Other</label>
             </p>
 
             <fieldset id="vooropleiding">
             <legend>What is your previous education?</legend>
 
-                <input type="radio" value="middelbaar" name="vraag2" id="middelbaar" checked>
+                <input type="radio" value="middelbaar" name="vraag2" id="middelbaar" ${middelbaarPV}>
                 <label for="middelbaar">High School</label>
-                <input type="radio" value="bachelor" name="vraag2" id="bachelor">
-                <label for="bachelor">Bachelor  or graduate</label>
-                <input type="radio" value="andere" name="vraag2" id="andere1">
+                <input type="radio" value="bachelor" name="vraag2" id="bachelor" ${bachelorPV}>
+                <label for="bachelor">Bachelor or graduate</label>
+                <input type="radio" value="andereVOPO" name="vraag2" id="andere1" ${andereOPOPV}>
                 <label for="andere1">Other</label>
 
             </fieldset>
 
             <p>Language?</p>
             <p>
-                <input type="radio" value="NL" name="vraag3" id="NL" required>
+                <input type="radio" value="NL" name="vraag3" id="NL" ${NLPV}>
                 <label for="NL">Nederlands</label>
-                <input type="radio" value="andere" name="vraag3" id="andere2">
+                <input type="radio" value="andereT" name="vraag3" id="andere2" ${andereTPV}>
                 <label for="andere2">Other</label>
             </p>
             <p><input type="submit" value="Send" id="submit"></p>

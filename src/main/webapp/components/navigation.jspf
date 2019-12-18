@@ -43,7 +43,7 @@
         </ul>
         <c:if test="${worker.getRole()=='ADMIN' || worker.getRole()=='JOBSTUDENT' || worker.getRole()=='EXPERT'}">
             <li class="nav-item">
-                <a class="nav-link" href="/Controller?command=SignOut">${worker.getRole()}: Afmelden</a>
+                <a class="nav-link" href="/Controller?command=SignOut"><c:out value="${worker.role}"></c:out> Afmelden</a>
             </li>
         </c:if>
     </div>
