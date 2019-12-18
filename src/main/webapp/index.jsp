@@ -29,7 +29,7 @@
 <main role="main" class="container">
     <div class="starter-template">
         <c:if test = "${worker.getRole()=='ADMIN' || worker.getRole()=='JOBSTUDENT' || worker.getRole()=='EXPERT'}">
-            <h1>Welcome to our Ticketing system ${worker.getRole()} you are in loket ${worker.getLoket()}!</h1>
+            <h1>${worker.getRole()} , you are in loket ${worker.getLoket()}!</h1>
         </c:if>
 
         <c:if test = "${worker.getRole()!='ADMIN' || worker.getRole()!='JOBSTUDENT' || worker.getRole()!='EXPERT'}">
