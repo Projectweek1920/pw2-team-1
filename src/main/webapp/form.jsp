@@ -80,7 +80,7 @@
                 <label for="malegender">Male</label>
             </p>
 
-            <p>Welke opleiding?</p>
+            <p>What will you be studying?</p>
             <p>
 
                 <input type="radio" value="graduaat" name="vraag1" id="graduaat" onclick="showHideVooropleiding()" ${graduaatPV}>
