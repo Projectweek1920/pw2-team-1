@@ -49,20 +49,20 @@
             <p>User information:</p>
             <p>
                 <label for="firstName">Voornaam:</label>
-                <input type="text" value="" name="firstName" id="firstName" required>
+                <input type="text" value="${fn:escapeXml("")}" name="firstName" id="firstName" required>
             </p>
             <p>
                 <label for="lastName">LastName:</label>
-                <input type="text" value="" name="lastName" id="lastName" required>
+                <input type="text" value="${fn:escapeXml("")}" name="lastName" id="lastName" required>
             </p>
             <p>
                 <label for="email">Email:</label>
-                <input type="text" value="" name="email" id="email" required>
+                <input type="text" value="${fn:escapeXml("")}" name="email" id="email" required>
             </p>
             <p>
-                <input type="radio" value="FEMALE" name="gender" id="femalegender" required>
+                <input type="radio" value="${fn:escapeXml("FEMALE")}" name="gender" id="femalegender" required>
                 <label for="femalegender">Female</label>
-                <input type="radio" value="MALE" name="gender" id="malegender">
+                <input type="radio" value="${fn:escapeXml("MALE")}" name="gender" id="malegender">
                 <label for="malegender">Male</label>
             </p>
 
