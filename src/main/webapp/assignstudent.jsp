@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!-- Header -->
@@ -48,19 +47,19 @@
             <p>User information:</p>
             <p>
                 <label for="userName">Username:</label>
-                <input type="text" value="${fn:escapeXml(userNamePV)}" name="userName" id="userName">
+                <input type="text" value="<c:out value="${userNamePV}"></c:out>" name="userName" id="userName">
             </p>
             <p>
                 <label for="firstName">Voornaam:</label>
-                <input type="text" value="${fn:escapeXml(firstNamePV)}" name="firstName" id="firstName">
+                <input type="text" value="<c:out value="${firstNamePV}"></c:out>" name="firstName" id="firstName">
             </p>
             <p>
                 <label for="lastName">LastName:</label>
-                <input type="text" value="${fn:escapeXml(lastNamePV)}" name="lastName" id="lastName">
+                <input type="text" value="<c:out value="${lastNamePV}"></c:out>" name="lastName" id="lastName">
             </p>
             <p>
                 <label for="email">Email:</label>
-                <input type="text" value="${fn:escapeXml(emailPV)}" name="email" id="email">
+                <input type="text" value="<c:out value="${emailPV}"></c:out>" name="email" id="email">
             </p>
             <p>
                 <input type="radio" value="FEMALE" name="gender" id="femalegender" ${genderfemalePV}>

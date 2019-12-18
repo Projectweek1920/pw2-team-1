@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!-- Header -->
@@ -53,16 +52,16 @@
             </p>
             <p>
                 <label for="lastName">LastName:</label>
-                <input type="text" value="<c:out value="">" name="lastName" id="lastName" required>
+                <input type="text" value="<c:out value=""></c:out>" name="lastName" id="lastName" required>
             </p>
             <p>
                 <label for="email">Email:</label>
-                <input type="text" value="<c:out value="">" name="email" id="email" required>
+                <input type="text" value="<c:out value=""></c:out>" name="email" id="email" required>
             </p>
             <p>
-                <input type="radio" value="<c:out value="FEMALE">" name="gender" id="femalegender" required>
+                <input type="radio" value="<c:out value="FEMALE"></c:out>" name="gender" id="femalegender" required>
                 <label for="femalegender">Female</label>
-                <input type="radio" value="<c:out value="MALE">" name="gender" id="malegender">
+                <input type="radio" value="<c:out value="MALE"></c:out>" name="gender" id="malegender">
                 <label for="malegender">Male</label>
             </p>
 

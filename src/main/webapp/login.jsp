@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!-- Header -->
@@ -32,15 +31,15 @@
     <form action="/Controller?command=SignIn" method="POST" novalidate>
         <p>
             <label for="userName">Username:</label>
-            <input type="text" value="<c:out value="Admin">" name="userName" id="userName">
+            <input type="text" value="<c:out value="Admin"></c:out>" name="userName" id="userName">
         </p>
         <p>
             <label for="password">Password:</label>
-            <input type="password" value="<c:out value="">" name="password" id="password">
+            <input type="password" value="<c:out value=""></c:out>" name="password" id="password">
         </p>
         <p>
             <label for="loket">Loket:</label>
-            <input type="loket" value="<c:out value="">" name="loket" id="loket">
+            <input type="loket" value="<c:out value=""></c:out>" name="loket" id="loket">
         </p>
         <p><input type="submit" value="Send" id="submit"></p>
     </form>

@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!doctype html>
@@ -42,8 +41,8 @@
         <h1> Jobstudent page</h1>
         <div>
             <div id="studentInfo">
-            <p><c:out value="${JobStudent.firstName} ${JobStudent.lastName}"></p>
-            <p><c:out value="${JobStudent.userId}"></p>
+            <p><c:out value="${JobStudent.firstName} ${JobStudent.lastName}"></c:out></p>
+            <p><c:out value="${JobStudent.userId}"></c:out></p>
             </div>
         </div>
         <jsp:include page="userButtons.jsp">

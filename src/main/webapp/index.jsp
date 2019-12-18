@@ -28,20 +28,23 @@
 
 <main role="main" class="container">
     <div class="starter-template">
-        <c:if test = "${worker.getRole()=='ADMIN' || worker.getRole()=='JOBSTUDENT' || worker.getRole()=='EXPERT'}">
+        <c:if test="${worker.getRole()=='ADMIN' || worker.getRole()=='JOBSTUDENT' || worker.getRole()=='EXPERT'}">
             <h1>${worker.getRole()} , you are in loket ${worker.getLoket()}!</h1>
         </c:if>
 
-        <c:if test = "${worker.getRole()!='ADMIN' || worker.getRole()!='JOBSTUDENT' || worker.getRole()!='EXPERT'}">
+        <c:if test="${worker.getRole()!='ADMIN' || worker.getRole()!='JOBSTUDENT' || worker.getRole()!='EXPERT'}">
             <h1>Welcome to our Ticketing system!</h1>
         </c:if>
-        <p class="lead">This is the homepage, if you want to enrol in our school head to our <a href="Controller?command=Form">form page</a>!</p>
-        <p>If you wish to see an overview of all enrolled students then go to the <a href="Controller?command=Users">users page</a>!</p>
+        <p class="lead">This is the homepage, if you want to enrol in our school head to our <a
+                href="Controller?command=Form">form page</a>!</p>
+        <p>If you wish to see an overview of all enrolled students then go to the <a href="Controller?command=Users">users
+            page</a>!</p>
         <p>
             <button><a href="Controller?command=Users" class="button">Queue of Students</a></button>
-<c:if test = "${worker.getRole()=='ADMIN' || worker.getRole()=='EXPERT'}">
-            <button><a href="Controller?command=ShowAdministration" type="button" class="button">AdministrationPage</a></button>
-</c:if>
+            <c:if test="${worker.getRole()=='ADMIN' || worker.getRole()=='EXPERT'}">
+                <button><a href="Controller?command=ShowAdministration" type="button"
+                           class="button">AdministrationPage</a></button>
+            </c:if>
             <button><a href="Controller?command=Form" type="button" class="button">Go to Student Form</a></button>
         </p>
     </div>
@@ -62,8 +65,12 @@
             h + ":" + m + ":" + s;
         var t = setTimeout(startTime, 500);
     }
+
     function checkTime(i) {
-        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        if (i < 10) {
+            i = "0" + i
+        }
+        ;  // add zero in front of numbers < 10
         return i;
     }
 </script>
