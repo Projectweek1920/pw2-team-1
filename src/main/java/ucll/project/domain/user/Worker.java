@@ -20,6 +20,7 @@ public class Worker extends Person{
         setRole(role);
     }
 
+
     public Role getRole() {
         return role;
     }
@@ -68,8 +69,16 @@ public class Worker extends Person{
         this.loket = loket;
     }
 
+    public String showUserName(){
+        return this.getUserName();
+    }
+
     public String toString() {
         return "User(userId=" + ", userName=" + this.getUserName() + ", firstName=" + this.getFirstName() + ", lastName=" + this.getLastName() + ", email=" + this.getEmail() + ", gender=" + this.getGender() + ", role=" + this.getRole() + ", hashedPassword=" + this.getHashedPassword() + ")";
+    }
+
+    public String toShowString(){
+        return "Username: " + this.getUserName() + " name: " + this.getFirstName() + "." + this.getLastName() + " role: " + this.getRole();
     }
 
     public String getLoket() {

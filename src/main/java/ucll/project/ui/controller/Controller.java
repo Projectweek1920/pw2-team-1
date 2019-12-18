@@ -1,5 +1,6 @@
 package ucll.project.ui.controller;
 
+import ucll.project.domain.user.NotAuthorizedException;
 import ucll.project.domain.user.QueueSyncronizer;
 import ucll.project.domain.user.UserService;
 import ucll.project.ui.controller.Handler.HandlerFactory;
@@ -44,8 +45,8 @@ public class Controller extends HttpServlet {
             RequestHandler handler = handlerFactory.getHandler(command, service);
             String destination = handler.handleRequest(request, response);
             handler.forwardRequest(destination, request, response);
-        } catch (Exception e) {
-            throw new ControllerException(e.getMessage());
+        } catch (NotAuthorizedException e) {
+            request.setAttribute("notAuthorized", "You have insufficient rights to have a look at the requested page.");
         }
     }
 }

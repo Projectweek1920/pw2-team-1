@@ -28,7 +28,7 @@
 
 <main role="main" class="container">
 
-    <form action="Controller?command=SignIn" method="POST" novalidate>
+    <form action="/Controller?command=SignIn" method="POST" novalidate>
         <p>
             <label for="userName">Username:</label>
             <input type="text" value="Wout123" name="userName" id="userName">

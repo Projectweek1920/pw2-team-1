@@ -2,7 +2,8 @@ package ucll.project.domain.user;
 
 public enum Role {
     USER("user"),
-    SUPPORT("support"),
+    JOBSTUDENT("jobstudent"),
+    EXPERT("expert"),
     ADMIN("admin");
 
     private String role;

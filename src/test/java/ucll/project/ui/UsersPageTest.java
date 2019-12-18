@@ -22,11 +22,7 @@ public class UsersPageTest {
     @BeforeClass
     public static void SetupDriver() throws MalformedURLException {
         System.setProperty("webdriver.chrome.driver", "libs/geckodriver.exe");
-        driver = FirefoxDriverHelper.getDriver();
-        DesiredCapabilities capability = DesiredCapabilities.firefox();
-        driver = new RemoteWebDriver(new URL("http://projectweek.be:4444/wd/hub"), capability);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        driver = DriverHelper.getDriver();
     }
 
     @AfterClass
