@@ -14,7 +14,7 @@ public class NextTicketHandler extends RequestHandler {
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         getUserService().clickNextEasy();
-        request.setAttribute("JobStudent", getUserService().nextDifficultUser());
+        request.setAttribute("JobStudent", getUserService().nextEasyUser());
         return "Jobstudent.jsp";
     }
 }
