@@ -4,12 +4,14 @@ import javax.xml.bind.DatatypeConverter;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
 public class Worker extends Person{
 
     private Role role;
     private String loket;
     private transient String hashedPassword;
+    private ArrayList<String> lokets = new ArrayList<>();
 
     public Worker(){
 
@@ -66,6 +68,12 @@ public class Worker extends Person{
     }
 
     public void setLoket(String loket) {
+        for (String str: lokets) {
+            if (str.equals(loket) && !str.equals("")){
+                throw new DomainException("Loket is al bezet");
+            }
+        }
+        lokets.add(loket);
         this.loket = loket;
     }
 
@@ -85,8 +93,8 @@ public class Worker extends Person{
         return loket;
     }
 
-    public void setUserId(int anInt) {
-        super.setUserName(anInt+"");
+    public void setUserId(String anInt) {
+        super.setUserName(anInt);
     }
 
     public int getUserId() {
