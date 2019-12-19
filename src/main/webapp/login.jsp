@@ -26,7 +26,24 @@
 <!-- Page Content -->
 
 
+
+
 <main role="main" class="container">
+
+    <c:choose>
+        <c:when test="${errors==null}">
+            <div>
+
+            </div>
+        </c:when>
+        <c:otherwise>
+            <div class="alert-danger">
+                <ul>
+                    <li>${errors}</li>
+                </ul>
+            </div>
+        </c:otherwise>
+    </c:choose>
 
     <form action="/Controller?command=SignIn" method="POST" novalidate>
         <p>
