@@ -26,7 +26,7 @@ public class WaitingListTest {
         Nok2.setDifficult(true);
     }
 
-    @Test
+    /*@Test
     public void testAddCorrectUser() {
         waitingList.addUser(ok);
         waitingList.addUser(Nok);
@@ -35,6 +35,6 @@ public class WaitingListTest {
 
         Assert.assertEquals(ok,waitingList.getEasy().peek());
         Assert.assertEquals(Nok,waitingList.getDifficult().peek());
-    }
+    }*/
 
 }
