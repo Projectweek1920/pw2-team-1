@@ -21,19 +21,26 @@ public class PickNextHandler extends RequestHandler {
             if (user != null){
                 request.setAttribute("assignedUser", getUserService().nextEasyUser());
                 Worker worker = (Worker) request.getSession().getAttribute(("worker"));
+                WaitingList.getInstance().removeUserAanDeBeurt(worker.getLoket());
+                WaitingList.getInstance().removeNextEasyUser();
                 user.setLoket(worker.getLoket());
                 WaitingList.getInstance().addUserAanDeBeurt(user);
-                WaitingList.getInstance().removeNextEasyUser();
-                user.setLoket(getUserService().getCertainUserRepo(worker.getUserName()).getLoket());
+            }else {
+                Worker worker = (Worker) request.getSession().getAttribute(("worker"));
+                WaitingList.getInstance().removeUserAanDeBeurt(worker.getLoket());
             }
         } else {
             User user = getUserService().nextDifficultUser();
             if (user != null){
                 request.setAttribute("assignedUser", getUserService().nextDifficultUser());
                 Worker worker = (Worker) request.getSession().getAttribute(("worker"));
+                WaitingList.getInstance().removeUserAanDeBeurt(worker.getLoket());
                 WaitingList.getInstance().removeNextDifficultUser();
                 user.setLoket(worker.getLoket());
                 WaitingList.getInstance().addUserAanDeBeurt(user);
+            }else {
+                Worker worker = (Worker) request.getSession().getAttribute(("worker"));
+                WaitingList.getInstance().removeUserAanDeBeurt(worker.getLoket());
             }
         }
         RequestHandler requestHandler = new ShowAdministrationHandler(getCommand(),getUserService());
