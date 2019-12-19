@@ -67,9 +67,6 @@ public class UserService {
         waitingList.getDifficult().remove(nextDifficultUser());
     }
 
-    public User nextDifficultUser() {
-        return waitingList.getDifficult().peek();
-    }
 
     public void markEasyAsComplex(int userid) {
         waitingList.addDifficultAsFirst(getUserWithId(userid));
