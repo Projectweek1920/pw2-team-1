@@ -20,7 +20,7 @@
 
 <!-- Page Content -->
 
-
+<article>
 <div class="container">
     <!-- Jumbotron -->
     <div class="jumbotron">
@@ -30,6 +30,7 @@
                 class="green">Take Me To The Homepage</span></a></p>
     </div>
 </div>
+</article>
 <!-- Footer -->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Bootstrap JS -->

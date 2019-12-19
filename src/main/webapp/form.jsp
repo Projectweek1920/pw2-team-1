@@ -86,7 +86,7 @@
                 </ul>
 
                 <fieldset id="vooropleiding">
-                    <legend><h2>What is your previous education?</h2></legend>
+                    <h2><legend>What is your previous education?</legend></h2>
                     <ul class="radio-menu-item">
                         <li><input type="radio" value="middelbaar" name="vraag2" id="middelbaar" ${middelbaarPV}>
                         <label for="middelbaar">High School</label></li>
@@ -97,7 +97,7 @@
                     </ul>
                 </fieldset>
 
-                <h2>Language?</h2>
+                <h2>Language of degree</h2>
                 <ul class="radio-menu-item">
                     <li> <input type="radio" value="NL" name="vraag3" id="NL" ${NLPV}>
                     <label for="NL">Dutch</label></li>

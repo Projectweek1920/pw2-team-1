@@ -32,7 +32,7 @@
 
 
 <main role="main" class="container">
-<article style="align-content: center">
+<article style="text-align: center">
     <div class="starter-template">
         <h1>Behandel student (Expert)</h1>
 
