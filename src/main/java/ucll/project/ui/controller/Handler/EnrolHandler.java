@@ -43,10 +43,8 @@ public class EnrolHandler extends RequestHandler {
                 getUserService().addToWaitingList(user);
                 request.setAttribute("submitted","block");
 
-                RequestHandler requestHandler = new FormHandler(getCommand(),getUserService());
-                requestHandler.setUserService(getUserService());
-                String desti = requestHandler.handleRequest(request,response);
-                return desti;
+                return "submitted.jsp";
+
             } catch (DomainException exc) {
                 request.setAttribute("error", exc.getMessage());
                 request.setAttribute("errors",errors);

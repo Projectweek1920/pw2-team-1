@@ -8,9 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Submitted</title>
 </head>
 <body>
-$END$
+    <h1>Your information has been submitted. Please wait in the lounge.</h1>
+    <p><a href="Controller?command=Form">Back to form!</a></p>
 </body>
 </html>
