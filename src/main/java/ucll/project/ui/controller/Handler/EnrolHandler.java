@@ -25,13 +25,13 @@ public class EnrolHandler extends RequestHandler {
             setLastName(user,request,errors);
             setEmail(user,request,errors);
             setGender(user,request,errors);
+            user.setDifficult(false);
             setVraag1(answercheck,user,request,errors);
             if (answercheck == true){
                 setVraag2(user,request,errors);
             }
             setVraag3(user,request,errors);
             setVraag4(user,request,errors);
-            user.setDifficult(false);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -43,10 +43,8 @@ public class EnrolHandler extends RequestHandler {
                 getUserService().addToWaitingList(user);
                 request.setAttribute("submitted","block");
 
-                RequestHandler requestHandler = new FormHandler(getCommand(),getUserService());
-                requestHandler.setUserService(getUserService());
-                String desti = requestHandler.handleRequest(request,response);
-                return desti;
+                return "submitted.jsp";
+
             } catch (DomainException exc) {
                 request.setAttribute("error", exc.getMessage());
                 request.setAttribute("errors",errors);

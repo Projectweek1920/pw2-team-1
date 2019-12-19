@@ -50,6 +50,7 @@ public class WaitingList {
         }
     }
 
+
     public void addUserAanDeBeurt(User user){
         aanDeBeurt.add(user);
     }
