@@ -1,5 +1,6 @@
 package ucll.project.db;
 
+import ucll.project.domain.user.Gender;
 import ucll.project.domain.user.SortById;
 import ucll.project.domain.user.User;
 
@@ -12,7 +13,16 @@ public class WaitingList {
     private ArrayList<User> aanDeBeurt = new ArrayList<>();
 
     private WaitingList() {
-
+        User user1 = new User("OG1", "Quinten", "Geeraerts", "ares@gmail.com", Gender.MALE);
+        User user2 = new User("OG2", "Mathieu", "Broeckhoven", "ares@gmail.com", Gender.MALE);
+        User user3 = new User("OG3", "Matthias", "Veelaert", "ares@gmail.com", Gender.MALE);
+        User user4 = new User("OG4", "Mikkel", "Skovdal", "ares@gmail.com", Gender.MALE);
+        User user5 = new User("OG5", "Sinan", "Yolartiran", "ares@gmail.com", Gender.MALE);
+        easy.add(user1);
+        easy.add(user2);
+        difficult.add(user3);
+        difficult.add(user4);
+        easy.add(user5);
     }
 
     public static synchronized WaitingList getInstance() {

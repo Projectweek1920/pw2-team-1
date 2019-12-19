@@ -24,51 +24,36 @@
 
 
 <main role="main" class="container">
-
-    <div class="starter-template">
-        <h1>Overzicht Medewerkers</h1>
-
-    </div>
-    <c:choose>
-        <c:when test="${students == null || students == []}">
-            <p>U hebt momenteel geen medewerkers. Voeg er enkele toe.</p>
-        </c:when>
-        <c:otherwise>
-            <table class="table">
-                <caption>Medewerkers</caption>
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach var="student" items="${students}">
-                    <tr>
-                        <th><c:out value="${student.toShowString()}"></c:out>
-                            <!--
-                            <c:if test = "${worker.getRole()=='ADMIN'}">
-                                <form method="post" action="Controller?command=ChangeRole" novalidate>
-                                    <input type="radio" name="role" value="JOBSTUDENT" id="jobstudent">
-                                    <label for="jobstudent">Jobstudent</label>
-                                    <input type="radio" name="role" value="EXPERT" id="expert">
-                                    <label for="expert">Expert</label>
-                                    <input type="radio" name="role" value="ADMIN" id="admin">
-                                    <label for="admin">Admin</label>
-                                    <p><label for="worker"></label><input type="hidden" id="worker" name="worker" value="<c:out value="${student.userName}"></c:out>"></p>
-                                    <input type="submit" value="save">
-                                </form>
-                            </c:if>
-                            -->
-                        </th>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
-        </c:otherwise>
-    </c:choose>
-
-
-
+    <article>
+        <div class="starter-template">
+            <h1>Overzicht Medewerkers</h1>
+        </div>
+        <div style="text-align: center">
+            <c:choose>
+                <c:when test="${students == null || students == []}">
+                    <p>U hebt momenteel geen medewerkers. Voeg er enkele toe.</p>
+                </c:when>
+                <c:otherwise>
+                    <table class="table">
+                        <tr>
+                            <th scope="col">Username</th>
+                            <th scope="col">name</th>
+                            <th scope="col">Achternaam</th>
+                            <th scope="col">Role</th>
+                        </tr>
+                        <c:forEach var="student" items="${students}">
+                            <tr>
+                                <th><c:out value="${student.getUserName()}"></c:out></th>
+                                <th><c:out value="${student.getFirstName()}"></c:out></th>
+                                <th><c:out value="${student.getLastName()}"></c:out></th>
+                                <th><c:out value="${student.getRole()}"></c:out></th>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </c:otherwise>
+            </c:choose>
+        </div>
+    </article>
 </main>
 <!-- Footer -->
 <!-- Optional JavaScript -->

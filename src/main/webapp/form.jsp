@@ -72,7 +72,7 @@
                     <input type="text" value="<c:out value="${emailPV}"></c:out>" name="email" id="email">
                 </p>
 
-                <h2>What will you be studying?</h2>
+                <h2 style="margin: 10px">What will you be studying?</h2>
                 <ul class="radio-menu-item">
                 <li><input type="radio" value="graduaat" name="vraag1" id="graduaat"
                            onclick="showHideVooropleiding()" ${graduaatPV}>
@@ -86,7 +86,7 @@
                 </ul>
 
                 <fieldset id="vooropleiding">
-                    <h2><legend>What is your previous education?</legend></h2>
+                    <h2 style="margin: 10px"><legend>What is your previous education?</legend></h2>
                     <ul class="radio-menu-item">
                         <li><input type="radio" value="middelbaar" name="vraag2" id="middelbaar" ${middelbaarPV}>
                         <label for="middelbaar">High School</label></li>
@@ -97,21 +97,21 @@
                     </ul>
                 </fieldset>
 
-                <h2>Language of degree</h2>
+                <h2 style="margin: 10px">Language of degree</h2>
                 <ul class="radio-menu-item">
                     <li> <input type="radio" value="NL" name="vraag3" id="NL" ${NLPV}>
                     <label for="NL">Dutch</label></li>
                     <li> <input type="radio" value="andereT" name="vraag3" id="andere2" ${andereTPV}>
                     <label for="andere2">Other</label></li>
                 </ul>
-                <h2>Extra questions?</h2>
+                <h2 style="margin: 10px">Extra questions?</h2>
                 <ul class="radio-menu-item">
                     <li><input type="radio" value="YES" name="vraag4" id="YES" ${YESPV}>
                     <label for="YES">Yes</label></li>
                     <li><input type="radio" value="NO" name="vraag4" id="NO" ${NOPV}>
                     <label for="NO">No</label></li>
                 </ul>
-                <p><input type="submit" value="Send" id="submit"></p>
+                <p><input type="submit" value="Send" id="submit" style="margin-top: 10px"></p>
             </form>
 
         </div>
@@ -125,50 +125,11 @@
         document.getElementById("myForm").reset();
     }
 </script>
-<script>
-    function startTime() {
-        var today = new Date();
-        var h = today.getHours();
-        var m = today.getMinutes();
-        var s = today.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        document.getElementById('txt').innerHTML =
-            h + ":" + m + ":" + s;
-        var t = setTimeout(startTime, 500);
-    }
-
-    function checkTime(i) {
-        if (i < 10) {
-            i = "0" + i
-        }  // add zero in front of numbers < 10
-        return i;
-    }
-</script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-<script>
-    window.addEventListener("load", initPage);
-
-    function initPage() {
-        if (document.getElementById("done").style.display === 'block') {
-            alert("Your information has been submitted. Please wait in the lounge.");
-
-            function wait(ms) {
-                var start = new Date().getTime();
-                var end = start;
-                while (end < start + ms) {
-                    end = new Date().getTime();
-                }
-            }
-
-            document.getElementById("done").style.display = 'none';
-        }
-    }
-</script>
 </body>
 </html>

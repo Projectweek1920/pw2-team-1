@@ -50,38 +50,41 @@
             <p><c:out value="${assignedUser.userId}"></c:out></p>
         </div>
     </div>
-    <c:choose>
-        <c:when test="${users == null || users == []}">
-            <p>Er zijn nog geen tickets aangemaakt.</p>
-        </c:when>
-        <c:otherwise>
-            <table class="table">
-                <caption>Studentenlijst</caption>
-                <thead>
-                <tr>
-                    <th scope="col">Volgnummer</th>
-                    <th scope="col">Voornaam</th>
-                    <th scope="col">Achternaam</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Complexiteit</th>
-                    <th scope="col">Tijd van inschrijven</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach var="user" items="${users}">
+    <div style="margin: auto">
+        <c:choose>
+            <c:when test="${users == null || users == []}">
+                <p>Er zijn nog geen tickets aangemaakt.</p>
+            </c:when>
+            <c:otherwise>
+                <table class="table">
+                    <caption>Studentenlijst</caption>
+                    <thead>
                     <tr>
-                        <th><c:out value="${user.userId}"></c:out> </th>
-                        <th><c:out value="${user.getFirstNamee()}"></c:out> </th>
-                        <th><c:out value="${user.getLastNamee()}"></c:out></th>
-                        <th><c:out value="${user.getEmaile()}"></c:out> </th>
-                        <th><c:out value="${user.isDifficult()}"></c:out> </th>
-                        <th><c:out value="${user.tijdVanInschrijving}"></c:out> </th>
+                        <th scope="col">Volgnummer</th>
+                        <th scope="col">Voornaam</th>
+                        <th scope="col">Achternaam</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Complexiteit</th>
+                        <th scope="col">Tijd van inschrijven</th>
                     </tr>
-                </c:forEach>
-                </tbody>
-            </table>
-        </c:otherwise>
-    </c:choose>
+                    </thead>
+                    <tbody>
+                    <c:forEach var="user" items="${users}">
+                        <tr>
+                            <th><c:out value="${user.userId}"></c:out> </th>
+                            <th><c:out value="${user.getFirstNamee()}"></c:out> </th>
+                            <th><c:out value="${user.getLastNamee()}"></c:out></th>
+                            <th><c:out value="${user.getEmaile()}"></c:out> </th>
+                            <th><c:out value="${user.isDifficult()}"></c:out> </th>
+                            <th><c:out value="${user.tijdVanInschrijving}"></c:out> </th>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </c:otherwise>
+        </c:choose>
+    </div>
+
 </article>
 
 

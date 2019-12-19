@@ -10,7 +10,7 @@
 </div>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <img src="./static/img/UCLL_LOGO_RGB.png" alt="logo ucll">
+    <a href="Controller?command=Home"><img src="./static/img/UCLL_LOGO_RGB.png" alt="logo ucll"></a>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">

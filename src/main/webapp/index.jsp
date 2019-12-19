@@ -15,7 +15,7 @@
     </jsp:include>
     <title>Welkom op ons ticketing system!</title>
 </head>
-<body onload="startTime()">
+<body>
 
 
 <!-- Navigation -->
@@ -47,25 +47,25 @@
             <c:when test="${worker.getRole()=='EXPERT' || worker.getRole()=='ADMIN'}">
             </c:when>
             <c:otherwise>
-                <p>Klik <a href="Controller?command=Queue">hier</a> voor het wachtscherm.</p>
+                <p>Klik op de knoppen om naar het wachtscherm of naar het inschrijvingsformulier te gaan.</p>
             </c:otherwise>
         </c:choose>
         <p>
 <c:if test = "${worker.getRole()=='ADMIN'}">
-            <button><a href="Controller?command=ShowAdministration" type="button" class="button">Toon medewerkers</a></button>
+            <p><a href="Controller?command=ShowAdministration" class="button">Toon medewerkers</a></p>
 </c:if>
     <c:choose>
     <c:when test="${worker.getRole()=='EXPERT' || worker.getRole()=='ADMIN'}">
     </c:when>
     <c:otherwise>
-        <button><a href="Controller?command=Queue" class="button">Wachtscherm</a></button>
+        <p><a href="Controller?command=Queue" class="button">Wachtscherm</a></p>
         </c:otherwise>
         </c:choose>
             <c:choose>
                 <c:when test="${worker.getRole()=='EXPERT'}">
                 </c:when>
                 <c:otherwise>
-                    <button><a href="Controller?command=Form" type="button" class="button">Inschrijvingsformulier</a></button>
+                    <p><a href="Controller?command=Form" class="button">Inschrijvingsformulier</a></p>
                 </c:otherwise>
             </c:choose>
         </p>
@@ -75,27 +75,6 @@
 <!-- Footer -->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Bootstrap JS -->
-<script>
-    function startTime() {
-        var today = new Date();
-        var h = today.getHours();
-        var m = today.getMinutes();
-        var s = today.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        document.getElementById('txt').innerHTML =
-            h + ":" + m + ":" + s;
-        var t = setTimeout(startTime, 500);
-    }
-
-    function checkTime(i) {
-        if (i < 10) {
-            i = "0" + i
-        }
-        ;  // add zero in front of numbers < 10
-        return i;
-    }
-</script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
