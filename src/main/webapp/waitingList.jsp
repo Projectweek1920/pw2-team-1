@@ -16,9 +16,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Aleo&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./static/css/style.css">
-    <link rel="stylesheet" href="./static/css/reset.css">
+    <jsp:include page="./components/stylesheets.jsp">
+        <jsp:param name="" value=""/>
+    </jsp:include>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Queue</title>
 </head>

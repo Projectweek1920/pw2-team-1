@@ -1,6 +1,100 @@
 body {
-    padding-top: 5rem;
-    /*background-color: red;*/
+    width: 100%;
+    margin: 0px;
+    background-color: #E9F3F8;
+}
+nav{
+    background-color: #E00049;
+}
+
+nav div{
+
+    text-align: right;
+}
+
+nav img{
+    height: 90px;
+}
+
+nav ul{
+
+    vertical-align: middle;
+    display: inline-flex ;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+nav ul li{
+    padding: 10px;
+    display: block;
+    vertical-align: middle;
+    border-right: solid 1px white;
+
+}
+
+nav ul li:last-child{
+
+    border-right: none;
+
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-family: "Aleo", "Arial", "Helvetica", "sans-serif";
+
+
+}
+
+.Afmeld a{
+    text-decoration: none;
+    color: #002757;
+    font-weight: bolder;
+    font-family: "Aleo", "Arial", "Helvetica", "sans-serif";
+
+}
+
+.Afmeld{
+    padding: 10px;
+}
+
+.Aanmeld{
+    padding: 10px;
+}
+
+.logContainer{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#Aanmeld{
+
+    text-decoration: none;
+    color: #002757;
+    font-family: "Aleo", "Arial", "Helvetica", "sans-serif";
+}
+
+.Aanmeld a{
+    text-decoration: none;
+    color: #002757;
+    font-weight: bolder;
+    font-family: "Aleo", "Arial", "Helvetica", "sans-serif";
+
+}
+
+
+.nav-item{
+
+    list-style: none;
+}
+
+#Afmeld a{
+    margin-left: 80%;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 .starter-template {

@@ -8,6 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <jsp:include page="./components/stylesheets.jsp">
+        <jsp:param name="" value=""/>
+    </jsp:include>
     <title>Administratie</title>
 </head>
 <body>
