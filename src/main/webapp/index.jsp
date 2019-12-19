@@ -47,7 +47,7 @@
             <c:when test="${worker.getRole()=='EXPERT' || worker.getRole()=='ADMIN'}">
             </c:when>
             <c:otherwise>
-                <p>Klik op de knoppen om naar het wachtscherm of naar het inschrijvingsformulier te gaan.</p>
+                <p>Klik hieronder om naar het wachtscherm of het inschrijvingsformulier te gaan.</p>
             </c:otherwise>
         </c:choose>
         <p>
