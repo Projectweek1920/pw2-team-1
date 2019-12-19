@@ -51,7 +51,7 @@
             </c:if>
             <c:if test="${worker.getRole()=='ADMIN' || worker.getRole()=='EXPERT'}">
                 <li class="nav-item">
-                    <a class="nav-link" href="/Controller?command=ShowAdministration">Administratie</a>
+                    <a class="nav-link" href="/Controller?command=ShowAdministration">Expert</a>
                 </li>
             </c:if>
         </ul>
