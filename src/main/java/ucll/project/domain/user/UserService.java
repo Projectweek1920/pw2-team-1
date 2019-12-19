@@ -69,4 +69,18 @@ public class UserService {
         return waitingList.getDifficult().peek();
     }
 
+    public void markEasyAsComplex(int userid) {
+        waitingList.addDifficultAsFirst(getUserWithId(userid));
+    }
+
+    public User getUserWithId(int userid){
+        User temp = null;
+        for(User u : waitingList.getAanDeBeurt()){
+            if(u.getUserId()==userid){
+                temp = u;
+                break;
+            }
+        }
+        return temp;
+    }
 }

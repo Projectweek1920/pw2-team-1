@@ -37,7 +37,7 @@
     </div>
     <div class="section">
         <h2 style="margin-right: -1px">In behandeling</h2>
-        <div id="In behandeling" class="grid-container">
+        <div id="Toegewezen" class="grid-container">
             <c:forEach var="user" items="${ready}">
                 <div class="table-cell">
                     <p style="font-weight: bolder"><c:out value="${user.firstName} ${fn:substring(user.lastName,0,0)}."></c:out>> </p>

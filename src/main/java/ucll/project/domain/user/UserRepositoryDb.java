@@ -1,4 +1,5 @@
-/*package ucll.project.domain.user;
+/*
+package ucll.project.domain.user;
 
 import ucll.project.db.ConnectionPool;
 
@@ -28,6 +29,11 @@ public class UserRepositoryDb implements UserRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void createUser(Worker worker, String password) {
+
     }
 
     @Override
@@ -87,6 +93,16 @@ public class UserRepositoryDb implements UserRepository {
     }
 
     @Override
+    public void update(Worker worker) {
+
+    }
+
+    @Override
+    public void delete(Worker worker) {
+
+    }
+
+    @Override
     public void update(User user) {
         try (Connection conn = ConnectionPool.getConnection();
              PreparedStatement stmt = conn.prepareStatement("UPDATE \"user\" SET " +
@@ -136,5 +152,4 @@ public class UserRepositoryDb implements UserRepository {
         stmt.setString(i++, user.getHashedPassword());
         return i;
     }
-}
-*/
+}*/
