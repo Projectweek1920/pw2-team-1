@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="/static/css/style.css" rel="stylesheet">
-    <title>Formulier</title>
+    <title>New enrolment</title>
 
     <script>
         function showHideVooropleiding() {
@@ -42,61 +42,74 @@
 
     <div class="starter-template">
         <p id="done" style="display: ${submitted eq 'block' ? 'block' : 'none'}">Your information has been submitted.</p>
-        <h1>Form page</h1>
+        <h1>New enrolment</h1>
+
+        <c:choose>
+            <c:when test="${errors==null}">
+                <div>
+
+                </div>
+            </c:when>
+            <c:otherwise>
+                <div class="alert-danger">
+                    <ul>
+                        <li>${errors}</li>
+                    </ul>
+                </div>
+            </c:otherwise>
+        </c:choose>
 
         <form method="post" action="/Controller?command=Enrol">
-            <p>User information:</p>
+            <p>Please input your information.</p>
             <p>
-                <label for="firstName">Voornaam:</label>
-                <input type="text" value="c" name="firstName" id="firstName" required>
+                <label for="firstName">First Name:</label>
+                <input type="text" value="<c:out value="${firstNamePV}"></c:out>" name="firstName" id="firstName">
             </p>
             <p>
-                <label for="lastName">LastName:</label>
-                <input type="text" value="<c:out value=""></c:out>" name="lastName" id="lastName" required>
+                <label for="lastName">Last Name:</label>
+                <input type="text" value="<c:out value="${lastNamePV}"></c:out>" name="lastName" id="lastName">
             </p>
             <p>
                 <label for="email">Email:</label>
-                <input type="text" value="<c:out value=""></c:out>" name="email" id="email" required>
+                <input type="text" value="<c:out value="${emailPV}"></c:out>" name="email" id="email">
             </p>
-            <%--<p>
-                <input type="radio" value="<c:out value="FEMALE"></c:out>" name="gender" id="femalegender" required>
-                <label for="femalegender">Female</label>
-                <input type="radio" value="<c:out value="MALE"></c:out>" name="gender" id="malegender">
-                <label for="malegender">Male</label>
-            </p>--%>
 
-
-
-
-            <p>Welke opleiding?</p>
+            <p>What will you be studying?</p>
             <p>
 
-                <input type="radio" value="graduaat" name="vraag1" id="graduaat" onclick="showHideVooropleiding()">
-                <label for="graduaat">Bachelor graduaat</label>
-                <input type="radio" value="postgraduaat" name="vraag1" id="postgraduaat" onclick="showHideVooropleiding()">
-                <label for="postgraduaat">Banaba postgraduaat</label>
-                <input type="radio" value="andere" name="vraag1" id="andere" onclick="showHideVooropleiding()">
-                <label for="andere">Andere</label>
+                <input type="radio" value="graduaat" name="vraag1" id="graduaat" onclick="showHideVooropleiding()" ${graduaatPV}>
+                <label for="graduaat">Bachelor or graduate</label>
+                <input type="radio" value="postgraduaat" name="vraag1" id="postgraduaat" onclick="showHideVooropleiding()" ${postgraduaatPV}>
+                <label for="postgraduaat">Banaba or post-graduate</label>
+                <input type="radio" value="andereOPO" name="vraag1" id="andere" onclick="showHideVooropleiding()" ${andereOPOPV}>
+                <label for="andere">Other</label>
             </p>
 
             <fieldset id="vooropleiding">
-            <legend>Welke vooropleiding?</legend>
+            <legend>What is your previous education?</legend>
 
-                <input type="radio" value="middelbaar" name="vraag2" id="middelbaar" checked>
-                <label for="middelbaar">Middelbaar</label>
-                <input type="radio" value="bachelor" name="vraag2" id="bachelor">
-                <label for="bachelor">Bachelor/graduaat</label>
-                <input type="radio" value="andere" name="vraag2" id="andere1">
-                <label for="andere1">Andere</label>
+                <input type="radio" value="middelbaar" name="vraag2" id="middelbaar" ${middelbaarPV}>
+                <label for="middelbaar">High School</label>
+                <input type="radio" value="bachelor" name="vraag2" id="bachelor" ${bachelorPV}>
+                <label for="bachelor">Bachelor or graduate</label>
+                <input type="radio" value="andereVOPO" name="vraag2" id="andere1" ${andereOPOPV}>
+                <label for="andere1">Other</label>
 
             </fieldset>
 
-            <p>Taal?</p>
+            <p>Language?</p>
             <p>
-                <input type="radio" value="NL" name="vraag3" id="NL" required>
-                <label for="NL">Nederlands/Vlaams</label>
-                <input type="radio" value="andere" name="vraag3" id="andere2">
-                <label for="andere2">Andere</label>
+                <input type="radio" value="NL" name="vraag3" id="NL" ${NLPV}>
+                <label for="NL">Dutch</label>
+                <input type="radio" value="andereT" name="vraag3" id="andere2" ${andereTPV}>
+                <label for="andere2">Other</label>
+            </p>
+            <p>Extra questions?</p>
+            <p>
+                <input type="radio" value="YES" name="vraag4" id="YES" ${YESPV}>
+                <label for="YES">Yes</label>
+                <input type="radio" value="NO" name="vraag4" id="NO" ${NOPV}>
+                <label for="NO">No</label>
             </p>
             <p><input type="submit" value="Send" id="submit"></p>
         </form>
@@ -138,9 +151,7 @@
 
     function initPage(){
         if (document.getElementById("done").style.display === 'block') {
-            console.log("reeeeeee");
-            alert("Your information has been submitted.");
-            //wait(2000);
+            alert("Your information has been submitted. Please wait in the lounge.");
             function wait(ms){
                 var start = new Date().getTime();
                 var end = start;

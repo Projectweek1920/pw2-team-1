@@ -34,14 +34,14 @@
             <input type="text" value="<c:out value="Admin"></c:out>" name="userName" id="userName">
         </p>
         <p>
-            <label for="password">Password:</label>
+            <label for="password">Wachtwoord:</label>
             <input type="password" value="<c:out value=""></c:out>" name="password" id="password">
         </p>
         <p>
             <label for="loket">Loket:</label>
             <input type="loket" value="<c:out value=""></c:out>" name="loket" id="loket">
         </p>
-        <p><input type="submit" value="Send" id="submit"></p>
+        <p><input type="submit" value="Login" id="submit"></p>
     </form>
 
 </main>

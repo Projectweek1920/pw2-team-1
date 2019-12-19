@@ -98,7 +98,7 @@ public class AssignstudentHandler extends RequestHandler {
     }
 
     protected void setGender(Worker worker, HttpServletRequest request,ArrayList<String> errors) throws ServletException, IOException {
-        String gender = request.getParameter("gender");
+        String gender = "MALE";
         try {
             worker.setGender(Gender.valueOf(gender));
             request.setAttribute("Class", "has-success");

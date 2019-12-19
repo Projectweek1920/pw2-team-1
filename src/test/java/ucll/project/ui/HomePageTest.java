@@ -33,7 +33,7 @@
 //        System.out.println("test");
 //
 //        driver.get(Config.BASE_URL);
-//        assertEquals("Hello world!", driver.getTitle());
+//        assertEquals("Welkom op ons ticketing system!", driver.getTitle());
 //
 //    }
 //

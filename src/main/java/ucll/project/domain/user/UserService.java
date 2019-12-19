@@ -1,10 +1,6 @@
 package ucll.project.domain.user;
 import ucll.project.db.WaitingList;
-import org.apache.tomcat.jdbc.pool.DataSource;
-import org.apache.tomcat.jdbc.pool.PoolProperties;
 
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserService {
@@ -12,10 +8,12 @@ public class UserService {
     private WaitingList waitingList = WaitingList.getInstance();
 
     public UserService(){
-
-        Worker worker = new Worker("Admin","Wout","De Boeck","WoutDeBoeck@gmail.com",Gender.MALE,Role.ADMIN);
         userRepo = new UserRepositoryMemory();
-        userRepo.createUser(worker,"P@ssw0rd");
+        Worker admin = new Worker("Admin","Wout","De Boeck","WoutDeBoeck@gmail.com",Gender.MALE,Role.ADMIN);
+        userRepo.createUser(admin,"P@ssw0rd");
+
+        Worker expert = new Worker("Expert","Matthias","Veelaert","matthiasveelaert@student.ucll.be",Gender.MALE,Role.EXPERT);
+        userRepo.createUser(expert,"P@ssw0rd");
 
     }
 
@@ -56,6 +54,10 @@ public class UserService {
         return waitingList.getEasy().peek();
         //else if admin
         //return waitingList.getDifficult().peek();
+    }
+
+    public User nextDifficultUser() {
+        return waitingList.getDifficult().peek();
     }
 
     public void clickNextEasy() {

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="/static/css/style.css" rel="stylesheet">
-    <title>Add student</title>
+    <title>Administratieve medewerkers toevoegen</title>
 </head>
 <body>
 
@@ -27,7 +27,7 @@
 <main role="main" class="container">
 
     <div class="starter-template">
-        <h1>Form page</h1>
+        <h1>Nieuwe administratieve medewerker</h1>
         <c:choose>
             <c:when test="${errors==null}">
                 <div>
@@ -46,7 +46,7 @@
         <form method="post" action="/Controller?command=Assignstudent" novalidate>
             <p>User information:</p>
             <p>
-                <label for="userName">Username:</label>
+                <label for="userName">StudentenNummer:</label>
                 <input type="text" value="<c:out value="${userNamePV}"></c:out>" name="userName" id="userName">
             </p>
             <p>
@@ -54,18 +54,12 @@
                 <input type="text" value="<c:out value="${firstNamePV}"></c:out>" name="firstName" id="firstName">
             </p>
             <p>
-                <label for="lastName">LastName:</label>
+                <label for="lastName">Achternaam:</label>
                 <input type="text" value="<c:out value="${lastNamePV}"></c:out>" name="lastName" id="lastName">
             </p>
             <p>
                 <label for="email">Email:</label>
                 <input type="text" value="<c:out value="${emailPV}"></c:out>" name="email" id="email">
-            </p>
-            <p>
-                <input type="radio" value="FEMALE" name="gender" id="femalegender" ${genderfemalePV}>
-                <label for="femalegender">Female</label>
-                <input type="radio" value="MALE" name="gender" id="malegender" ${gendermalePV}>
-                <label for="malegender">Male</label>
             </p>
             <p>
                 <input type="radio" value="JOBSTUDENT" name="worker" id="jobStudent" ${jobstudentPV}>

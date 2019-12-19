@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="/static/css/style.css" rel="stylesheet">
-    <title>Studentenlijst</title>
+    <title>Overzicht Medewerkers</title>
 </head>
 <body>
 
@@ -27,16 +27,16 @@
 <main role="main" class="container">
 
     <div class="starter-template">
-        <h1>Overview page</h1>
+        <h1>Overzicht Medewerkers</h1>
 
     </div>
     <c:choose>
         <c:when test="${students == null || students == []}">
-            <p>No workers to show</p>
+            <p>U hebt momenteel geen medewerkers. Voeg er enkele toe.</p>
         </c:when>
         <c:otherwise>
             <table class="table">
-                <caption>List of workers</caption>
+                <caption>Medewerkers</caption>
                 <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -46,6 +46,7 @@
                 <c:forEach var="student" items="${students}">
                     <tr>
                         <th><c:out value="${student.toShowString()}"></c:out>
+                            <!--
                             <c:if test = "${worker.getRole()=='ADMIN'}">
                                 <form method="post" action="Controller?command=ChangeRole" novalidate>
                                     <input type="radio" name="role" value="JOBSTUDENT" id="jobstudent">
@@ -58,6 +59,7 @@
                                     <input type="submit" value="save">
                                 </form>
                             </c:if>
+                            -->
                         </th>
                     </tr>
                 </c:forEach>
