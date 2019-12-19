@@ -75,7 +75,7 @@
                             <th><c:out value="${user.getFirstNamee()}"></c:out> </th>
                             <th><c:out value="${user.getLastNamee()}"></c:out></th>
                             <th><c:out value="${user.getEmaile()}"></c:out> </th>
-                            <th><c:out value="${user.isDifficult()}"></c:out> </th>
+                            <th><c:out value="${user.isDifficult() eq true ? 'Complex' :'Eenvoudig'}"></c:out> </th>
                             <th><c:out value="${user.tijdVanInschrijving}"></c:out> </th>
                         </tr>
                     </c:forEach>
