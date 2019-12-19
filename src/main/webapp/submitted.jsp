@@ -12,6 +12,8 @@
 </head>
 <body>
     <h1>Your information has been submitted. Please wait in the lounge.</h1>
-    <p><a href="Controller?command=Form">Back to form!</a></p>
+    <form method="post" action="Controller?command=Form">
+        <button type="submit">Back to form!</button>
+    </form>
 </body>
 </html>

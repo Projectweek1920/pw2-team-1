@@ -58,7 +58,7 @@
             </c:otherwise>
         </c:choose>
 
-        <form method="post" action="/Controller?command=Enrol">
+        <form method="post" action="/Controller?command=Enrol" id="myForm">
             <p>Please input your information.</p>
             <p>
                 <label for="firstName">First Name:</label>
@@ -111,6 +111,7 @@
                 <label for="NO">No</label>
             </p>
             <p><input type="submit" value="Send" id="submit"></p>
+            <p><input type="reset" value="Cancel" onclick="clearForm"></p>
         </form>
 
     </div>
@@ -119,6 +120,11 @@
 <!-- Footer -->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Bootstrap JS -->
+<script>
+    function clearForm() {
+        document.getElementById("myForm").reset();
+    }
+</script>
 <script>
     function startTime() {
         var today = new Date();
