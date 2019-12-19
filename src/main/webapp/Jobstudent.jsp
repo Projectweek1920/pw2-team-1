@@ -33,7 +33,7 @@
 <!-- Page Content -->
 
 <main role="main" class="container">
-
+<article>
     <div class="starter-template">
         <h1> Behandel student</h1>
         <div>
@@ -51,7 +51,7 @@
             </form>
         </c:if>--%>
     </div>
-
+</article>
 
 </main>
 

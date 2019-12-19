@@ -42,7 +42,7 @@
             </div>
         </c:otherwise>
     </c:choose>
-
+<article>
     <form action="/Controller?command=SignIn" method="POST" novalidate>
         <p>
             <label for="userName">Username:</label>
@@ -58,7 +58,7 @@
         </p>
         <p><input type="submit" value="Login" id="submit"></p>
     </form>
-
+</article>
 </main>
 <!-- Footer -->
 <!-- Optional JavaScript -->

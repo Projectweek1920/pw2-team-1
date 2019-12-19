@@ -26,8 +26,8 @@
 <main class="grid-container" style="display: grid;
     grid-template-columns: 50% 50%;">
     <div class="section">
-        <h2 style="margin-right: -1px">Queue</h2>
-        <div id="Wachtrij" class="grid-container">
+        <q style="margin-right: -1px" class="queue">Queue</q>
+        <div id="Wachtrij" class="grid-container,queue">
             <c:forEach var="name" items="${names}">
                 <div class="table-cell"><p style="font-weight: bolder"><c:out value="${name}"></c:out></p></div>
             </c:forEach>
@@ -36,7 +36,7 @@
         </div>
     </div>
     <div class="section">
-        <h2 style="margin-right: -1px">Currently being processed</h2>
+        <q style="margin-right: -1px" class="queue">Currently being processed</q>
         <div id="In behandeling" class="grid-container">
             <c:forEach var="user" items="${ready}">
                 <div class="table-cell">
@@ -53,5 +53,4 @@
 </main>
 <a class="link" href="/Controller?command=Home">Back</a>
 </body>
-<script src="./js/synchron.js"></script>
 </html>
