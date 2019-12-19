@@ -30,7 +30,6 @@
 </head>
 <body onload="startTime()">
 
-<div id="txt"></div>
 
 <!-- Navigation -->
 <%@ include file="components/navigation.jspf" %>
