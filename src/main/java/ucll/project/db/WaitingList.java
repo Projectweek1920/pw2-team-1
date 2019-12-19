@@ -13,11 +13,11 @@ public class WaitingList {
     private ArrayList<User> aanDeBeurt = new ArrayList<>();
 
     private WaitingList() {
-        User user1 = new User("OG1", "Quinten", "Geeraerts", "ares@gmail.com", Gender.MALE);
-        User user2 = new User("OG2", "Mathieu", "Broeckhoven", "ares@gmail.com", Gender.MALE);
-        User user3 = new User("OG3", "Matthias", "Veelaert", "ares@gmail.com", Gender.MALE);
-        User user4 = new User("OG4", "Mikkel", "Skovdal", "ares@gmail.com", Gender.MALE);
-        User user5 = new User("OG5", "Sinan", "Yolartiran", "ares@gmail.com", Gender.MALE);
+        User user1 = new User("OG1", "Quinten", "Geeraerts", "dummy1@gmail.com", Gender.MALE);
+        User user2 = new User("OG2", "Mathieu", "Broeckhoven", "dummy2@gmail.com", Gender.MALE);
+        User user3 = new User("OG3", "Matthias", "Veelaert", "dummy3@gmail.com", Gender.MALE);
+        User user4 = new User("OG4", "Mikkel", "Skovdal", "dummy4@gmail.com", Gender.MALE);
+        User user5 = new User("OG5", "Sinan", "Yolartiran", "dummy5@gmail.com", Gender.MALE);
         easy.add(user1);
         easy.add(user2);
         difficult.add(user3);
