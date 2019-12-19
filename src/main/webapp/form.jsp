@@ -72,7 +72,7 @@
                     <input type="text" value="<c:out value="${emailPV}"></c:out>" name="email" id="email">
                 </p>
 
-                <h2 style="margin: 10px">What will you be studying?</h2>
+                <h2 style="margin: 10px; font-size: 125%">What will you be studying?</h2>
                 <ul class="radio-menu-item">
                 <li><input type="radio" value="graduaat" name="vraag1" id="graduaat"
                            onclick="showHideVooropleiding()" ${graduaatPV}>
@@ -86,7 +86,7 @@
                 </ul>
 
                 <fieldset id="vooropleiding">
-                    <h2 style="margin: 10px"><legend>What is your previous education?</legend></h2>
+                    <h2 style="margin: 10px; font-size: 125%"><legend>What is your previous education?</legend></h2>
                     <ul class="radio-menu-item">
                         <li><input type="radio" value="middelbaar" name="vraag2" id="middelbaar" ${middelbaarPV}>
                         <label for="middelbaar">High School</label></li>
@@ -98,13 +98,14 @@
                 </fieldset>
 
                 <h2 style="margin: 10px">Language of degree?</h2>
+                <h2 style="margin: 10px; font-size: 125%">Language of degree</h2>
                 <ul class="radio-menu-item">
                     <li> <input type="radio" value="NL" name="vraag3" id="NL" ${NLPV}>
                     <label for="NL">Dutch</label></li>
                     <li> <input type="radio" value="andereT" name="vraag3" id="andere2" ${andereTPV}>
                     <label for="andere2">Other</label></li>
                 </ul>
-                <h2 style="margin: 10px">Extra questions?</h2>
+                <h2 style="margin: 10px; font-size: 125%">Extra questions?</h2>
                 <ul class="radio-menu-item">
                     <li><input type="radio" value="YES" name="vraag4" id="YES" ${YESPV}>
                     <label for="YES">Yes</label></li>

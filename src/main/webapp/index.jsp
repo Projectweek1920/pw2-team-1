@@ -52,7 +52,7 @@
         </c:choose>
         <p>
 <c:if test = "${worker.getRole()=='ADMIN'}">
-            <p><a href="Controller?command=ShowAdministration" class="button">Toon medewerkers</a></p>
+            <p><a href="Controller?command=showStudentList" class="button">Toon medewerkers</a></p>
 </c:if>
     <c:choose>
     <c:when test="${worker.getRole()=='EXPERT' || worker.getRole()=='ADMIN'}">
