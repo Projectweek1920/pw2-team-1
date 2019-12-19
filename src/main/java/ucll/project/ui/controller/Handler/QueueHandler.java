@@ -28,19 +28,12 @@ public class QueueHandler extends RequestHandler {
         ArrayList<String> names = new ArrayList<>();
         try {
             for (User u : WaitingList.getInstance().getAll()) {
-                names.add(formatName(u.getFirstName(),u.getLastName()));
+                names.add(u.getFormatName());
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return names;
-    }
-
-    public String formatName(String name, String surname){
-        String formatted = name;
-        formatted = formatted+ " " + surname.charAt(0)+".";
-
-        return formatted;
     }
 
     public ArrayList<User> getReady(){

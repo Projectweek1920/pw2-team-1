@@ -28,6 +28,13 @@ public class User extends Person {
         tijdVanInschrijving = LocalTime.now();
     }
 
+    public String getFormatName(){
+        String formatted = this.getFirstNamee();
+        formatted = formatted+ " " + this.getLastNamee().charAt(0)+".";
+
+        return formatted;
+    }
+
     // Getters and setters and toString
 
     public boolean isDifficult() {
