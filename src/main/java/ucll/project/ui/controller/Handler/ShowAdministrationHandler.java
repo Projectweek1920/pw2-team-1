@@ -12,6 +12,7 @@ public class ShowAdministrationHandler extends RequestHandler {
 
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        return null;
+        request.setAttribute("users", getUserService().getUsers());
+        return "Administration.jsp";
     }
 }
