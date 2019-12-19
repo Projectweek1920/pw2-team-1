@@ -8,7 +8,7 @@ public class UserService {
     private WaitingList waitingList = WaitingList.getInstance();
 
     public UserService(){
-        userRepo = new UserRepositoryMemory();
+        userRepo = new UserRepositoryDb();
         Worker admin = new Worker("Admin","Wout","De Boeck","WoutDeBoeck@gmail.com",Gender.MALE,Role.ADMIN);
         userRepo.createUser(admin,"P@ssw0rd");
 
