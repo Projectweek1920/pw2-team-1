@@ -30,6 +30,7 @@ public class EnrolHandler extends RequestHandler {
                 setVraag2(user,request,errors);
             }
             setVraag3(user,request,errors);
+            setVraag4(user,request,errors);
             user.setDifficult(false);
         } catch (ServletException e) {
             e.printStackTrace();
@@ -41,7 +42,11 @@ public class EnrolHandler extends RequestHandler {
             try{
                 getUserService().addToWaitingList(user);
                 request.setAttribute("submitted","block");
-                return "form.jsp";
+
+                RequestHandler requestHandler = new FormHandler(getCommand(),getUserService());
+                requestHandler.setUserService(getUserService());
+                String desti = requestHandler.handleRequest(request,response);
+                return desti;
             } catch (DomainException exc) {
                 request.setAttribute("error", exc.getMessage());
                 request.setAttribute("errors",errors);
@@ -90,7 +95,7 @@ public class EnrolHandler extends RequestHandler {
     }
 
     protected void setGender(User user, HttpServletRequest request,ArrayList<String> errors) throws ServletException, IOException {
-        String gender = request.getParameter("gender");
+        String gender = "MALE";
         try {
             user.setGender(Gender.valueOf(gender));
             request.setAttribute("Class", "has-success");
