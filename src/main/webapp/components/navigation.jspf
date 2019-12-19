@@ -25,7 +25,7 @@
             </c:choose>
 
             <c:choose>
-                <c:when test="${worker.getRole()=='JOBSTUDENT' || worker.getRole()=='EXPERT' || worker.getRole()=='ADMIN'}">
+                <c:when test="${worker.getRole()=='JOBSTUDENT' || worker.getRole()=='EXPERT'}">
                 </c:when>
                 <c:otherwise>
                     <li class="nav-item">

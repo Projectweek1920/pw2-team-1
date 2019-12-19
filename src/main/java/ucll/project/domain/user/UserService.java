@@ -46,7 +46,6 @@ public class UserService {
     public void addUser(User user){
         this.waitingList.addUser(user);
     }
-
     public User nextEasyUser() {
         //if user is jobstudent
         //deze staat op difficcult omdat het algo een beetje derp is atm.
