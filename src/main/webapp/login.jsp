@@ -31,7 +31,7 @@
     <form action="/Controller?command=SignIn" method="POST" novalidate>
         <p>
             <label for="userName">Username:</label>
-            <input type="text" value="<c:out value="Admin"></c:out>" name="userName" id="userName">
+            <input type="text" value="<c:out value=""></c:out>" name="userName" id="userName">
         </p>
         <p>
             <label for="password">Wachtwoord:</label>
