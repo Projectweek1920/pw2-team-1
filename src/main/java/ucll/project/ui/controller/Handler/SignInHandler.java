@@ -19,6 +19,8 @@ public class SignInHandler extends RequestHandler {
         String loket = request.getParameter("loket");
         String destination = "";
 
+
+
         for(Worker worker : getUserService().getUserRepo()){
 
             if (worker.getUserName().equals(userName)){
@@ -35,7 +37,6 @@ public class SignInHandler extends RequestHandler {
                 }
             }
         }
-
         return destination;
     }
 }

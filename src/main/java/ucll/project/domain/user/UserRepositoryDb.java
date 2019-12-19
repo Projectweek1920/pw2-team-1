@@ -13,7 +13,7 @@ public class UserRepositoryDb implements UserRepository {
     public void createUser(Worker user, String password) {
         try (Connection conn = ConnectionPool.getConnection();
              PreparedStatement stmt = conn.prepareStatement("INSERT INTO \"Personeel\" " +
-                     "(rnummer, firstname, lastname, role, loket) VALUES (?, ?, ?, ?, ?)",
+                     "(rnummer, firstname, lastname, role) VALUES (?, ?, ?, ?)",
                      Statement.RETURN_GENERATED_KEYS))
         {
             //user.hashAndSetPassword(password);
@@ -129,7 +129,7 @@ public class UserRepositoryDb implements UserRepository {
         stmt.setString(i++, user.getFirstName());
         stmt.setString(i++, user.getLastName());
         stmt.setString(i++, user.getRole().toString());
-        stmt.setString(i++, user.getLoket().toString());
+        //stmt.setString(i++, user.getLoket().toString());
         return i;
     }
 }
