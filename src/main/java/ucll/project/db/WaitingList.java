@@ -15,8 +15,8 @@ public class WaitingList {
 
     }
 
-    public static synchronized WaitingList getInstance(){
-        if(instance==null){
+    public static synchronized WaitingList getInstance() {
+        if (instance == null) {
             instance = new WaitingList();
         }
         return instance;
@@ -51,7 +51,7 @@ public class WaitingList {
     }
 
 
-    public void addUserAanDeBeurt(User user){
+    public void addUserAanDeBeurt(User user) {
         aanDeBeurt.add(user);
     }
 
@@ -77,7 +77,7 @@ public class WaitingList {
 
     }
 
-    public void removeNextEasyUser(){
+    public void removeNextEasyUser() {
         try {
             easy.poll();
         } catch (Exception e) {
@@ -85,7 +85,7 @@ public class WaitingList {
         }
     }
 
-    public void removeNextDifficultUser(){
+    public void removeNextDifficultUser() {
         try {
             difficult.poll();
         } catch (Exception e) {
@@ -110,9 +110,20 @@ public class WaitingList {
         return arrayList;
     }
 
-    public void addDifficultAsFirst(User u){
+    public void addDifficultAsFirst(User u) {
         this.difficult.addFirst(u);
     }
 
+    public void removeUserAanDeBeurt(String loket) {
+        User userr = null;
+        System.out.println(loket);
+        for (User u : aanDeBeurt) {
+            if (u.getLoket().equals(loket)) {
+                userr = u;
+            }
+        }
+        aanDeBeurt.remove(userr);
+    }
 
 }
+
