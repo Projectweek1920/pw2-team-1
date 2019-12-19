@@ -40,7 +40,7 @@
         <div id="In behandeling" class="grid-container">
             <c:forEach var="user" items="${ready}">
                 <div class="table-cell">
-                    <p style="font-weight: bolder"><c:out value="${user.firstName} ${fn:substring(user.lastName,0,0)}."></c:out>> </p>
+                    <p style="font-weight: bolder"><c:out value="${user.firstName} ${user.lastName}"></c:out> </p>
                 </div>
                 <div class="table-cell">
                     <p style="font-weight: bolder"><c:out value="${user.loket}"></c:out></p>

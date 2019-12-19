@@ -26,7 +26,10 @@
 
 <main role="main" class="container">
     <article>
-        <c:if test = "${worker.getRole()=='ADMIN' || worker.getRole()=='JOBSTUDENT' || worker.getRole()=='EXPERT'}">
+        <c:if test = "${worker.getRole()=='ADMIN'}">
+            <h1>${worker.getRole()}!</h1>
+        </c:if>
+        <c:if test = "${worker.getRole()=='JOBSTUDENT' || worker.getRole()=='EXPERT'}">
             <h1>${worker.getRole()} , u zit in loket ${worker.getLoket()}!</h1>
         </c:if>
 

@@ -43,8 +43,16 @@ public class QueueHandler extends RequestHandler {
         return formatted;
     }
 
-    public ArrayList<String> getReady(){
-        return null;
+    public ArrayList<User> getReady(){
+        ArrayList<User> names = new ArrayList<>();
+        try {
+            for (User u : WaitingList.getInstance().getAanDeBeurt()) {
+                names.add(u);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return names;
     }
 
 }

@@ -62,8 +62,7 @@ public class User extends Person {
     }
 
     public void setLoket(String loket) {
-
-
+        this.loket = loket;
     }
     @Override
     public String toString() {

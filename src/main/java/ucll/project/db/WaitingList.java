@@ -85,6 +85,14 @@ public class WaitingList {
         }
     }
 
+    public void removeNextDifficultUser(){
+        try {
+            difficult.poll();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     public ArrayList<User> getAanDeBeurt() {
         return aanDeBeurt;
     }

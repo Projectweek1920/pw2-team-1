@@ -19,11 +19,12 @@ public class NextTicketHandler extends RequestHandler {
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
         User user = getUserService().nextEasyUser();
         if (user != null){
-            request.setAttribute("JobStudent", getUserService().nextEasyUser());
+            request.setAttribute("assignedUser", getUserService().nextEasyUser());
             Worker worker = (Worker) request.getSession().getAttribute(("worker"));
+            user.setLoket(worker.getLoket());
+            WaitingList.getInstance().addUserAanDeBeurt(user);
             WaitingList.getInstance().removeNextEasyUser();
             user.setLoket(getUserService().getCertainUserRepo(worker.getUserName()).getLoket());
-            WaitingList.getInstance().addUserAanDeBeurt(user);
             System.out.println(WaitingList.getInstance().getAanDeBeurt().size());
         }
         RequestHandler requestHandler = new JobstudentHandler(getCommand(),getUserService());
