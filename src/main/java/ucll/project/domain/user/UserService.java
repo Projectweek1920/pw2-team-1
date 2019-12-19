@@ -1,10 +1,6 @@
 package ucll.project.domain.user;
 import ucll.project.db.WaitingList;
-import org.apache.tomcat.jdbc.pool.DataSource;
-import org.apache.tomcat.jdbc.pool.PoolProperties;
 
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserService {
@@ -13,9 +9,13 @@ public class UserService {
 
     public UserService(){
 
-        Worker worker = new Worker("Admin","Wout","De Boeck","WoutDeBoeck@gmail.com",Gender.MALE,Role.ADMIN);
+        Worker admin = new Worker("Admin","Wout","De Boeck","WoutDeBoeck@gmail.com",Gender.MALE,Role.ADMIN);
         userRepo = new UserRepositoryMemory();
-        userRepo.createUser(worker,"P@ssw0rd");
+        userRepo.createUser(admin,"P@ssw0rd");
+
+        Worker expert = new Worker("Expert","Matthias","Veelaert","matthiasveelaert@student.ucll.be",Gender.MALE,Role.EXPERT);
+        userRepo = new UserRepositoryMemory();
+        userRepo.createUser(expert,"P@ssw0rd");
 
     }
 
