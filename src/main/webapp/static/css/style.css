@@ -49,6 +49,16 @@ nav a{
 
 
 }
+.table th[scope=col] {
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding-bottom: 10px;
+}
+.table caption {
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding-bottom: 20px;
+}
 
 .Afmeld a{
     text-decoration: none;
