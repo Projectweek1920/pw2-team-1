@@ -97,8 +97,7 @@
                     </ul>
                 </fieldset>
 
-                <h2 style="margin: 10px">Language of degree?</h2>
-                <h2 style="margin: 10px; font-size: 125%">Language of degree</h2>
+                <h2 style="margin: 10px; font-size: 125%">Language of degree?</h2>
                 <ul class="radio-menu-item">
                     <li> <input type="radio" value="NL" name="vraag3" id="NL" ${NLPV}>
                     <label for="NL">Dutch</label></li>
