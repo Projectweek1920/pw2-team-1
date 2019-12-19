@@ -37,7 +37,7 @@
             <c:when test="${worker.getRole()=='EXPERT'}">
             </c:when>
             <c:otherwise>
-                <p class="lead">U bent op de startpagina, klik <a href="Controller?command=Form">hier</a> voor het inschrijvingsformulier.</p>
+                <p class="lead">U bent op de startpagina.</p>
             </c:otherwise>
         </c:choose>
         <c:choose>

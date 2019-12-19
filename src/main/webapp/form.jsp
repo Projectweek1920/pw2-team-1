@@ -121,6 +121,11 @@
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Bootstrap JS -->
 <script>
+    function clearForm() {
+        document.getElementById("myForm").reset();
+    }
+</script>
+<script>
     function startTime() {
         var today = new Date();
         var h = today.getHours();
