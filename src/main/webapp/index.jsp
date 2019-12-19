@@ -35,14 +35,38 @@
         <c:if test = "${worker.getRole()!='ADMIN' || worker.getRole()!='JOBSTUDENT' || worker.getRole()!='EXPERT'}">
             <h1>Welkom op ons ticketing system!</h1>
         </c:if>
-        <p class="lead">U bent op de startpagina, klik <a href="Controller?command=Form">hier</a> voor het inschrijvingsformulier.</p>
-        <p>Klik <a href="Controller?command=Queue">hier</a> voor het wachtscherm.</p>
+        <c:choose>
+            <c:when test="${worker.getRole()=='EXPERT'}">
+            </c:when>
+            <c:otherwise>
+                <p class="lead">U bent op de startpagina, klik <a href="Controller?command=Form">hier</a> voor het inschrijvingsformulier.</p>
+            </c:otherwise>
+        </c:choose>
+        <c:choose>
+            <c:when test="${worker.getRole()=='EXPERT' || worker.getRole()=='ADMIN'}">
+            </c:when>
+            <c:otherwise>
+                <p>Klik <a href="Controller?command=Queue">hier</a> voor het wachtscherm.</p>
+            </c:otherwise>
+        </c:choose>
         <p>
-            <button><a href="Controller?command=Queue" class="button">Wachtscherm</a></button>
-<c:if test = "${worker.getRole()=='ADMIN' || worker.getRole()=='EXPERT'}">
+<c:if test = "${worker.getRole()=='ADMIN'}">
             <button><a href="Controller?command=ShowAdministration" type="button" class="button">Toon medewerkers</a></button>
 </c:if>
-            <button><a href="Controller?command=Form" type="button" class="button">Inschrijvingsformulier</a></button>
+    <c:choose>
+    <c:when test="${worker.getRole()=='EXPERT' || worker.getRole()=='ADMIN'}">
+    </c:when>
+    <c:otherwise>
+        <button><a href="Controller?command=Queue" class="button">Wachtscherm</a></button>
+        </c:otherwise>
+        </c:choose>
+            <c:choose>
+                <c:when test="${worker.getRole()=='EXPERT'}">
+                </c:when>
+                <c:otherwise>
+                    <button><a href="Controller?command=Form" type="button" class="button">Inschrijvingsformulier</a></button>
+                </c:otherwise>
+            </c:choose>
         </p>
     </div>
 

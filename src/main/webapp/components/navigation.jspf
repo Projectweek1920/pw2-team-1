@@ -14,14 +14,26 @@
                 <a class="nav-link" href="/Controller?command=Users">Users</a>
             </li>
 </c:if>-->
-            <li class="nav-item">
-                <a class="nav-link" href="/Controller?command=Form">Inschrijvingen studenten</a>
-            </li>
-<c:if test="${!(worker.getRole()=='EXPERT') || !(worker.getRole()=='ADMIN') }">
-            <li class="nav-item">
-                <a class="nav-link" href="/Controller?command=Queue">Wachtscherm</a>
-            </li>
-</c:if>
+            <c:choose>
+                <c:when test="${worker.getRole()=='EXPERT'}">
+                </c:when>
+                <c:otherwise>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Controller?command=Form">Inschrijvingen studenten</a>
+                    </li>
+                </c:otherwise>
+            </c:choose>
+
+            <c:choose>
+                <c:when test="${worker.getRole()=='EXPERT' || worker.getRole()=='ADMIN'}">
+                </c:when>
+                <c:otherwise>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Controller?command=Queue">Wachtscherm</a>
+                    </li>
+                </c:otherwise>
+            </c:choose>
+
 <c:if test="${worker.getRole()=='JOBSTUDENT' || worker.getRole()=='ADMIN'}">
             <li class="nav-item">
                 <a class="nav-link" href="/Controller?command=Jobstudent">Jobstudent</a>
