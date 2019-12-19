@@ -73,12 +73,6 @@
                 <label for="email">Email:</label>
                 <input type="text" value="<c:out value="${emailPV}"></c:out>" name="email" id="email">
             </p>
-            <p>
-                <input type="radio" value="<c:out value="FEMALE"></c:out>" name="gender" id="femalegender" ${gendermalePV}>
-                <label for="femalegender">Female</label>
-                <input type="radio" value="<c:out value="MALE"></c:out>" name="gender" id="malegender" ${genderfemalePV}>
-                <label for="malegender">Male</label>
-            </p>
 
             <p>What will you be studying?</p>
             <p>
@@ -106,9 +100,16 @@
             <p>Language?</p>
             <p>
                 <input type="radio" value="NL" name="vraag3" id="NL" ${NLPV}>
-                <label for="NL">Nederlands</label>
+                <label for="NL">Dutch</label>
                 <input type="radio" value="andereT" name="vraag3" id="andere2" ${andereTPV}>
                 <label for="andere2">Other</label>
+            </p>
+            <p>Extra questions?</p>
+            <p>
+                <input type="radio" value="YES" name="vraag4" id="YES" ${YESPV}>
+                <label for="YES">Yes</label>
+                <input type="radio" value="NO" name="vraag4" id="NO" ${NOPV}>
+                <label for="NO">No</label>
             </p>
             <p><input type="submit" value="Send" id="submit"></p>
         </form>

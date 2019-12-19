@@ -62,12 +62,6 @@
                 <input type="text" value="<c:out value="${emailPV}"></c:out>" name="email" id="email">
             </p>
             <p>
-                <input type="radio" value="FEMALE" name="gender" id="femalegender" ${genderfemalePV}>
-                <label for="femalegender">Female</label>
-                <input type="radio" value="MALE" name="gender" id="malegender" ${gendermalePV}>
-                <label for="malegender">Male</label>
-            </p>
-            <p>
                 <input type="radio" value="JOBSTUDENT" name="worker" id="jobStudent" ${jobstudentPV}>
                 <label for="jobStudent">JobStudent</label>
                 <input type="radio" value="EXPERT" name="worker" id="expert" ${expertPV}>
