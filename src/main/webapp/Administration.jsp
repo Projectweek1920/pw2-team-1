@@ -46,8 +46,8 @@
             <button type="button" id="pauzeKnop" onclick="pauze()">Pauze</button>
         </form>
         <div id="studentInfo">
-            <p><c:out value="${JobStudent.firstName} ${JobStudent.lastName}"></c:out></p>
-            <p><c:out value="${JobStudent.userId}"></c:out></p>
+            <p><c:out value="${assignedUser.firstName} ${assignedUser.lastName}"></c:out></p>
+            <p><c:out value="${assignedUser.userId}"></c:out></p>
         </div>
     </div>
     <c:choose>
