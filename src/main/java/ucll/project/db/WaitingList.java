@@ -7,13 +7,13 @@ import java.util.*;
 
 public class WaitingList {
     private static WaitingList instance;
-    private Queue<User> easy = new LinkedList<>();
-    private Queue<User> difficult = new LinkedList<>();
+    private Deque<User> easy = new LinkedList<>();
+    private Deque<User> difficult = new LinkedList<>();
     private ArrayList<User> aanDeBeurt = new ArrayList<>();
 
     private WaitingList() {
-    }
 
+    }
 
     public static synchronized WaitingList getInstance(){
         if(instance==null){
@@ -22,19 +22,19 @@ public class WaitingList {
         return instance;
     }
 
-    public Queue<User> getEasy() {
+    public Deque<User> getEasy() {
         return easy;
     }
 
-    public void setEasy(Queue<User> easy) {
+    public void setEasy(Deque<User> easy) {
         this.easy = easy;
     }
 
-    public Queue<User> getDifficult() {
+    public Deque<User> getDifficult() {
         return difficult;
     }
 
-    public void setDifficult(Queue<User> difficult) {
+    public void setDifficult(Deque<User> difficult) {
         this.difficult = difficult;
     }
 
@@ -49,6 +49,7 @@ public class WaitingList {
             throw new IllegalArgumentException("user is null");
         }
     }
+
 
     public void addUserAanDeBeurt(User user){
         aanDeBeurt.add(user);
@@ -100,4 +101,10 @@ public class WaitingList {
         Collections.sort(arrayList, new SortById());
         return arrayList;
     }
+
+    public void addDifficultAsFirst(User u){
+        this.difficult.addFirst(u);
+    }
+
+
 }

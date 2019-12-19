@@ -25,13 +25,13 @@ public class EnrolHandler extends RequestHandler {
             setLastName(user,request,errors);
             setEmail(user,request,errors);
             setGender(user,request,errors);
+            user.setDifficult(false);
             setVraag1(answercheck,user,request,errors);
             if (answercheck == true){
                 setVraag2(user,request,errors);
             }
             setVraag3(user,request,errors);
             setVraag4(user,request,errors);
-            user.setDifficult(false);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

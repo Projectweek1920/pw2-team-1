@@ -12,7 +12,8 @@ public class JobstudentHandler extends RequestHandler {
 
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        request.setAttribute("JobStudent", getUserService().nextEasyUser());
+        System.out.println(getUserService().nextEasyUser());
+        request.setAttribute("assignedUser", getUserService().nextEasyUser());
         return "Jobstudent.jsp";
     }
 }

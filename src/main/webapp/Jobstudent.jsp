@@ -16,13 +16,13 @@
     <title>Behandel Student (Jobstudent)</title>
     <script>
         function pauze() {
-            document.getElementById('pauzeKnop').style.display='none';
-            document.getElementById('studentInfo').style.display='none';
+            document.getElementById('pauzeKnop').style.display = 'none';
+            document.getElementById('studentInfo').style.display = 'none';
         }
 
         function next() {
-            document.getElementById('pauzeKnop').style.display='block';
-            document.getElementById('studentInfo').style.display='block';    //Als je de studentInfo wil terug tonen, toont die niks, die doet dat dus automatisch?
+            document.getElementById('pauzeKnop').style.display = 'block';
+            document.getElementById('studentInfo').style.display = 'block';    //Als je de studentInfo wil terug tonen, toont die niks, die doet dat dus automatisch?
         }
     </script>
 </head>
@@ -41,14 +41,21 @@
         <h1> Behandel student</h1>
         <div>
             <div id="studentInfo">
-            <p><c:out value="${JobStudent.firstName} ${JobStudent.lastName}"></c:out></p>
-            <p><c:out value="${JobStudent.userId}"></c:out></p>
+                <p><c:out value="${assignedUser.firstName} ${assignedUser.lastName}"></c:out></p>
+                <p><c:out value="${assignedUser.userId}"></c:out></p>
             </div>
         </div>
         <jsp:include page="userButtons.jsp">
             <jsp:param name="" value=""/>
         </jsp:include>
+        <%--<c:if test="${!markedAsComplex}">
+            <form action="Controller?command=ToComplex&userid=${assignedUser.userId}" method="post">
+                <input type="button" value="Markeer als complex">
+            </form>
+        </c:if>--%>
     </div>
+
+
 </main>
 
 
@@ -67,8 +74,12 @@
             h + ":" + m + ":" + s;
         var t = setTimeout(startTime, 500);
     }
+
     function checkTime(i) {
-        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        if (i < 10) {
+            i = "0" + i
+        }
+        ;  // add zero in front of numbers < 10
         return i;
     }
 </script>

@@ -1,4 +1,5 @@
-/*package ucll.project.domain.user;
+
+package ucll.project.domain.user;
 
 import ucll.project.db.ConnectionPool;
 
@@ -9,13 +10,13 @@ import java.util.List;
 public class UserRepositoryDb implements UserRepository {
 
     @Override
-    public void createUser(User user, String password) {
+    public void createUser(Worker user, String password) {
         try (Connection conn = ConnectionPool.getConnection();
-             PreparedStatement stmt = conn.prepareStatement("INSERT INTO \"user\" " +
-                     "(username, firstname, lastname, email, gender, role, password) VALUES (?, ?, ?, ?, ?, ?, ?)",
+             PreparedStatement stmt = conn.prepareStatement("INSERT INTO \"Personeel\" " +
+                     "(rnummer, firstname, lastname, role, loket) VALUES (?, ?, ?, ?, ?)",
                      Statement.RETURN_GENERATED_KEYS))
         {
-            user.hashAndSetPassword(password);
+            //user.hashAndSetPassword(password);
             stmtSetUser(stmt, 1, user);
             if (stmt.executeUpdate() == 0) {
                 throw new RuntimeException("Failed to create user");
@@ -31,7 +32,7 @@ public class UserRepositoryDb implements UserRepository {
     }
 
     @Override
-    public User get(int userId) {
+    public Worker get(int userId) {
         try (Connection conn = ConnectionPool.getConnection();
              PreparedStatement stmt = conn.prepareStatement("SELECT * FROM \"user\" WHERE id = ?"))
         {
@@ -48,12 +49,12 @@ public class UserRepositoryDb implements UserRepository {
     }
 
     @Override
-    public List<User> getAll() {
+    public List<Worker> getAll() {
         try (Connection conn = ConnectionPool.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery("SELECT * FROM \"user\""))
         {
-            List<User> users = new ArrayList<>();
+            List<Worker> users = new ArrayList<>();
             while (rs.next()) {
                 users.add(userFromResult(rs));
             }
@@ -64,7 +65,7 @@ public class UserRepositoryDb implements UserRepository {
     }
 
     @Override
-    public User loginUser(String username, String password) throws InvalidLogin {
+    public Worker loginUser(String username, String password) throws InvalidLogin {
         try (Connection conn = ConnectionPool.getConnection();
              PreparedStatement stmt = conn.prepareStatement("SELECT * FROM \"user\" WHERE username = ?"))
         {
@@ -74,7 +75,7 @@ public class UserRepositoryDb implements UserRepository {
                     throw new InvalidLogin("Invalid username");
                 }
 
-                User user = userFromResult(rs);
+                Worker user = userFromResult(rs);
                 if (!user.isValidPassword(password)) {
                     throw new InvalidLogin("Invalid password");
                 }
@@ -87,7 +88,7 @@ public class UserRepositoryDb implements UserRepository {
     }
 
     @Override
-    public void update(User user) {
+    public void update(Worker user) {
         try (Connection conn = ConnectionPool.getConnection();
              PreparedStatement stmt = conn.prepareStatement("UPDATE \"user\" SET " +
                      "username = ?, firstname = ?, lastname = ?, email = ?, gender = ?, role = ?, password = ? " +
@@ -102,7 +103,7 @@ public class UserRepositoryDb implements UserRepository {
     }
 
     @Override
-    public void delete(User user) {
+    public void delete(Worker user) {
         try (Connection conn = ConnectionPool.getConnection();
              PreparedStatement stmt = conn.prepareStatement("DELETE FROM \"user\" WHERE id = ?"))
         {
@@ -113,28 +114,22 @@ public class UserRepositoryDb implements UserRepository {
         }
     }
 
-    private static User userFromResult(ResultSet rs) throws SQLException {
-        User user = new User();
+    private static Worker userFromResult(ResultSet rs) throws SQLException {
+        Worker user = new Worker();
         user.setUserId(rs.getInt("id"));
         user.setUserName(rs.getString("username"));
         user.setFirstName(rs.getString("firstname"));
         user.setLastName(rs.getString("lastname"));
-        user.setEmail(rs.getString("email"));
-        user.setGender(Gender.valueOf(rs.getString("gender")));
         user.setRole(Role.valueOf(rs.getString("role")));
-        user.setHashedPassword(rs.getString("password"));
         return user;
     }
 
-    private static int stmtSetUser(PreparedStatement stmt, int i, User user) throws SQLException {
+    private static int stmtSetUser(PreparedStatement stmt, int i, Worker user) throws SQLException {
         stmt.setString(i++, user.getUserName());
         stmt.setString(i++, user.getFirstName());
         stmt.setString(i++, user.getLastName());
-        stmt.setString(i++, user.getEmail());
-        stmt.setString(i++, user.getGender().toString());
         stmt.setString(i++, user.getRole().toString());
-        stmt.setString(i++, user.getHashedPassword());
+        stmt.setString(i++, user.getLoket().toString());
         return i;
     }
 }
-*/
