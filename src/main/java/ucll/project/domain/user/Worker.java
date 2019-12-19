@@ -85,8 +85,8 @@ public class Worker extends Person{
         return loket;
     }
 
-    public void setUserId(int anInt) {
-        super.setUserName(anInt+"");
+    public void setUserId(String anInt) {
+        super.setUserName(anInt);
     }
 
     public int getUserId() {

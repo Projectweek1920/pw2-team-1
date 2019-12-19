@@ -10,11 +10,6 @@ public class UserService {
     public UserService(){
         userRepo = new UserRepositoryDb();
         Worker admin = new Worker("Admin","Wout","De Boeck","WoutDeBoeck@gmail.com",Gender.MALE,Role.ADMIN);
-        userRepo.createUser(admin,"P@ssw0rd");
-
-        Worker expert = new Worker("Expert","Matthias","Veelaert","matthiasveelaert@student.ucll.be",Gender.MALE,Role.EXPERT);
-        userRepo.createUser(expert,"P@ssw0rd");
-
     }
 
     public Worker getCertainUserRepo(String userName){

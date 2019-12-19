@@ -13,10 +13,10 @@ public class UserRepositoryDb implements UserRepository {
     public void createUser(Worker user, String password) {
         try (Connection conn = ConnectionPool.getConnection();
              PreparedStatement stmt = conn.prepareStatement("INSERT INTO \"Personeel\" " +
-                     "(rnummer, firstname, lastname, role, loket) VALUES (?, ?, ?, ?, ?)",
+                     "(rnummer, voornaam, achternaam, role, email, password) VALUES (?, ?, ?, ?, ?, ?)",
                      Statement.RETURN_GENERATED_KEYS))
         {
-            //user.hashAndSetPassword(password);
+
             stmtSetUser(stmt, 1, user);
             if (stmt.executeUpdate() == 0) {
                 throw new RuntimeException("Failed to create user");
@@ -24,7 +24,7 @@ public class UserRepositoryDb implements UserRepository {
 
             try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
                 generatedKeys.next();
-                user.setUserId(generatedKeys.getInt(1));
+                user.setUserId(generatedKeys.getString(1));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -52,7 +52,7 @@ public class UserRepositoryDb implements UserRepository {
     public List<Worker> getAll() {
         try (Connection conn = ConnectionPool.getConnection();
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT * FROM \"user\""))
+             ResultSet rs = stmt.executeQuery("SELECT * FROM \"Personeel\""))
         {
             List<Worker> users = new ArrayList<>();
             while (rs.next()) {
@@ -87,10 +87,24 @@ public class UserRepositoryDb implements UserRepository {
         }
     }
 
-    @Override
+    public static void updatePassword(String hashedPassword, Worker worker) {
+        try (Connection conn = ConnectionPool.getConnection();
+             PreparedStatement stmt = conn.prepareStatement("UPDATE \"Personeel\" SET " +
+                     "password = ? " +
+                     "WHERE rnummer = ? ")) {
+            String id = worker.getUserName();
+            stmt.setString(1,hashedPassword);
+            stmt.setString(2,id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+        @Override
     public void update(Worker user) {
         try (Connection conn = ConnectionPool.getConnection();
-             PreparedStatement stmt = conn.prepareStatement("UPDATE \"user\" SET " +
+             PreparedStatement stmt = conn.prepareStatement("UPDATE \"¨Personeel\" SET " +
                      "username = ?, firstname = ?, lastname = ?, email = ?, gender = ?, role = ?, password = ? " +
                      "WHERE id = ? "))
         {
@@ -116,11 +130,12 @@ public class UserRepositoryDb implements UserRepository {
 
     private static Worker userFromResult(ResultSet rs) throws SQLException {
         Worker user = new Worker();
-        user.setUserId(rs.getInt("id"));
-        user.setUserName(rs.getString("username"));
-        user.setFirstName(rs.getString("firstname"));
-        user.setLastName(rs.getString("lastname"));
+        user.setUserId(rs.getString("rnummer"));
+        user.setUserName(rs.getString("rnummer"));
+        user.setFirstName(rs.getString("voornaam"));
+        user.setLastName(rs.getString("achternaam"));
         user.setRole(Role.valueOf(rs.getString("role")));
+        user.setHashedPassword(rs.getString("password"));
         return user;
     }
 
@@ -129,7 +144,9 @@ public class UserRepositoryDb implements UserRepository {
         stmt.setString(i++, user.getFirstName());
         stmt.setString(i++, user.getLastName());
         stmt.setString(i++, user.getRole().toString());
-        stmt.setString(i++, user.getLoket().toString());
+        stmt.setString(i++, user.getEmail().toString());
+        user.hashAndSetPassword("P@ssw0rd");
+        stmt.setString(i++, user.getHashedPassword());
         return i;
     }
 }
