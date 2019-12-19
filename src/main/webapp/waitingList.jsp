@@ -20,13 +20,13 @@
     <link rel="stylesheet" href="./static/css/style.css">
     <link rel="stylesheet" href="./static/css/reset.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wachtlijst</title>
+    <title>Queue</title>
 </head>
 <body>
 <main class="grid-container" style="display: grid;
     grid-template-columns: 50% 50%;">
     <div class="section">
-        <h2 style="margin-right: -1px">Wachtrij</h2>
+        <h2 style="margin-right: -1px">Queue</h2>
         <div id="Wachtrij" class="grid-container">
             <c:forEach var="name" items="${names}">
                 <div class="table-cell"><p style="font-weight: bolder"><c:out value="${name}"></c:out></p></div>
@@ -36,7 +36,7 @@
         </div>
     </div>
     <div class="section">
-        <h2 style="margin-right: -1px">In behandeling</h2>
+        <h2 style="margin-right: -1px">Currently being processed</h2>
         <div id="In behandeling" class="grid-container">
             <c:forEach var="user" items="${ready}">
                 <div class="table-cell">
@@ -51,7 +51,7 @@
         </div>
     </div>
 </main>
-<a class="link" href="/Controller?command=Home">Terug</a>
+<a class="link" href="/Controller?command=Home">Back</a>
 </body>
 <script src="./js/synchron.js"></script>
 </html>
