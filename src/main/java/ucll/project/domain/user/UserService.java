@@ -10,6 +10,7 @@ public class UserService {
     public UserService(){
         userRepo = new UserRepositoryMemory();
         Worker admin = new Worker("Admin","Wout","De Boeck","WoutDeBoeck@gmail.com",Gender.MALE,Role.ADMIN);
+        userRepo.createUser(admin,"P@ssw0rd");
     }
 
     public Worker getCertainUserRepo(String userName){

@@ -130,8 +130,90 @@ h2{
 }
 
 main{
+    font-size: 120%;
+    font-family: "Aleo", "Arial", "Helvetica", "sans-serif";
+    text-align: center;
+    color: #002757;
 
 }
+
+main h1{
+    font-weight: 600;
+    font-size: 180%;
+    padding: 25 0 15 0;
+
+}
+
+main p{
+    font-family: "Aleo", "Arial", "Helvetica", "sans-serif";
+    padding: 5px;
+}
+
+main article{
+    background-color: white;
+    padding: 10px;
+    margin: 15px;
+
+}
+
+form p{
+    margin-right: 40%;
+    text-align: right;
+}
+
+form p:last-child{
+    margin-right: 0%;
+    text-align: center;
+
+}
+
+a{
+    text-decoration: none;
+    color: #002757;
+    font-weight: bolder;
+    font-family: "Aleo", "Arial", "Helvetica", "sans-serif";
+}
+
+
+input[type=submit]:hover{
+    background-color: #E00049;
+    border: solid 5px #E00049;
+    color: white;
+}
+
+input[type=submit]{
+    background-color: #E9F3F8;
+    border: solid 5px #E9F3F8;
+    color: #002757;
+}
+
+.button{
+    background-color: #E9F3F8;
+    border: solid 5px #E9F3F8;
+    color: #002757;
+}
+
+.button:hover{
+    background-color: #E00049;
+    border: solid 5px #E00049;
+    color: white;
+}
+
+.radio-menu-item{
+    display: block;
+    margin-left: 45%;
+    text-align: left;
+}
+
+main h2{
+    font-size: 130%;
+    font-weight: bold;
+    background-color: white;
+    color: #002757;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
 
 .section{
     border: #E00049 solid 5px;
