@@ -11,7 +11,7 @@
 <html>
 <head>
     <!-- Auto refresh -->
-    <meta http-equiv="refresh" content="5"/>
+    <meta http-equiv="refresh" content="2"/>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
