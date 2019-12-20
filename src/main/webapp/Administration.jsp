@@ -43,7 +43,6 @@
             <input type="submit" value="SIMPEL" name="student" id="simpel">
             <label for="moeilijk">Student:</label>
             <input type="submit" value="MOEILIJK" name="student" id="moeilijk">
-            <button type="button" id="pauzeKnop" onclick="pauze()">Pauze</button>
         </form>
         <div id="studentInfo">
             <p><c:out value="${assignedUser.firstName} ${assignedUser.lastName}"></c:out></p>
