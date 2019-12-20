@@ -41,17 +41,17 @@
                     <a class="nav-link" href="/Controller?command=Jobstudent">Jobstudent</a>
                 </li>
             </c:if>
+            <c:if test="${worker.getRole()=='ADMIN' || worker.getRole()=='EXPERT'}">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Controller?command=ShowAdministration">Expert</a>
+                </li>
+            </c:if>
             <c:if test="${worker.getRole()=='ADMIN'}">
                 <li class="nav-item">
                     <a class="nav-link" href="/Controller?command=ShowAssignJobstudent">Voeg een medewerker toe</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/Controller?command=showStudentList">Overzicht Medewerkers</a>
-                </li>
-            </c:if>
-            <c:if test="${worker.getRole()=='ADMIN' || worker.getRole()=='EXPERT'}">
-                <li class="nav-item">
-                    <a class="nav-link" href="/Controller?command=ShowAdministration">Expert</a>
                 </li>
             </c:if>
         </ul>

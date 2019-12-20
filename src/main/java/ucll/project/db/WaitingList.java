@@ -16,7 +16,9 @@ public class WaitingList {
         User user1 = new User("OG1", "Quinten", "Geeraerts", "quiten.geeraerts@gmail.com", Gender.MALE);
         User user2 = new User("OG2", "Mathieu", "Broeckhoven", "mathieu.broeckhoven@telenet.be", Gender.MALE);
         User user3 = new User("OG3", "Matthias", "Veelaert", "matthias.veelaert@outlook.com", Gender.MALE);
+        user3.setDifficult(true);
         User user4 = new User("OG4", "Mikkel", "Skovdal", "mikkel.skovdal@hotmail.be", Gender.MALE);
+        user4.setDifficult(true);
         User user5 = new User("OG5", "Sinan", "Yolartiran", "sinan.yolartiran@skynet.be", Gender.MALE);
         easy.add(user1);
         easy.add(user2);
